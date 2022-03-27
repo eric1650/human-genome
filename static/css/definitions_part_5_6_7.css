@@ -1,0 +1,512 @@
+.definitions_part_5_6_7-container {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+  }
+  .definitions_part_5_6_7-part5 {
+    width: 100%;
+    display: flex;
+    padding: var(--dl-space-space-threeunits);
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .definitions_part_5_6_7-text {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: var(--dl-space-space-twounits);
+  }
+  .definitions_part_5_6_7-steps {
+    width: 100%;
+    height: 496px;
+    display: flex;
+    padding: var(--dl-space-space-threeunits);
+    max-width: var(--dl-size-size-maxwidth);
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 39px;
+  }
+  .definitions_part_5_6_7-container1 {
+    width: 1022px;
+    height: 434px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+  }
+  .definitions_part_5_6_7-container2 {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+  }
+  .definitions_part_5_6_7-step {
+    width: 402px;
+    height: 472px;
+    display: flex;
+    padding: var(--dl-space-space-oneandhalfunits);
+    align-items: center;
+    flex-direction: column;
+  }
+  .definitions_part_5_6_7-text02 {
+    color: var(--dl-color-gray-900);
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: -30px;
+  }
+  .definitions_part_5_6_7-text04 {
+    font-size: 1.15rem;
+    font-weight: 500;
+  }
+  .definitions_part_5_6_7-text06 {
+    color: var(--dl-color-gray-500);
+    font-size: 0.75rem;
+    margin-top: var(--dl-space-space-oneandhalfunits);
+    text-align: center;
+  }
+  .definitions_part_5_6_7-step1 {
+    width: 272px;
+    height: 456px;
+    display: flex;
+    padding: var(--dl-space-space-oneandhalfunits);
+    align-items: center;
+    flex-direction: column;
+  }
+  .definitions_part_5_6_7-text10 {
+    color: var(--dl-color-gray-900);
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: -30px;
+  }
+  .definitions_part_5_6_7-text12 {
+    font-size: 1.15rem;
+    font-weight: 500;
+  }
+  .definitions_part_5_6_7-text13 {
+    color: var(--dl-color-gray-500);
+    font-size: 0.75rem;
+    margin-top: var(--dl-space-space-oneandhalfunits);
+    text-align: center;
+  }
+  .definitions_part_5_6_7-image {
+    width: 217px;
+    height: 123px;
+    object-fit: cover;
+  }
+  .definitions_part_5_6_7-step2 {
+    width: 414px;
+    height: 451px;
+    display: flex;
+    padding: var(--dl-space-space-oneandhalfunits);
+    align-items: center;
+    padding-left: 24px;
+    flex-direction: column;
+  }
+  .definitions_part_5_6_7-text21 {
+    color: var(--dl-color-gray-900);
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: -30px;
+  }
+  .definitions_part_5_6_7-text23 {
+    font-size: 1.15rem;
+    font-weight: 500;
+  }
+  .definitions_part_5_6_7-text25 {
+    color: var(--dl-color-gray-500);
+    font-size: 0.75rem;
+    margin-top: var(--dl-space-space-oneandhalfunits);
+    text-align: center;
+  }
+  .definitions_part_5_6_7-image1 {
+    width: 220px;
+    height: 151px;
+    object-fit: cover;
+  }
+  .definitions_part_5_6_7-part6 {
+    width: 100%;
+    display: flex;
+    padding: var(--dl-space-space-threeunits);
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .definitions_part_5_6_7-text33 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: var(--dl-space-space-twounits);
+  }
+  .definitions_part_5_6_7-steps1 {
+    width: 100%;
+    height: 496px;
+    display: flex;
+    padding: var(--dl-space-space-threeunits);
+    max-width: var(--dl-size-size-maxwidth);
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 39px;
+  }
+  .definitions_part_5_6_7-container3 {
+    width: 1022px;
+    height: 434px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+  }
+  .definitions_part_5_6_7-container4 {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+  }
+  .definitions_part_5_6_7-step3 {
+    width: 263px;
+    height: 355px;
+    display: flex;
+    padding: var(--dl-space-space-oneandhalfunits);
+    align-items: center;
+    flex-direction: column;
+  }
+  .definitions_part_5_6_7-text35 {
+    color: var(--dl-color-gray-900);
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: -30px;
+  }
+  .definitions_part_5_6_7-text37 {
+    font-size: 1.15rem;
+    font-weight: 500;
+  }
+  .definitions_part_5_6_7-text39 {
+    color: var(--dl-color-gray-500);
+    font-size: 0.75rem;
+    margin-top: var(--dl-space-space-oneandhalfunits);
+    text-align: center;
+  }
+  .definitions_part_5_6_7-image2 {
+    width: 50%;
+    height: 110px;
+    object-fit: cover;
+  }
+  .definitions_part_5_6_7-step4 {
+    width: 229px;
+    height: 461px;
+    display: flex;
+    padding: var(--dl-space-space-oneandhalfunits);
+    align-items: center;
+    flex-direction: column;
+  }
+  .definitions_part_5_6_7-text44 {
+    color: var(--dl-color-gray-900);
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: -30px;
+  }
+  .definitions_part_5_6_7-text46 {
+    font-size: 1.15rem;
+    font-weight: 500;
+  }
+  .definitions_part_5_6_7-text48 {
+    color: var(--dl-color-gray-500);
+    font-size: 0.75rem;
+    margin-top: var(--dl-space-space-oneandhalfunits);
+    text-align: center;
+  }
+  .definitions_part_5_6_7-image3 {
+    width: 209px;
+    height: 116px;
+    object-fit: cover;
+  }
+  .definitions_part_5_6_7-container5 {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+  }
+  .definitions_part_5_6_7-step5 {
+    width: 278px;
+    height: 451px;
+    display: flex;
+    padding: var(--dl-space-space-oneandhalfunits);
+    align-items: center;
+    flex-direction: column;
+  }
+  .definitions_part_5_6_7-text53 {
+    color: var(--dl-color-gray-900);
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: -30px;
+  }
+  .definitions_part_5_6_7-text55 {
+    font-size: 1.15rem;
+    font-weight: 500;
+  }
+  .definitions_part_5_6_7-text57 {
+    color: var(--dl-color-gray-500);
+    font-size: 0.75rem;
+    margin-top: var(--dl-space-space-oneandhalfunits);
+    text-align: center;
+  }
+  .definitions_part_5_6_7-image4 {
+    width: 99px;
+    height: 108px;
+    object-fit: cover;
+  }
+  .definitions_part_5_6_7-step6 {
+    width: 284px;
+    height: 438px;
+    display: flex;
+    padding: var(--dl-space-space-oneandhalfunits);
+    align-items: center;
+    padding-right: 24px;
+    flex-direction: column;
+  }
+  .definitions_part_5_6_7-text64 {
+    color: var(--dl-color-gray-900);
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: -30px;
+  }
+  .definitions_part_5_6_7-text66 {
+    font-size: 1.15rem;
+    font-weight: 500;
+  }
+  .definitions_part_5_6_7-text68 {
+    color: var(--dl-color-gray-500);
+    font-size: 0.75rem;
+    margin-top: var(--dl-space-space-oneandhalfunits);
+    text-align: center;
+  }
+  .definitions_part_5_6_7-image5 {
+    width: 121px;
+    height: 114px;
+    object-fit: cover;
+  }
+  .definitions_part_5_6_7-part7 {
+    width: 100%;
+    display: flex;
+    padding: var(--dl-space-space-threeunits);
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .definitions_part_5_6_7-text73 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: var(--dl-space-space-twounits);
+  }
+  .definitions_part_5_6_7-banner {
+    width: 100%;
+    display: flex;
+    padding: var(--dl-space-space-threeunits);
+    max-width: var(--dl-size-size-maxwidth);
+    align-items: center;
+    padding-bottom: 48px;
+    justify-content: space-between;
+  }
+  .definitions_part_5_6_7-container6 {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    margin-right: var(--dl-space-space-sixunits);
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .definitions_part_5_6_7-text74 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: var(--dl-space-space-unit);
+  }
+  .definitions_part_5_6_7-text76 {
+    margin-right: var(--dl-space-space-threeunits);
+  }
+  .definitions_part_5_6_7-image6 {
+    width: 391px;
+    height: 490px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  @media(max-width: 991px) {
+    .definitions_part_5_6_7-text {
+      text-align: center;
+    }
+    .definitions_part_5_6_7-text02 {
+      text-align: center;
+    }
+    .definitions_part_5_6_7-text04 {
+      text-align: center;
+    }
+    .definitions_part_5_6_7-text10 {
+      text-align: center;
+    }
+    .definitions_part_5_6_7-text12 {
+      text-align: center;
+    }
+    .definitions_part_5_6_7-text21 {
+      text-align: center;
+    }
+    .definitions_part_5_6_7-text23 {
+      text-align: center;
+    }
+    .definitions_part_5_6_7-text33 {
+      text-align: center;
+    }
+    .definitions_part_5_6_7-text35 {
+      text-align: center;
+    }
+    .definitions_part_5_6_7-text37 {
+      text-align: center;
+    }
+    .definitions_part_5_6_7-text44 {
+      text-align: center;
+    }
+    .definitions_part_5_6_7-text46 {
+      text-align: center;
+    }
+    .definitions_part_5_6_7-text53 {
+      text-align: center;
+    }
+    .definitions_part_5_6_7-text55 {
+      text-align: center;
+    }
+    .definitions_part_5_6_7-text64 {
+      text-align: center;
+    }
+    .definitions_part_5_6_7-text66 {
+      text-align: center;
+    }
+    .definitions_part_5_6_7-text73 {
+      text-align: center;
+    }
+    .definitions_part_5_6_7-banner {
+      flex-direction: column;
+    }
+    .definitions_part_5_6_7-container6 {
+      align-items: center;
+      margin-right: 0px;
+      margin-bottom: var(--dl-space-space-threeunits);
+    }
+    .definitions_part_5_6_7-text76 {
+      text-align: center;
+      margin-left: var(--dl-space-space-threeunits);
+    }
+    .definitions_part_5_6_7-image6 {
+      width: var(--dl-size-size-xxlarge);
+      height: var(--dl-size-size-xxlarge);
+    }
+  }
+  @media(max-width: 767px) {
+    .definitions_part_5_6_7-part5 {
+      padding-left: var(--dl-space-space-twounits);
+      padding-right: var(--dl-space-space-twounits);
+    }
+    .definitions_part_5_6_7-steps {
+      padding-left: var(--dl-space-space-twounits);
+      padding-right: var(--dl-space-space-twounits);
+    }
+    .definitions_part_5_6_7-container1 {
+      flex-direction: column;
+    }
+    .definitions_part_5_6_7-step {
+      padding: var(--dl-space-space-unit);
+    }
+    .definitions_part_5_6_7-step1 {
+      padding: var(--dl-space-space-unit);
+    }
+    .definitions_part_5_6_7-step2 {
+      padding: var(--dl-space-space-unit);
+    }
+    .definitions_part_5_6_7-part6 {
+      padding-left: var(--dl-space-space-twounits);
+      padding-right: var(--dl-space-space-twounits);
+    }
+    .definitions_part_5_6_7-steps1 {
+      padding-left: var(--dl-space-space-twounits);
+      padding-right: var(--dl-space-space-twounits);
+    }
+    .definitions_part_5_6_7-container3 {
+      flex-direction: column;
+    }
+    .definitions_part_5_6_7-step3 {
+      padding: var(--dl-space-space-unit);
+    }
+    .definitions_part_5_6_7-step4 {
+      padding: var(--dl-space-space-unit);
+    }
+    .definitions_part_5_6_7-step5 {
+      padding: var(--dl-space-space-unit);
+    }
+    .definitions_part_5_6_7-step6 {
+      padding: var(--dl-space-space-unit);
+    }
+    .definitions_part_5_6_7-part7 {
+      padding-left: var(--dl-space-space-twounits);
+      padding-right: var(--dl-space-space-twounits);
+    }
+    .definitions_part_5_6_7-banner {
+      padding-left: var(--dl-space-space-twounits);
+      padding-right: var(--dl-space-space-twounits);
+    }
+    .definitions_part_5_6_7-text76 {
+      margin-left: var(--dl-space-space-unit);
+      margin-right: var(--dl-space-space-unit);
+    }
+  }
+  @media(max-width: 479px) {
+    .definitions_part_5_6_7-part5 {
+      padding-top: var(--dl-space-space-twounits);
+      padding-left: var(--dl-space-space-unit);
+      padding-right: var(--dl-space-space-unit);
+      padding-bottom: var(--dl-space-space-twounits);
+    }
+    .definitions_part_5_6_7-steps {
+      padding-top: var(--dl-space-space-twounits);
+      padding-left: var(--dl-space-space-unit);
+      padding-right: var(--dl-space-space-unit);
+      padding-bottom: var(--dl-space-space-twounits);
+    }
+    .definitions_part_5_6_7-container2 {
+      flex-direction: column;
+    }
+    .definitions_part_5_6_7-part6 {
+      padding-top: var(--dl-space-space-twounits);
+      padding-left: var(--dl-space-space-unit);
+      padding-right: var(--dl-space-space-unit);
+      padding-bottom: var(--dl-space-space-twounits);
+    }
+    .definitions_part_5_6_7-steps1 {
+      padding-top: var(--dl-space-space-twounits);
+      padding-left: var(--dl-space-space-unit);
+      padding-right: var(--dl-space-space-unit);
+      padding-bottom: var(--dl-space-space-twounits);
+    }
+    .definitions_part_5_6_7-container4 {
+      flex-direction: column;
+    }
+    .definitions_part_5_6_7-container5 {
+      flex-direction: column;
+    }
+    .definitions_part_5_6_7-part7 {
+      padding-top: var(--dl-space-space-twounits);
+      padding-left: var(--dl-space-space-unit);
+      padding-right: var(--dl-space-space-unit);
+      padding-bottom: var(--dl-space-space-twounits);
+    }
+    .definitions_part_5_6_7-banner {
+      padding-top: var(--dl-space-space-twounits);
+      padding-left: var(--dl-space-space-unit);
+      padding-right: var(--dl-space-space-unit);
+      padding-bottom: var(--dl-space-space-twounits);
+    }
+    .definitions_part_5_6_7-image6 {
+      width: var(--dl-size-size-xlarge);
+      height: var(--dl-size-size-xlarge);
+    }
+  }
+  
