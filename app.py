@@ -7,6 +7,9 @@
 from flask import Flask, render_template
 import altair as alt
 import pandas as pd
+import zipfile
+# import requests
+# from io import StringIO
 
 # Create Flask App Instance
 app = Flask(__name__)
@@ -14,6 +17,16 @@ app = Flask(__name__)
 ##############################
 # Genome Data
 ##############################
+
+# testing from URL
+# response = requests.get('https://www.icloud.com/iclouddrive/045x9xMGKI6QACy2W9Xm6yYPQ#genome')
+# print(response.status_code)
+# result = str(response.content, 'utf-8')
+# data = StringIO(result)
+# genome = pd.read_csv(data)
+# print(genome.head())
+
+# genome = pd.read_csv('https://www.icloud.com/iclouddrive/045x9xMGKI6QACy2W9Xm6yYPQ#genome')
 
 genome = pd.read_csv('data/genome.csv')
 gene_names = list(genome.gene_name.unique())
@@ -35,6 +48,13 @@ def molstar(genome=genome, gene_name='TP53'):
     gene = gene[gene.feature == 'gene'].reset_index()
     uniprot_id = gene.loc[0, 'uniprot_id']
     return render_template('molstar.html', uniprot_id=uniprot_id)
+
+# # Return gene record
+# @app.route('/gene_info')
+# def gene_info(genome=genome, gene_name='TP53'):
+#     gene = genome[genome.gene_name == gene_name]
+#     gene = gene[gene.feature == 'gene'].reset_index()
+#     return gene.loc[0].to_json()
 
 # Render definitions.html for part 1
 @app.route('/definitions_part_1')
