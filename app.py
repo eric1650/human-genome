@@ -18,17 +18,10 @@ app = Flask(__name__)
 # Genome Data
 ##############################
 
-# testing from URL
-# response = requests.get('https://www.icloud.com/iclouddrive/045x9xMGKI6QACy2W9Xm6yYPQ#genome')
-# print(response.status_code)
-# result = str(response.content, 'utf-8')
-# data = StringIO(result)
-# genome = pd.read_csv(data)
-# print(genome.head())
+direct_url="https://drive.google.com/uc?export=download&confirm=9iBg&id=1-8H7V0kzGlx6vPpRM4koQ7vr_KtIXgKn"
+genome = pd.read_csv(direct_url)
 
-# genome = pd.read_csv('https://www.icloud.com/iclouddrive/045x9xMGKI6QACy2W9Xm6yYPQ#genome')
-
-genome = pd.read_csv('data/genome.csv')
+# genome = pd.read_csv('data/genome.csv')
 gene_names = list(genome.gene_name.unique())
 gene_names.sort()
 
