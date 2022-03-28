@@ -21,14 +21,15 @@ app = Flask(__name__)
 # direct_url="https://drive.google.com/uc?export=download&confirm=9iBg&id=1-8H7V0kzGlx6vPpRM4koQ7vr_KtIXgKn"
 # genome = pd.read_csv(direct_url)
 
-chromosomes = ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY']
-for chromosome in chromosomes[0]:
-    path = 'data/' + chromosome + '.csv.zip'
-    if chromosome == chromosomes[0]:
-        genome = pd.read_csv(path)
-    else:
-        data = pd.read_csv(path)
-        genome = pd.concat([genome, data], ignore_index=True)
+# chromosomes = ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY']
+# for chromosome in chromosomes[0]:
+#     path = 'data/' + chromosome + '.csv.zip'
+#     if chromosome == chromosomes[0]:
+#         genome = pd.read_csv(path)
+#     else:
+#         data = pd.read_csv(path)
+#         genome = pd.concat([genome, data], ignore_index=True)
+genome = pd.read_csv('data/chr1.csv.zip')
 
 print(len(genome))
 gene_names = list(genome.gene_name.unique())
