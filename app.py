@@ -22,16 +22,15 @@ app = Flask(__name__)
 # genome = pd.read_csv(direct_url)
 
 # chromosomes = ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY']
-# for chromosome in chromosomes[0]:
-#     path = 'data/' + chromosome + '.csv.zip'
+# for chromosome in chromosomes:
+#     path = 'data/chromosomes/' + chromosome + '.csv.zip'
 #     if chromosome == chromosomes[0]:
 #         genome = pd.read_csv(path)
 #     else:
 #         data = pd.read_csv(path)
 #         genome = pd.concat([genome, data], ignore_index=True)
-genome = pd.read_csv('data/chr1.csv.zip')
+genome = pd.read_csv('data/chromosomes/chr1.csv.zip')
 
-print(len(genome))
 gene_names = list(genome.gene_name.unique())
 gene_names.sort()
 
@@ -91,9 +90,12 @@ def definitions_part_5_6_7():
 
 # Render altair chart of gene components
 @app.route('/chart/gene_components/<gene_name>')
-def gene_components(genome=genome, gene_name='TP53'):
+def gene_components(gene_name='TP53'):
 
-    gene = genome[genome.gene_name == gene_name]
+    # gene = genome[genome.gene_name == gene_name]
+    path = 'data/genes/' + gene_name + '.csv.zip'
+    gene = pd.read_csv(path)
+
     transcripts = gene[gene.feature != 'gene']
 
     domain_min = gene.start.min()
@@ -128,9 +130,12 @@ def gene_components(genome=genome, gene_name='TP53'):
 
 # render altair chart of gene transcription
 @app.route('/chart/transcription/<gene_name>')
-def transcription(genome=genome, gene_name='TP53'):
+def transcription(gene_name='TP53'):
 
-    gene = genome[genome.gene_name == gene_name]
+    # gene = genome[genome.gene_name == gene_name]
+    path = 'data/genes/' + gene_name + '.csv.zip'
+    gene = pd.read_csv(path)
+
     transcripts = gene[gene.feature != 'gene']
     exons = transcripts[transcripts.feature == 'exon']
     exons = exons[exons.transcript_type != 'nonsense_mediated_decay']
@@ -155,9 +160,12 @@ def transcription(genome=genome, gene_name='TP53'):
 
 # render altair chart of gene splicing
 @app.route('/chart/splicing/<gene_name>')
-def splicing(genome=genome, gene_name='TP53'):
+def splicing(gene_name='TP53'):
 
-    gene = genome[genome.gene_name == gene_name]
+    # gene = genome[genome.gene_name == gene_name]
+    path = 'data/genes/' + gene_name + '.csv.zip'
+    gene = pd.read_csv(path)
+
     transcripts = gene[gene.feature != 'gene']
     spliced = transcripts[transcripts.feature.isin(['UTR','CDS','start_codon','stop_codon'])]
     spliced = spliced[spliced.transcript_type != 'nonsense_mediated_decay']
@@ -182,9 +190,12 @@ def splicing(genome=genome, gene_name='TP53'):
 
 # render altair chart of gene translation
 @app.route('/chart/translation/<gene_name>')
-def translation(genome=genome, gene_name='TP53'):
+def translation(gene_name='TP53'):
 
-    gene = genome[genome.gene_name == gene_name]
+    # gene = genome[genome.gene_name == gene_name]
+    path = 'data/genes/' + gene_name + '.csv.zip'
+    gene = pd.read_csv(path)
+
     transcripts = gene[gene.feature != 'gene']
     spliced = transcripts[transcripts.feature.isin(['UTR','CDS','start_codon','stop_codon'])]
     spliced = spliced[spliced.transcript_type != 'nonsense_mediated_decay']
@@ -210,9 +221,12 @@ def translation(genome=genome, gene_name='TP53'):
 
 # render altair chart of protein composition by amino acid
 @app.route('/chart/protein_composition/<gene_name>')
-def protein_composition(genome=genome, gene_name='TP53'):
+def protein_composition(gene_name='TP53'):
 
-    gene = genome[genome.gene_name == gene_name]
+    # gene = genome[genome.gene_name == gene_name]
+    path = 'data/genes/' + gene_name + '.csv.zip'
+    gene = pd.read_csv(path)
+    
     gene = gene[gene.feature == 'gene'].reset_index()
     protein_name = gene.loc[0, 'protein_name']
     aa_seq = gene.loc[0, 'aa_sequence']
