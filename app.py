@@ -29,8 +29,7 @@ app = Flask(__name__)
 #     else:
 #         data = pd.read_csv(path)
 #         genome = pd.concat([genome, data], ignore_index=True)
-genome = pd.read_csv('data/chromosomes/chr1.csv.zip')
-
+genome = pd.read_csv('data/genome_genes/genome.csv.zip')
 gene_names = list(genome.gene_name.unique())
 gene_names.sort()
 
@@ -226,7 +225,7 @@ def protein_composition(gene_name='TP53'):
     # gene = genome[genome.gene_name == gene_name]
     path = 'data/genes/' + gene_name + '.csv.zip'
     gene = pd.read_csv(path)
-    
+
     gene = gene[gene.feature == 'gene'].reset_index()
     protein_name = gene.loc[0, 'protein_name']
     aa_seq = gene.loc[0, 'aa_sequence']
