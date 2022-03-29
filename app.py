@@ -7,9 +7,9 @@
 from flask import Flask, render_template
 import altair as alt
 import pandas as pd
+import json
 import zipfile
-# import requests
-# from io import StringIO
+
 
 # Create Flask App Instance
 app = Flask(__name__)
@@ -86,6 +86,12 @@ def definitions_part_5_6_7():
 ##############################
 # Altair routes
 ##############################
+
+# Render altair chart of gene browser
+@app.route('/chart/gene_overview')
+def gene_overview():
+    chart = json.loads('static/charts/gene_overview.vl.json')
+    return chart
 
 # Render altair chart of gene components
 @app.route('/chart/gene_components/<gene_name>')
