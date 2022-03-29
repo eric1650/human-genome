@@ -1,6 +1,10 @@
 # Visualizing the Human Genome
-### By Eric Ellestad, Whitney Fee, and Angel Ortiz Nuñez
 ### UC Berkeley - W209 Data Visualization - Final Project
+### Authors:
+- Eric Ellestad
+- Whitney Fee
+- Angel Ortiz Nuñez
+
 
 ## Introduction
 
