@@ -87,6 +87,13 @@ def gene_overview():
         chart = json.load(read_file)
     return chart
 
+# Render altair chart of gene browser
+@app.route('/chart/gene_browser/')
+def gene_browser():
+    with open("static/charts/gene_browser.vg.json", "r") as read_file:
+        chart = json.load(read_file)
+    return chart
+
 # Render altair chart of gene components
 @app.route('/chart/gene_components/<gene_name>')
 def gene_components(gene_name='TP53'):
