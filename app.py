@@ -83,8 +83,9 @@ def definitions_part_5_6_7():
 # Render altair chart of gene overview
 @app.route('/chart/gene_overview/')
 def gene_overview():
-    chart = json.load('static/charts/gene_overview.vg.json')
-    return chart.to_json()
+    with open("static/charts/gene_overview.vg.json", "r") as read_file:
+        chart = json.load(read_file)
+    return chart
 
 # Render altair chart of gene components
 @app.route('/chart/gene_components/<gene_name>')
@@ -247,7 +248,7 @@ def protein_composition(gene_name='TP53'):
         tooltip = alt.Tooltip(['Amino_Acid','Count'])
     ).properties(
         width = 750,
-        title=f'Distribution of Amino Acids in Protein: {protein_name}'
+        title=f'Distribution of Amino Acids in Protein that is Coded for by Gene: {gene_name}'
     )
 
     return amino_acid_composition.to_json()
