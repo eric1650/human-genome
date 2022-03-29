@@ -83,8 +83,8 @@ def definitions_part_5_6_7():
 # Render altair chart of gene overview
 @app.route('/chart/gene_overview/')
 def gene_overview():
-    chart = json.load('static/charts/gene_overview.vl.json')
-    return chart
+    chart = json.load('static/charts/gene_overview.vg.json')
+    return chart.to_json()
 
 # Render altair chart of gene components
 @app.route('/chart/gene_components/<gene_name>')
