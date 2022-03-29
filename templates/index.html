@@ -112,19 +112,21 @@
         </div>
       </div>
 
-      <!-- Render Gene Browser Chart -->
+      <!-- Render Gene Browser Chart
       <div class="container">
         <div class="charts text-center">
           <div class="row"><div id="gene_browser"></div></div><hr>
         </div>
       </div>
+      -->
 
-      <!-- Render Gene Browser by Chromosome Chart -->
+      <!-- Render Gene Browser by Chromosome Chart
       <div class="container">
         <div class="charts text-center">
           <div class="row"><div id="gene_browser_by_chr"></div></div><hr>
         </div>
       </div>
+      -->
 
     <h2>Part 3: The Components of a Gene</h2>
 
@@ -225,8 +227,8 @@
         var gene_name = document.getElementById("gene_dropdown").value;
 
         parse("/chart/gene_overview/", "gene_overview")
-        parse("/chart/gene_browser/", "gene_browser")
-        parse("/chart/gene_browser_by_chr/", "gene_browser_by_chr")
+        //parse("/chart/gene_browser/", "gene_browser")
+        //parse("/chart/gene_browser_by_chr/", "gene_browser_by_chr")
         parse("/chart/gene_components/" + gene_name, "gene_components")
         parse("/chart/transcription/" + gene_name, "transcription")
         parse("/chart/splicing/" + gene_name, "splicing")
