@@ -192,7 +192,7 @@
       function displayGene() {
         var gene_name = document.getElementById("gene_dropdown").value;
 
-        parse("/chart/gene_overview", "gene_overview")
+        parse("/chart/gene_overview/", "gene_overview")
         parse("/chart/gene_components/" + gene_name, "gene_components")
         parse("/chart/transcription/" + gene_name, "transcription")
         parse("/chart/splicing/" + gene_name, "splicing")

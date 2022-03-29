@@ -50,13 +50,6 @@ def molstar(genome=genome, gene_name='TP53'):
     uniprot_id = gene.loc[0, 'uniprot_id']
     return render_template('molstar.html', uniprot_id=uniprot_id)
 
-# # Return gene record
-# @app.route('/gene_info')
-# def gene_info(genome=genome, gene_name='TP53'):
-#     gene = genome[genome.gene_name == gene_name]
-#     gene = gene[gene.feature == 'gene'].reset_index()
-#     return gene.loc[0].to_json()
-
 # Render definitions.html for part 1
 @app.route('/definitions_part_1')
 def definitions_part_1():
@@ -88,7 +81,7 @@ def definitions_part_5_6_7():
 ##############################
 
 # Render altair chart of gene overview
-@app.route('/chart/gene_overview')
+@app.route('/chart/gene_overview/')
 def gene_overview():
     chart = json.loads('static/charts/gene_overview.vl.json')
     return chart
