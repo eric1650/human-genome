@@ -191,18 +191,19 @@
       <h3>Resulting Protein Info</h3>
 
         <div class="container">
-          <div class="row">
-            <hr>
+          <div class="row"><hr>
             <h4>Gene Name:</h4>
             <div id='gene_name'></div>
           </div>
-          <div class="row">
-            <hr>
+          <div class="row"><hr>
             <h4>Protein Name:</h4>
             <div id='protein_name'></div>
           </div>
-          <div class="row">
-            <hr>
+          <div class="row"><hr>
+            <h4>Number of Amino Acids:</h4>
+            <div id='aa_length'></div>
+          </div>
+          <div class="row"><hr>
             <h4>Amino Acid Sequence:</h4>
             <div id='aa_seq'></div>
           </div><hr>
@@ -257,6 +258,7 @@
           $.getJSON(protein_info_url, function(protein) {
             document.getElementById("protein_name").innerHTML = protein.name;
             document.getElementById("aa_seq").innerHTML = protein.aa_seq;
+            document.getElementById("aa_length").innerHTML = protein.aa_length;
           });
         }
         get_protein_info()
