@@ -2,9 +2,11 @@
 ### By Eric Ellestad, Whitney Fee, and Angel Ortiz Nuñez
 ### UC Berkeley - W209 Data Visualization - Final Project
 
-The human genome consists of 23 chromosome pairs that include 20,000 protein-coding genes and over 6 billion base pairs in total DNA length. The Human Genome Project kicked off the genomics era and modern high-throughput genetic sequencing technologies have resulted in large scale publicly available databases of detailed human genetic information.
+## Introduction
 
-Our project is attempting to create an intuitive and interactive visualization tool of the human genome that shows the chromosomal location and subcomponent organization of each gene. Protein-coding genes will include additional visualizations regarding their RNA transcripts and information regarding the resulting post-translation protein such as its functional role in the body and a 3D visualization of the folded structure of the protein. The fully-zoomed out overview will reveal the organization and scale of the human genome while the zoomed-in details will reveal information about specific genes and their biological function.
+[The Human Genome Project]("https://www.genome.gov/human-genome-project") was completed in 2003 which ushered in the genomics era by sequencing an entire human genome for the very first time. In the following two decades, advances in modern high-throughput genetic sequencing technologies have made DNA sequencing faster, cheaper, and widely available. This has lead to a proliferation of genomic "big data" and the availability of large-scale public databases of detailed human genomic data.
+
+The human genome consists of 23 chromosome pairs that include around 20,000 genes and over 6 billion base pairs in total DNA length. Given that the scale and complexity of genomic data can make these topics difficult to grasp intuitively, our project is an attempt to create an interactive visualization tool of the human genome that stitches together the macromolecular structure with the building blocks all within the context of the central dogma of molecular biology: DNA gets transcribed into RNA which gets translated into Proteins that drive many bodily functions.
 
 
 Folder Structure:
