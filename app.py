@@ -87,7 +87,7 @@ def definitions_part_5_6_7():
 # Altair routes
 ##############################
 
-# Render altair chart of gene browser
+# Render altair chart of gene overview
 @app.route('/chart/gene_overview')
 def gene_overview():
     chart = json.loads('static/charts/gene_overview.vl.json')
