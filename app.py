@@ -4,7 +4,7 @@
 # Updated 03/25/2022
 ##############################
 
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 import altair as alt
 import pandas as pd
 import json
@@ -44,11 +44,22 @@ def index(gene_names=gene_names):
 
 # Render molstar.html viewer of selected gene
 @app.route('/molstar/<gene_name>')
-def molstar(genome=genome, gene_name='TP53'):
+def molstar(genome=genome, gene_name=gene_names[0]):
     gene = genome[genome.gene_name == gene_name]
     gene = gene[gene.feature == 'gene'].reset_index()
     uniprot_id = gene.loc[0, 'uniprot_id']
     return render_template('molstar.html', uniprot_id=uniprot_id)
+
+# Retrieve Protein Info for a Specific Gene
+@app.route('/protein_info/<gene_name>')
+def protein_info(genome=genome, gene_name=gene_names[0]):
+    gene = genome[genome.gene_name == gene_name]
+    gene = gene[gene.feature == 'gene'].reset_index()
+    aa_seq = gene.loc[0, 'aa_sequence']
+    protein_name = gene.loc[0, 'protein_name']
+    print(protein_name)
+    print(aa_seq)
+    return jsonify(name=protein_name, aa_seq=aa_seq)
 
 # Render definitions.html for part 1
 @app.route('/definitions_part_1')
@@ -103,7 +114,7 @@ def gene_browser_by_chr():
 
 # Render altair chart of gene components
 @app.route('/chart/gene_components/<gene_name>')
-def gene_components(gene_name='TP53'):
+def gene_components(gene_name=gene_names[0]):
 
     # gene = genome[genome.gene_name == gene_name]
     path = 'data/genes/' + gene_name + '.csv.zip'
@@ -143,7 +154,7 @@ def gene_components(gene_name='TP53'):
 
 # render altair chart of gene transcription
 @app.route('/chart/transcription/<gene_name>')
-def transcription(gene_name='TP53'):
+def transcription(gene_name=gene_names[0]):
 
     # gene = genome[genome.gene_name == gene_name]
     path = 'data/genes/' + gene_name + '.csv.zip'
@@ -173,7 +184,7 @@ def transcription(gene_name='TP53'):
 
 # render altair chart of gene splicing
 @app.route('/chart/splicing/<gene_name>')
-def splicing(gene_name='TP53'):
+def splicing(gene_name=gene_names[0]):
 
     # gene = genome[genome.gene_name == gene_name]
     path = 'data/genes/' + gene_name + '.csv.zip'
@@ -203,7 +214,7 @@ def splicing(gene_name='TP53'):
 
 # render altair chart of gene translation
 @app.route('/chart/translation/<gene_name>')
-def translation(gene_name='TP53'):
+def translation(gene_name=gene_names[0]):
 
     # gene = genome[genome.gene_name == gene_name]
     path = 'data/genes/' + gene_name + '.csv.zip'
@@ -234,7 +245,7 @@ def translation(gene_name='TP53'):
 
 # render altair chart of protein composition by amino acid
 @app.route('/chart/protein_composition/<gene_name>')
-def protein_composition(gene_name='TP53'):
+def protein_composition(gene_name=gene_names[0]):
 
     # gene = genome[genome.gene_name == gene_name]
     path = 'data/genes/' + gene_name + '.csv.zip'
