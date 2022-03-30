@@ -27,10 +27,10 @@
       <a href="https://www.genome.gov/human-genome-project">The Human Genome Project</a>
       was completed in 2003 which ushered in the genomics era by sequencing an entire
       human genome for the very first time. In the following two decades, advances
-      in modern high-throughput genetic sequencing technologies have made DNA
+      in high-throughput genetic sequencing technologies have made DNA
       sequencing faster, cheaper, and widely available. This has lead to a proliferation
       of genomic "big data" and the availability of large-scale public databases
-      of detailed human genomic information.
+      of detailed genomic information.
     </span><br><br>
 
     <span style="width:1000px; word-wrap:break-word; display:inline-block;">
@@ -228,6 +228,10 @@
             <div id='gene_name'></div><br>
           </div>
           <div class="row"><hr>
+            <h4>Located on Chromosome:</h4>
+            <div id='chromosome'></div><br>
+          </div>
+          <div class="row"><hr>
             <h4>Protein Name:</h4>
             <span id='protein_name' style="width:1000px; word-wrap:break-word; display:inline-block;"></span><br><br>
           </div>
@@ -236,11 +240,11 @@
             <span id='protein_function' style="width:1000px; word-wrap:break-word; display:inline-block;"></span><br><br>
           </div>
           <div class="row"><hr>
-            <h4>Number of Amino Acids:</h4>
+            <h4>Number of Amino Acids in Protein:</h4>
             <div id='aa_length'></div><br>
           </div>
           <div class="row"><hr>
-            <h4>Amino Acid Sequence:</h4>
+            <h4>Amino Acid Sequence of Protein:</h4>
             <!-- <textarea id='aa_seq' style="width:1000px; height:100px; word-wrap:break-word;"></textarea> -->
             <span id='aa_seq' style="width:1000px; word-wrap:break-word; display:inline-block;"></span><br><br>
           </div><hr>
@@ -304,6 +308,7 @@
         function get_protein_info() {
           var protein_info_url = '/protein_info/' + gene_name;
           $.getJSON(protein_info_url, function(protein) {
+            document.getElementById("chromosome").innerHTML = protein.chromosome;
             document.getElementById("protein_name").innerHTML = protein.name;
             document.getElementById("protein_function").innerHTML = protein.function;
             document.getElementById("aa_seq").innerHTML = protein.aa_seq;

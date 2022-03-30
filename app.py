@@ -22,6 +22,33 @@ genome = pd.read_csv('data/genome_genes/genome.csv.zip')
 gene_names = list(genome.gene_name.unique())
 gene_names.sort()
 
+chr_dict = {
+ 'chr1': "Chromosome 1",
+ 'chr2': "Chromosome 2",
+ 'chr3': "Chromosome 3",
+ 'chr4': "Chromosome 4",
+ 'chr5': "Chromosome 5",
+ 'chr6': "Chromosome 6",
+ 'chr7': "Chromosome 7",
+ 'chr8': "Chromosome 8",
+ 'chr9': "Chromosome 9",
+ 'chr10': "Chromosome 10",
+ 'chr11': "Chromosome 11",
+ 'chr12': "Chromosome 12",
+ 'chr13': "Chromosome 13",
+ 'chr14': "Chromosome 14",
+ 'chr15': "Chromosome 15",
+ 'chr16': "Chromosome 16",
+ 'chr17': "Chromosome 17",
+ 'chr18': "Chromosome 18",
+ 'chr19': "Chromosome 19",
+ 'chr20': "Chromosome 20",
+ 'chr21': "Chromosome 21",
+ 'chr22': "Chromosome 22",
+ 'chrX': "Chromosome X",
+ 'chrY': "Chromosome Y"
+}
+
 ##############################
 # Flask routes
 ##############################
@@ -41,16 +68,23 @@ def molstar(genome=genome, gene_name=gene_names[0]):
 
 # Retrieve Protein Info for a Specific Gene
 @app.route('/protein_info/<gene_name>')
-def protein_info(genome=genome, gene_name=gene_names[0]):
+def protein_info(genome=genome, chr_dict=chr_dict, gene_name=gene_names[0]):
     gene = genome[genome.gene_name == gene_name]
     gene = gene[gene.feature == 'gene'].reset_index()
 
+    chromosome = chr_dict[gene.loc[0, 'seqname']]
     protein_name = gene.loc[0, 'protein_name']
     protein_function = gene.loc[0, 'protein_function']
     aa_seq = gene.loc[0, 'aa_sequence']
     aa_length = len(aa_seq)
 
-    return jsonify(name=protein_name, function=protein_function, aa_seq=aa_seq, aa_length=aa_length)
+    return jsonify(
+    chromosome=chromosome,
+    name=protein_name,
+    function=protein_function,
+    aa_seq=aa_seq,
+    aa_length=aa_length
+    )
 
 # Render definitions.html for part 1
 @app.route('/definitions_part_1')
