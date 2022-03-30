@@ -109,6 +109,35 @@
       </script>
 
     <hr>
+      <!-- Chart Instructions -->
+    <span style="width:1000px; display:inline-block;">
+      <h3>Gene Overview Chart Instructions</h3>
+      <ul>
+        <li>
+          Chromosome Length chart: The top left chart, it displays the length
+          of each chromosome in order from longest to shortest.
+        </li>
+        <li>
+          Gene Position chart: The top right chart, it shows all the genes in
+          each chromosome within their corresponding positions. One can zoom in
+          an out to better view a gene and those that surround them.
+        </li>
+        <li>
+          Feature Count Chart: The bottom left chart, shows the distribution of
+          features for all chromosomes.
+        </li>
+        <li>
+          Gene Type Distribution Chart: The bottom right chart, shows the number
+          of genes in each chromosome, as well as their Protein Coding/Non-Protein
+          Coding split.
+        </li>
+      </ul>
+      By selecting a chromosome in the Chromosome Length chart (clicking on one of the bars) the other three charts will be filtered by that chromosome; that is to say: only the genes for that chromosome will be shown in the Gene Position chart, only the feature distribution for that chromosome will be seen in the Feature Count chart, and only the gene count for that chromosome will be observed in the Gene Type Distribution chart. To deselect or de-filter for a particular chromosome, you can double click on the white space in the Chromosome Length Chart, this also works to return any chart to its original view after having zoomed in/out or having filtered it by any other means.
+      <br><br>
+      There is a selection bar named Gene Name in the bottom left corner of the dashboard with all the gene names within the Gene Position chart. Once a gene is selected from this bar, the Gene Position chart will reduce to only show the selected gene (in its corresponding position) and the chromosome it can be found in. If the charts are filtered by a chromosome from the Chromosome Length chart and a gene, that is not within that chromosome, is selected from the Gene Name selection bar, then no gene will be visible in the Gene Position chart. To deselect a gene and view all the genes, one can select the “All” option in the Gene Name selection bar.
+      <br><br>
+    </span>
+
       <!-- Render Gene Overview Chart -->
       <div class="container">
         <div class="charts text-center">
@@ -226,7 +255,9 @@
 
     <h2>Part 7 - Protein Folding: The Amino Acid Chain folds into its final 3D shape called a Protein</h2>
 
-        <a id="molstar" style="font-size:40px;">AlphaFold 3D Structure of the Protein Encoded by Gene</a>
+        <a id="molstar" style="font-size:40px;">Click to View the 3D Structure of the Protein</a>
+        <br><br>
+        <br><br>
         <br><br>
 
     <!-- Javascript to Render Altair Charts based on Gene Selection -->
