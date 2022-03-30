@@ -46,11 +46,11 @@ def protein_info(genome=genome, gene_name=gene_names[0]):
     gene = gene[gene.feature == 'gene'].reset_index()
 
     protein_name = gene.loc[0, 'protein_name']
-    # protein_function = gene.loc[0, 'protein_function']
+    protein_function = gene.loc[0, 'protein_function']
     aa_seq = gene.loc[0, 'aa_sequence']
     aa_length = len(aa_seq)
 
-    return jsonify(name=protein_name, aa_seq=aa_seq, aa_length=aa_length)
+    return jsonify(name=protein_name, function=protein_function, aa_seq=aa_seq, aa_length=aa_length)
 
 # Render definitions.html for part 1
 @app.route('/definitions_part_1')
@@ -246,10 +246,15 @@ def protein_composition(gene_name=gene_names[0]):
     protein_name = gene.loc[0, 'protein_name']
     aa_seq = gene.loc[0, 'aa_sequence']
 
-    aa_dict = {'Cys': 'C', 'Asp': 'D', 'Ser': 'S', 'Gln': 'Q', 'Lys': 'K',
-        'Trp': 'W', 'Asn': 'N', 'Pro': 'P', 'Thr': 'T', 'Phe': 'F', 'Ala': 'A',
-        'Gly': 'G', 'Ile': 'I', 'Leu': 'L', 'His': 'H', 'Arg': 'R', 'Met': 'M',
-        'Val': 'V', 'Glu': 'E', 'Tyr': 'Y'}
+    aa_dict = {
+        'Cysteine (Cys)': 'C', 'Aspartic Acid (Asp)': 'D', 'Serine (Ser)': 'S',
+        'Glutamine (Gln)': 'Q', 'Lysine (Lys)': 'K', 'Tryptophan (Trp)': 'W',
+        'Asparagine (Asn)': 'N', 'Proline (Pro)': 'P', 'Threonine (Thr)': 'T',
+        'Phenylalanine (Phe)': 'F', 'Alanine (Ala)': 'A', 'Glycine (Gly)': 'G',
+        'Isoleucine (Ile)': 'I', 'Leucine (Leu)': 'L', 'Histidine (His)': 'H',
+        'Arginine (Arg)': 'R', 'Methionine (Met)': 'M', 'Valine (Val)': 'V',
+        'Glutamic Acid (Glu)': 'E', 'Tyrosine (Tyr)': 'Y'
+        }
 
     aa_count = pd.DataFrame(columns = ['Amino_Acid','Count'])
     for key, value in aa_dict.items():
@@ -259,12 +264,12 @@ def protein_composition(gene_name=gene_names[0]):
         aa_count.loc[aa,'Count'] += 1
 
     amino_acid_composition = alt.Chart(aa_count).mark_bar().encode(
-        x = 'Count',
-        y = alt.Y('Amino_Acid:N', sort='-x'),
+        x = alt.X('Count', title='Count of Amino Acid in Protein'),
+        y = alt.Y('Amino_Acid:N', sort='-x', title='Amino Acid'),
         tooltip = alt.Tooltip(['Amino_Acid','Count'])
     ).properties(
         width = 750,
-        title=f'Distribution of Amino Acids in Protein that is Coded for by Gene: {gene_name}'
+        title=f'Count of each Amino Acid in Protein from Gene: {gene_name}'
     )
 
     return amino_acid_composition.to_json()
