@@ -203,6 +203,10 @@
             <span id='protein_name' style="width:1000px; word-wrap:break-word; display:inline-block;"></span><br><br>
           </div>
           <div class="row"><hr>
+            <h4>Protein Function:</h4>
+            <span id='protein_function' style="width:1000px; word-wrap:break-word; display:inline-block;"></span><br><br>
+          </div>
+          <div class="row"><hr>
             <h4>Number of Amino Acids:</h4>
             <div id='aa_length'></div><br>
           </div>
@@ -261,6 +265,7 @@
           var protein_info_url = '/protein_info/' + gene_name;
           $.getJSON(protein_info_url, function(protein) {
             document.getElementById("protein_name").innerHTML = protein.name;
+            document.getElementById("protein_function").innerHTML = protein.function;
             document.getElementById("aa_seq").innerHTML = protein.aa_seq;
             document.getElementById("aa_length").innerHTML = protein.aa_length;
           });

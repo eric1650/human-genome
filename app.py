@@ -57,10 +57,11 @@ def protein_info(genome=genome, gene_name=gene_names[0]):
     gene = gene[gene.feature == 'gene'].reset_index()
 
     protein_name = gene.loc[0, 'protein_name']
+    protein_function = gene.loc[0, 'protein_function']
     aa_seq = gene.loc[0, 'aa_sequence']
     aa_length = len(aa_seq)
 
-    return jsonify(name=protein_name, aa_seq=aa_seq, aa_length=aa_length)
+    return jsonify(name=protein_name, function=protein_function, aa_seq=aa_seq, aa_length=aa_length)
 
 # Render definitions.html for part 1
 @app.route('/definitions_part_1')
