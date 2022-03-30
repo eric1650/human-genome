@@ -202,10 +202,10 @@
             <h4>Protein Name:</h4>
             <span id='protein_name' style="width:1000px; word-wrap:break-word; display:inline-block;"></span><br><br>
           </div>
-          <div class="row"><hr>
+          <!-- <div class="row"><hr>
             <h4>Protein Function:</h4>
             <span id='protein_function' style="width:1000px; word-wrap:break-word; display:inline-block;"></span><br><br>
-          </div>
+          </div> -->
           <div class="row"><hr>
             <h4>Number of Amino Acids:</h4>
             <div id='aa_length'></div><br>
@@ -259,13 +259,13 @@
 
         var molstar_url = "/molstar/" + gene_name;
         document.getElementById("molstar").href = molstar_url;
-        document.getElementById("gene_name").innerHTML = 'Gene Name: ' + gene_name;
+        document.getElementById("gene_name").innerHTML = gene_name;
 
         function get_protein_info() {
           var protein_info_url = '/protein_info/' + gene_name;
           $.getJSON(protein_info_url, function(protein) {
             document.getElementById("protein_name").innerHTML = protein.name;
-            document.getElementById("protein_function").innerHTML = protein.function;
+            // document.getElementById("protein_function").innerHTML = protein.function;
             document.getElementById("aa_seq").innerHTML = protein.aa_seq;
             document.getElementById("aa_length").innerHTML = protein.aa_length;
           });

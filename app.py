@@ -18,17 +18,6 @@ app = Flask(__name__)
 # Genome Data
 ##############################
 
-# direct_url="https://drive.google.com/uc?export=download&confirm=9iBg&id=1-8H7V0kzGlx6vPpRM4koQ7vr_KtIXgKn"
-# genome = pd.read_csv(direct_url)
-
-# chromosomes = ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY']
-# for chromosome in chromosomes:
-#     path = 'data/chromosomes/' + chromosome + '.csv.zip'
-#     if chromosome == chromosomes[0]:
-#         genome = pd.read_csv(path)
-#     else:
-#         data = pd.read_csv(path)
-#         genome = pd.concat([genome, data], ignore_index=True)
 genome = pd.read_csv('data/genome_genes/genome.csv.zip')
 gene_names = list(genome.gene_name.unique())
 gene_names.sort()
@@ -57,11 +46,11 @@ def protein_info(genome=genome, gene_name=gene_names[0]):
     gene = gene[gene.feature == 'gene'].reset_index()
 
     protein_name = gene.loc[0, 'protein_name']
-    protein_function = gene.loc[0, 'protein_function']
+    # protein_function = gene.loc[0, 'protein_function']
     aa_seq = gene.loc[0, 'aa_sequence']
     aa_length = len(aa_seq)
 
-    return jsonify(name=protein_name, function=protein_function, aa_seq=aa_seq, aa_length=aa_length)
+    return jsonify(name=protein_name, aa_seq=aa_seq, aa_length=aa_length)
 
 # Render definitions.html for part 1
 @app.route('/definitions_part_1')
