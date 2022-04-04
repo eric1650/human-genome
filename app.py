@@ -116,26 +116,26 @@ def definitions_part_5_6_7():
 # Altair routes
 ##############################
 
-# # Render altair chart of gene overview
-# @app.route('/chart/gene_overview/')
-# def gene_overview():
-#     with open("static/charts/gene_overview.vg.json", "r") as read_file:
-#         chart = json.load(read_file)
-#     return chart
-#
-# # Render altair chart of gene browser
-# @app.route('/chart/gene_browser/')
-# def gene_browser():
-#     with open("static/charts/gene_browser.vg.json", "r") as read_file:
-#         chart = json.load(read_file)
-#     return chart
-#
-# # Render altair chart of gene browser by chromosome
-# @app.route('/chart/gene_browser_by_chr/')
-# def gene_browser_by_chr():
-#     with open("static/charts/gene_browser_by_chr.vg.json", "r") as read_file:
-#         chart = json.load(read_file)
-#     return chart
+# Render altair chart of gene overview
+@app.route('/chart/gene_overview/')
+def gene_overview():
+    with open("static/charts/gene_overview.vg.json", "r") as read_file:
+        chart = json.load(read_file)
+    return chart
+
+# Render altair chart of gene browser
+@app.route('/chart/gene_browser/')
+def gene_browser():
+    with open("static/charts/gene_browser.vg.json", "r") as read_file:
+        chart = json.load(read_file)
+    return chart
+
+# Render altair chart of gene browser by chromosome
+@app.route('/chart/gene_browser_by_chr/')
+def gene_browser_by_chr():
+    with open("static/charts/gene_browser_by_chr.vg.json", "r") as read_file:
+        chart = json.load(read_file)
+    return chart
 
 # Render altair chart of gene components
 @app.route('/chart/gene_components/<gene_name>')
