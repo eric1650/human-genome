@@ -260,8 +260,11 @@
 
     <h2>Part 7 - Protein Folding: The Amino Acid Chain folds into its final 3D shape called a Protein</h2>
 
-        <a id="molstar" style="font-size:40px;">Click to View the 3D Structure of the Protein</a>
+        <!-- <a id="molstar" style="font-size:40px;">Click to View the 3D Structure of the Protein</a> -->
+        <iframe id="molstar" title="Molstar Protein Viewer" height="1000" width="1000"></iframe>
         <br><br>
+
+
 
     <hr>
     <h2>Sources</h2>
@@ -303,7 +306,8 @@
         parse("/chart/protein_composition/" + gene_name, "protein_composition")
 
         var molstar_url = "/molstar/" + gene_name;
-        document.getElementById("molstar").href = molstar_url;
+        // document.getElementById("molstar").href = molstar_url;
+        document.getElementById("molstar").src = molstar_url;
 
         document.getElementById("gene_name").innerHTML = gene_name;
 

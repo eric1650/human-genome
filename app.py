@@ -116,12 +116,12 @@ def definitions_part_5_6_7():
 # Altair routes
 ##############################
 
-# # Render altair chart of gene overview
-# @app.route('/chart/gene_overview/')
-# def gene_overview():
-#     with open("static/charts/gene_overview.vg.json", "r") as read_file:
-#         chart = json.load(read_file)
-#     return chart
+# Render altair chart of gene overview
+@app.route('/chart/gene_overview/<gene_name>')
+def gene_overview(genome=genome, gene_name=gene_names[0]):
+    # transform genome dataframe
+    # altar chart (chart = # your Altair code)
+    return chart.to_json()
 #
 # # Render altair chart of gene browser
 # @app.route('/chart/gene_browser/')
