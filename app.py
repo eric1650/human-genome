@@ -158,19 +158,19 @@ def gene_components(gene_name=gene_names[0]):
         color = 'transcript_type:N',
         tooltip = alt.Tooltip(['gene_name','feature','transcript_type','exon_id','start','end'])
     ).properties(
-        width = 750,
+        width = 1000,
         title=f'Components of Gene {gene_name}'
     ).interactive()
 
     hist_features = alt.Chart(transcripts).mark_bar().encode(
         y = 'count(feature)',
         x = alt.X('feature:N', sort='-y')
-    ).properties(width = 350)
+    ).properties(width = 475)
 
     hist_transcript_type = alt.Chart(transcripts).mark_bar().encode(
         y = 'count(transcript_type)',
         x = alt.X('transcript_type:N', sort='-y')
-    ).properties(width = 350)
+    ).properties(width = 475)
 
     gene_layout = bar & (hist_features | hist_transcript_type)
 
@@ -200,7 +200,7 @@ def transcription(gene_name=gene_names[0]):
         color = 'feature',
         tooltip = alt.Tooltip(['gene_name','feature','transcript_type','exon_id','start','end'])
     ).properties(
-        width = 750,
+        width = 1000,
         title = f"Transcribed Exons of Gene {gene_name}"
     ).interactive()
 
@@ -230,7 +230,7 @@ def splicing(gene_name=gene_names[0]):
         color = 'feature',
         tooltip = alt.Tooltip(['gene_name','feature','transcript_type','exon_id','start','end'])
     ).properties(
-        width = 750,
+        width = 1000,
         title = f"Spliced mRNA Components of Gene {gene_name}"
     ).interactive()
 
@@ -261,7 +261,7 @@ def translation(gene_name=gene_names[0]):
         color = 'feature',
         tooltip = alt.Tooltip(['gene_name','feature','transcript_type','exon_id','start','end'])
     ).properties(
-        width = 750,
+        width = 1000,
         title = f"Translated CDS Regions of Gene {gene_name}"
     ).interactive()
 
@@ -302,7 +302,7 @@ def protein_composition(gene_name=gene_names[0]):
         y = alt.Y('Amino_Acid:N', sort='-x', title='Amino Acid'),
         tooltip = alt.Tooltip(['Amino_Acid','Count'])
     ).properties(
-        width = 750,
+        width = 1000,
         title=f'Count of each Amino Acid in Protein from Gene: {gene_name}'
     )
 
