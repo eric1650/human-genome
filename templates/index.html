@@ -18,6 +18,7 @@
   <!-- jquery CDN -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+  <!-- Header -->
   <span style="width:100%; text-align:center; word-wrap:break-word; display:block">
     <h1>Visualizing the Human Genome</h1>
   </span>
@@ -70,43 +71,65 @@
     </div>
   </div>
 
-  <br><br><br>
-  <h2>Part 1: At the highest-level, the Genome consists of Chromosomes</h2>
+  <br>
+  <br>
 
-      <a href="/definitions_part_1" style="font-size:22px;">Definitions for Part 1</a>
-
+  <!-- Part 1 Container: Genome Summary -->
+  <div class="container">
+    <div class="row">
+      <span style="width:100%;  word-wrap:break-word; display:inline-block;">
+        <h2>Part 1: At the highest-level, the Genome consists of Chromosomes</h2>
+        <a href="/definitions_part_1" style="font-size:22px;">Definitions for Part 1</a>
+      </span>
+    </div>
+    <div class="row">
       <!-- Visualization 1: Genome Summary -->
-      <div class='tableauPlaceholder' id='viz1646798624291' style='position: relative'>
+      <div class='tableauPlaceholder' id='viz1649698054475' style='position: relative'>
+        <noscript>
+          <a href='#'>
+            <img alt='The Human Genome ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Th&#47;TheHumanGenomeOverview&#47;TheHumanGenome&#47;1_rss.png' style='border: none' />
+          </a>
+        </noscript>
         <object class='tableauViz'  style='display:none;'>
           <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-          <param name='embed_code_version' value='3' />
-          <param name='site_root' value='' />
+          <param name='embed_code_version' value='3' /> <param name='site_root' value='' />
           <param name='name' value='TheHumanGenomeOverview&#47;TheHumanGenome' />
           <param name='tabs' value='no' />
           <param name='toolbar' value='yes' />
+          <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Th&#47;TheHumanGenomeOverview&#47;TheHumanGenome&#47;1.png' />
           <param name='animate_transition' value='yes' />
           <param name='display_static_image' value='yes' />
           <param name='display_spinner' value='yes' />
           <param name='display_overlay' value='yes' />
           <param name='display_count' value='yes' />
           <param name='language' value='en-US' />
-          <param name='filter' value='publish=yes' />
         </object>
       </div>
       <script type='text/javascript'>
-        var divElement = document.getElementById('viz1646798624291');
+        var divElement = document.getElementById('viz1649698054475');
         var vizElement = divElement.getElementsByTagName('object')[0];
-        if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='1227px';}
+
+        // if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';}
+        // else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';}
+        // else { vizElement.style.width='100%';vizElement.style.height='1227px';}
+        vizElement.style.width='1000px';vizElement.style.height='827px';
+
         var scriptElement = document.createElement('script');
         scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
         vizElement.parentNode.insertBefore(scriptElement, vizElement);
-      </script><br><br>
+      </script>
+    </div>
+  </div>
 
-    <hr>
-    <h2>PART 2: Within each Chromosome there are regions of DNA called Genes</h2>
+  <hr>
 
+  <!-- Part 2 Container: Chromosome Overview -->
+  <div class="container">
+    <div class="row">
+      <h2>PART 2: Within each Chromosome there are regions of DNA called Genes</h2>
       <a href="/definitions_part_2" style="font-size:22px;">Definitions for Part 2</a>
-
+    </div>
+    <div class="row">
       <div class='tableauPlaceholder' id='viz1646799593098' style='position: relative'>
         <object class='tableauViz'  style='display:none;'>
           <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
@@ -127,11 +150,18 @@
       <script type='text/javascript'>
         var divElement = document.getElementById('viz1646799593098');
         var vizElement = divElement.getElementsByTagName('object')[0];
-        if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}
+
+        // if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';}
+        // else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';}
+        // else { vizElement.style.width='100%';vizElement.style.height='727px';}
+        vizElement.style.width='1000px';vizElement.style.height='827px';
+
         var scriptElement = document.createElement('script');
         scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
         vizElement.parentNode.insertBefore(scriptElement, vizElement);
       </script>
+    </div>
+  </div>
 
     <hr>
 
@@ -162,123 +192,198 @@
 
       <br><hr><br>
 
-    <h2>Part 3: Within each Gene there are Exons, Introns, Coding DNA Sequences, Untranslated Regions, and Start and Stop Codons</h2>
-
-      <a href="/definitions_part_3" style="font-size:22px;">Definitions for Part 3</a>
-
-      <h3>Pick a Gene to Explore its Components and Transcripts</h3>
-      <!-- Dropdown List to Select Gene -->
-      <label for="gene_dropdown">Select a Gene to Explore:</label>
-      <select name="gene_dropdown" id="gene_dropdown" onchange="displayGene()">
-        {% for gene in gene_names %}
-        <option value="{{gene}}">{{gene}}</option>
-        {% endfor %}
-      </select>
-      <br>
-
-
-      <!-- Render Gene Browser Chart -->
-      <div class="container">
-        <div class="charts text-center">
-          <div class="row"><div id="gene_components"></div></div><hr>
-        </div>
+    <div class="container">
+      <div class="row">
+        <h2>Part 3: Within each Gene there are Exons, Introns, Coding DNA Sequences, Untranslated Regions, and Start and Stop Codons</h2>
+        <a href="/definitions_part_3" style="font-size:22px;">Definitions for Part 3</a>
       </div>
+      <div class="row">
+        <h3>Pick a Gene to Explore its Components and Transcripts</h3>
+        <!-- Dropdown List to Select Gene -->
+        <label for="gene_dropdown">Select a Gene to Explore:</label>
+        <select name="gene_dropdown" id="gene_dropdown" onchange="displayGene()">
+          {% for gene in gene_names %}
+          <option value="{{gene}}">{{gene}}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+
+    <br>
+
+    <!-- Render Gene Browser Chart -->
+    <div class="container">
+      <div class="charts text-center">
+        <div class="row"><div id="gene_components"></div></div><hr>
+      </div>
+    </div>
 
 
-    <h2>Part 4 - Transcription: When a Gene is activated, its DNA is transcribed into RNA</h2>
-
+    <!-- Render Gene Transcription Chart -->
+    <div class="container">
+      <h2>Part 4 - Transcription: When a Gene is activated, its DNA is transcribed into RNA</h2>
       <a href="/definitions_part_4" style="font-size:22px;">Definitions for Part 4</a>
 
-      <!-- Render Gene Transcription Chart -->
-      <div class="container">
-        <div class="charts text-center">
-          <div class="row"><div id="transcription"></div></div><hr>
-        </div>
+      <div class="charts text-center">
+        <div class="row"><div id="transcription"></div></div><hr>
       </div>
+    </div>
 
 
-    <h2>Part 5 - Splicing: Transcribed RNA then gets spliced into mRNA</h2>
-
+    <!-- Render Gene Splicing Chart -->
+    <div class="container">
+      <h2>Part 5 - Splicing: Transcribed RNA then gets spliced into mRNA</h2>
       <a href="/definitions_part_5_6_7" style="font-size:22px;">Definitions for Part 5, 6, and 7</a>
 
-      <!-- Render Gene Splicing Chart -->
-      <div class="container">
-        <div class="charts text-center">
-          <div class="row"><div id="splicing"></div></div><hr>
+      <div class="charts text-center">
+        <div class="row"><div id="splicing"></div></div><hr>
+      </div>
+    </div>
+
+    <!-- Render Gene Translation Chart -->
+    <div class="container">
+      <h2>Part 6 - Translation: mRNA then gets translated into a sequence of Amino Acids</h2>
+
+      <div class="charts text-center">
+        <div class="row"><div id="translation"></div></div><hr>
+      </div>
+    </div>
+
+    <!-- Container for Protein Information -->
+    <div class="container">
+      <div class="row" style="width:100%; text-align: center;">
+        <h2>Resulting Protein Info</h2>
+      </div>
+      <br>
+        <div class="row">
+          <div class="col">
+            <h4>Gene Name:</h4>
+          </div>
+          <div class="col-9">
+            <div id='gene_name'></div>
+          </div>
+          <br><hr><br>
         </div>
+        <div class="row">
+          <div class="col">
+            <h4>Chromosome:</h4>
+          </div>
+          <div class="col-9">
+            <div id='chromosome'></div>
+          </div>
+          <br><hr><br>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h4>Protein Name:</h4>
+          </div>
+          <div class="col-9">
+            <span id='protein_name' style="width:100%; word-wrap:break-word; display:inline-block;"></span>
+          </div>
+          <br><hr><br>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h4>Protein Function:</h4>
+          </div>
+          <div class="col-9">
+            <span id='protein_function' style="width:100%; word-wrap:break-word; display:inline-block;"></span>
+          </div>
+          <br><hr><br>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h4>Amino Acid Count:</h4>
+          </div>
+          <div class="col-9">
+            <div id='aa_length'></div>
+          </div>
+          <br><hr><br>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h4>Amino Acid Sequence:</h4>
+          </div>
+          <div class="col-9">
+            <span id='aa_seq' style="width:100%; word-wrap:break-word; display:inline-block;"></span>
+          </div>
+          <br><br>
+        </div><hr>
       </div>
 
-
-    <h2>Part 6 - Translation: mRNA then gets translated into a sequence of Amino Acids</h2>
-
-        <!-- Render Gene Translation Chart -->
-        <div class="container">
-          <div class="charts text-center">
-            <div class="row"><div id="translation"></div></div><hr>
-          </div>
-        </div>
-
-      <h3>Resulting Protein Info</h3>
-
-        <div class="container">
-          <div class="row"><hr>
-            <h4>Gene Name:</h4>
-            <div id='gene_name'></div><br>
-          </div>
-          <div class="row"><hr>
-            <h4>Located on Chromosome:</h4>
-            <div id='chromosome'></div><br>
-          </div>
-          <div class="row"><hr>
-            <h4>Protein Name:</h4>
-            <span id='protein_name' style="width:1000px; word-wrap:break-word; display:inline-block;"></span><br><br>
-          </div>
-          <div class="row"><hr>
-            <h4>Protein Function:</h4>
-            <span id='protein_function' style="width:1000px; word-wrap:break-word; display:inline-block;"></span><br><br>
-          </div>
-          <div class="row"><hr>
-            <h4>Number of Amino Acids in Protein:</h4>
-            <div id='aa_length'></div><br>
-          </div>
-          <div class="row"><hr>
-            <h4>Amino Acid Sequence of Protein:</h4>
-            <!-- <textarea id='aa_seq' style="width:1000px; height:100px; word-wrap:break-word;"></textarea> -->
-            <span id='aa_seq' style="width:1000px; word-wrap:break-word; display:inline-block;"></span><br><br>
-          </div><hr>
-        </div>
-
-    <!-- Render Amino Acid Composition Chart -->
+    <!-- Container for Amino Acid Composition Chart -->
     <div class="container">
       <div class="charts text-center">
         <div class="row"><div id="protein_composition"></div></div><hr>
       </div>
     </div>
 
-    <h2>Part 7 - Protein Folding: The Amino Acid Chain folds into its final 3D shape called a Protein</h2>
-
-        <!-- <a id="molstar" style="font-size:40px;">Click to View the 3D Structure of the Protein</a> -->
+    <!-- Container for Molstar Protein Viewer -->
+    <div class="container">
+      <h2>Part 7 - Protein Folding: The Amino Acid Chain folds into its final 3D shape called a Protein</h2>
+      <!-- <a id="molstar" style="font-size:40px;">Click to View the 3D Structure of the Protein</a> -->
+      <div class="charts text-center">
         <iframe id="molstar" title="Molstar Protein Viewer" height="1000" width="1000"></iframe>
-        <br><br>
+      </div>
+    </div>
 
-
+    <br>
+    <br>
 
     <hr>
-    <h2>Sources</h2>
-    <ul>
-      <li>Human Genome Dataset: <a href='https://www.gencodegenes.org/'>GENCODE Human Genome version GRCh38.p13</a></li>
-      <li>Protein Dataset: <a href='https://www.uniprot.org/'>UniProt Human Proteome (UniProtKB Reviewed Swiss-Prot)</a></li>
-      <li>3D Protein Structures: <a href='https://alphafold.ebi.ac.uk/'>AlphaFold Protein Structure Database</a></li>
-      <li>Protein Viewer API: <a href='https://molstar.org/'>Molstar Viewer</a></li>
-      <li>Definitions and Images: <a href='https://www.genome.gov/'>National Human Genome Research Institute</a></li>
-    </ul>
+
+    <!-- Container for Citations -->
+    <div class="container">
+      <h2>Sources</h2>
+      <ul>
+        <li>
+          <div class="row">
+            <div class="col-3">Human Genome Dataset:</div>
+            <div class="col"><a href='https://www.gencodegenes.org/'>GENCODE Human Genome version GRCh38.p13</a></div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col-3">Protein Dataset:</div>
+            <div class="col"><a href='https://www.uniprot.org/'>UniProt Human Proteome (UniProtKB Reviewed Swiss-Prot)</a></div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col-3">3D Protein Structures:</div>
+            <div class="col"><a href='https://alphafold.ebi.ac.uk/'>AlphaFold Protein Structure Database</a></div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col-3">Protein Viewer API:</div>
+            <div class="col"><a href='https://molstar.org/'>Molstar Viewer</a></div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col-3">Definitions and Images:</div>
+            <div class="col"><a href='https://www.genome.gov/'>National Human Genome Research Institute</a></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <!-- Authors -->
+    <div class="container">
+      <h2>Authors</h2>
+      <ul>
+        <li><a href='https://www.linkedin.com/in/eric-ellestad/'>Eric Ellestad</a></li>
+        <li><a href='https://www.linkedin.com/in/whitney-fee-2402596b/'>Whitney Fee</a></li>
+        <li><a href='https://www.linkedin.com/in/angel-ortiz-544936201/'>Angel Ortiz Nuñez</a></li>
+      </ul>
+    </div>
+
     <hr>
 
     <!-- Javascript to Render Altair Charts based on Gene Selection -->
-    <script type="text/javascript">
-
-    </script>
-
     <script type="text/javascript">
 
       function parse(url, div) {
