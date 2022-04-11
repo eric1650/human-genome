@@ -35,9 +35,8 @@ Folder Structure:
     └── pyvenv.cfg
 ```
 
-Requirements:
-- Flask
-- Altair
+Launch Virtual Machine:
+`source venv/bin/activate`
 
 Code to Launch Flask App from the Command Line:
 `python app.py`
