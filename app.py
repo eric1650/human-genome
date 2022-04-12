@@ -117,7 +117,7 @@ def definitions_part_5_6_7():
 ##############################
 
 # Render altair chart of gene composition by genome
-@app.route('/chart/gene_composition_genome')
+@app.route('/chart/gene_composition_genome/')
 def gene_composition_genome():
 
     genome_composition = pd.read_csv('data/gene_composition/genome_composition.csv')
@@ -131,7 +131,7 @@ def gene_composition_genome():
     return pie_chart.to_json()
 
 # Render altair chart of gene composition by chromosome
-@app.route('/chart/gene_composition_chr')
+@app.route('/chart/gene_composition_chr/')
 def gene_composition_chr():
 
     chr_composition = pd.read_csv('data/gene_composition/chr_composition.csv')
