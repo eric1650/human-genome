@@ -189,10 +189,52 @@
   <!-- Render Gene Transcription Chart -->
   <div class="container">
     <br><hr><br>
-    <h3>Transcription: When a Gene is activated, its DNA is transcribed into RNA</h3>
-    <h3>Splicing: Transcribed RNA then gets spliced into mRNA</h3>
-    <h3>Translation: mRNA then gets translated into a sequence of Amino Acids</h3>
-    <a href="/definitions_part_4" style="font-size:22px;">Definitions for Part 4</a>
+    <div class="row">
+      <h3>Gene Expression Consists of Several Steps:</h3>
+    </div>
+    <br>
+    <div class="row">
+      <div class="row">
+        <div class="col">
+          <h5>1. Transcription</h5>
+        </div>
+        <div class="col-10">
+            The DNA sequence of a gene is "read" and an RNA copy of the gene is created.
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row">
+        <div class="col">
+          <h5>2. Splicing</h5>
+        </div>
+        <div class="col-10">
+            Introns and Untranslated Regions (UTRs) are spliced out of the RNA sequence which is now mRNA.
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row">
+        <div class="col">
+          <h5>3. Translation</h5>
+        </div>
+        <div class="col-10">
+            The remaining Coding DNA Sequences (CDS) Regions of mRNA are translated into an Amino Acid Chain.
+        </div>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="row">
+        <div class="col">
+          <h5>4. Protein Folding</h5>
+        </div>
+        <div class="col-10">
+            The Amino Acid sequence folds into its final shape which is a Protein.
+        </div>
+      </div>
+    </div>
+    <br><hr><br>
     <div class="charts text-center">
       <div class="row"><div id="gene_expression"></div></div>
     </div>
@@ -202,11 +244,9 @@
   <!-- Container for Protein Information -->
   <div class="container">
     <br><hr><br>
-    <div class="row" style="width:100%; text-align: center;">
-      <h3>Resulting Protein Info</h3>
-    </div>
+    <h3>Translated Amino Acid Chain Info</h3>
     <br>
-      <div class="row">
+      <!-- <div class="row">
         <br><hr><br>
         <div class="col">
           <h4>Gene Name:</h4>
@@ -214,7 +254,7 @@
         <div class="col-9">
           <div id='gene_name'></div>
         </div>
-      </div>
+      </div> -->
       <!-- <div class="row">
         <br><hr><br>
         <div class="col">
@@ -224,24 +264,6 @@
           <div id='chromosome'></div>
         </div>
       </div> -->
-      <div class="row">
-        <br><hr><br>
-        <div class="col">
-          <h4>Protein Name:</h4>
-        </div>
-        <div class="col-9">
-          <span id='protein_name' style="width:100%; word-wrap:break-word; display:inline-block;"></span>
-        </div>
-      </div>
-      <div class="row">
-        <br><hr><br>
-        <div class="col">
-          <h4>Protein Function:</h4>
-        </div>
-        <div class="col-9">
-          <span id='protein_function' style="width:100%; word-wrap:break-word; display:inline-block;"></span>
-        </div>
-      </div>
       <div class="row">
         <br><hr><br>
         <div class="col">
@@ -275,9 +297,29 @@
     <!-- Container for Molstar Protein Viewer -->
     <div class="container">
       <br><hr><br>
-      <h3>After Translation, the Amino Acid Chain folds into its final 3D Shape and is a Protein</h3>
+      <h3>Post-Translation, the Amino Acid Chain folds into its 3D Shape and is now a Protein</h3>
       <br>
-      <!-- <a id="molstar" style="font-size:40px;">Click to View the 3D Structure of the Protein</a> -->
+      <div class="row">
+        <br><hr><br>
+        <div class="col">
+          <h4>Protein Name:</h4>
+        </div>
+        <div class="col-9">
+          <span id='protein_name' style="width:100%; word-wrap:break-word; display:inline-block;"></span>
+        </div>
+      </div>
+      <div class="row">
+        <br><hr><br>
+        <div class="col">
+          <h4>Protein Function:</h4>
+        </div>
+        <div class="col-9">
+          <span id='protein_function' style="width:100%; word-wrap:break-word; display:inline-block;"></span>
+        </div>
+      </div>
+      <br><hr><br>
+      <h3>3D Protein Visualization</h3>
+      <br>
       <div class="charts text-center">
         <iframe id="molstar" title="Molstar Protein Viewer" height="1000" width="1000"></iframe>
       </div>
@@ -361,20 +403,20 @@
         });
       }
 
+      parse("/chart/gene_composition_genome/", "gene_composition_genome")
+      parse("/chart/gene_composition_chr/", "gene_composition_chr")
+
       function displayGene() {
         var gene_name = document.getElementById("gene_dropdown").value;
 
-        parse("/chart/gene_composition_genome/", "gene_composition_genome")
-        parse("/chart/gene_composition_chr/", "gene_composition_chr")
         parse("/chart/gene_components/" + gene_name, "gene_components")
         parse("/chart/gene_expression/" + gene_name, "gene_expression")
         parse("/chart/protein_composition/" + gene_name, "protein_composition")
 
         var molstar_url = "/molstar/" + gene_name;
-        // document.getElementById("molstar").href = molstar_url;
         document.getElementById("molstar").src = molstar_url;
 
-        document.getElementById("gene_name").innerHTML = gene_name;
+        // document.getElementById("gene_name").innerHTML = gene_name;
 
         function get_protein_info() {
           var protein_info_url = '/protein_info/' + gene_name;

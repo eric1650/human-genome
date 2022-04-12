@@ -228,7 +228,7 @@ def gene_expression(gene_name):
         tooltip = alt.Tooltip(['gene_name','feature','transcript_type','exon_id','start','end'])
     ).properties(
         width = 750,
-        title = f"Exons are the portions of a gene that get transcribed into RNA"
+        title = f"Transcription: Exons are the portions of a gene that get transcribed into RNA"
     )
 
     # build splicing chart
@@ -240,7 +240,7 @@ def gene_expression(gene_name):
         tooltip = alt.Tooltip(['gene_name','feature','transcript_type','exon_id','start','end'])
     ).properties(
         width = 750,
-        title = f"Exons are divided into Untranslated Regions (UTR) and Coding DNA Sequences (CDS)"
+        title = f"Splicing: Untranslated Regions (UTR) of Exons are spliced out leaving only Coding DNA Sequences (CDS)"
     )
 
     translation = alt.Chart(translated).mark_bar().encode(
@@ -251,7 +251,7 @@ def gene_expression(gene_name):
         tooltip = alt.Tooltip(['gene_name','feature','transcript_type','exon_id','start','end'])
     ).properties(
         width = 750,
-        title = f"UTR sections get spliced out and the remaining CDS regions get translated into an Amino Acid Chain"
+        title = f"Translation: The remaining CDS regions get translated into an Amino Acid Chain"
     )
 
     chart = alt.vconcat(transcription & splicing & translation)
