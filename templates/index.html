@@ -39,8 +39,8 @@
   <div class="container">
     <br><hr><br>
     <div class="row">
-      <h3>Introduction to the Central Dogma of Biology</h3>
-      <br>
+      <h3>Introduction</h3>
+      <br><br>
       <span style="width:100%; word-wrap:break-word; display:inline-block;">
         <a href="https://www.genome.gov/human-genome-project">The Human Genome Project</a>
         was completed in 2003 which ushered in the modern genomics era by sequencing an entire
@@ -51,14 +51,14 @@
         of detailed genomic information.
         <br><br>
         The human genome consists of 23 chromosome pairs that include around 20,000
-        genes and over 6 billion base pairs in total DNA length. Given that the scale and
-        complexity of genomic data can make these topics difficult to grasp intuitively,
-        our project is an attempt to create an interactive visualization
-        tool of the human genome that stitches together the macromolecular structure
-        with the underlying building blocks. We will orient these concepts within
-        the context of the <a href="https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology">
-        Central Dogma of Molecular Biology</a>: DNA gets transcribed
-        into RNA which gets translated into Proteins that drive bodily functions.
+        genes and over 6 billion base pairs in total DNA length. Given the challenging scale and
+        complexity of genomic data, this project is an attempt to create an interactive
+        educational visualization of the human genome using real genomic data.
+        In Part 1 we will explore the genome's structure and its components and in
+        Part 2 we will look at gene expression and follow a selected gene's path through the
+        <a href="https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology">
+        Central Dogma of Molecular Biology</a> as it gets transcribed from DNA into RNA
+        and then translated into a Protein with a specific bodily function:
       </span>
     </div>
     <div class="row">
@@ -75,7 +75,7 @@
   <!-- Introduction to Genome Video -->
   <div class="container">
     <br><hr><br>
-    <h2>The Genome</h2>
+    <h2>Part 1: The Genome</h2>
     <br>
     <div class="charts text-center">
       <iframe width="790" height="444" src="https://www.youtube.com/embed/3fr4jBFs25s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -88,10 +88,8 @@
   <div class="container">
     <br><hr><br>
     <div class="row">
-      <span style="width:100%;  word-wrap:break-word; display:inline-block;">
-        <h3>The Genome Consists of 23 Pairs of Chromosomes</h3>
-        <a href="/definitions_part_1" style="font-size:22px;">Definitions for Part 1</a>
-      </span>
+      <h3>The Genome Consists of 23 Pairs of Chromosomes</h3>
+      <a href="/definitions_part_1" style="font-size:22px;">Definitions for Part 1</a>
     </div>
     <div class="row">
       <!-- Visualization 1: Genome Summary -->
@@ -107,10 +105,8 @@
   <div class="container">
     <br><hr><br>
     <div class="row">
-      <span style="width:100%;  word-wrap:break-word; display:inline-block;">
-        <h3>Within each Chromosome there are regions of DNA called Genes</h3>
-        <a href="/definitions_part_2" style="font-size:22px;">Definitions for Part 2</a>
-      </span>
+      <h3>Within each Chromosome there are regions of DNA called Genes</h3>
+      <a href="/definitions_part_2" style="font-size:22px;">Definitions for Part 2</a>
     </div>
     <div class="row">
       <!-- Visualization 1: Genome Summary -->
@@ -140,6 +136,8 @@
   <!-- Container: Test Youtube Video Embedding -->
   <div class="container">
     <br><hr><br>
+    <h2>Part 2: Gene Expression</h2>
+    <br>
     <div class="charts text-center">
       <iframe width="790" height="444" src="https://www.youtube.com/embed/gG7uCskUOrA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
@@ -148,14 +146,14 @@
 
   <div class="container">
     <br><hr><br>
+    <!-- <div class="row"> -->
+      <!-- <h3>Within each Gene there are Exons, Introns, Coding DNA Sequences, Untranslated Regions, and Start and Stop Codons</h3> -->
+      <!-- <a href="/definitions_part_3" style="font-size:22px;">Definitions for Part 3</a> -->
+    <!-- </div> -->
     <div class="row">
-      <h2>Part 3: Within each Gene there are Exons, Introns, Coding DNA Sequences, Untranslated Regions, and Start and Stop Codons</h2>
-      <a href="/definitions_part_3" style="font-size:22px;">Definitions for Part 3</a>
-    </div>
-    <div class="row">
-      <h3>Pick a Gene to Explore its Components and Transcripts</h3>
+      <h3>Select a Gene to Activate ("Express") that Gene:</h3>
       <!-- Dropdown List to Select Gene -->
-      <label for="gene_dropdown">Select a Gene to Explore:</label>
+      <!-- <label for="gene_dropdown">Select a Gene:</label> -->
       <select name="gene_dropdown" id="gene_dropdown" onchange="displayGene()">
         {% for gene in gene_names %}
         <option value="{{gene}}">{{gene}}</option>
@@ -177,7 +175,7 @@
   <!-- Render Gene Transcription Chart -->
   <div class="container">
     <br><hr><br>
-    <h2>Part 4 - Transcription: When a Gene is activated, its DNA is transcribed into RNA</h2>
+    <h3>Transcription: When a Gene is activated, its DNA is transcribed into RNA</h3>
     <a href="/definitions_part_4" style="font-size:22px;">Definitions for Part 4</a>
     <div class="charts text-center">
       <div class="row"><div id="transcription"></div></div>
@@ -188,7 +186,7 @@
   <!-- Render Gene Splicing Chart -->
   <div class="container">
     <br><hr><br>
-    <h2>Part 5 - Splicing: Transcribed RNA then gets spliced into mRNA</h2>
+    <h3>Splicing: Transcribed RNA then gets spliced into mRNA</h3>
     <a href="/definitions_part_5_6_7" style="font-size:22px;">Definitions for Part 5, 6, and 7</a>
 
     <div class="charts text-center">
@@ -199,7 +197,7 @@
   <!-- Render Gene Translation Chart -->
   <div class="container">
     <br><hr><br>
-    <h2>Part 6 - Translation: mRNA then gets translated into a sequence of Amino Acids</h2>
+    <h3>Translation: mRNA then gets translated into a sequence of Amino Acids</h3>
 
     <div class="charts text-center">
       <div class="row"><div id="translation"></div></div>
@@ -211,7 +209,7 @@
   <div class="container">
     <br><hr><br>
     <div class="row" style="width:100%; text-align: center;">
-      <h2>Resulting Protein Info</h2>
+      <h3>Resulting Protein Info</h3>
     </div>
     <br>
       <div class="row">
@@ -283,7 +281,7 @@
     <!-- Container for Molstar Protein Viewer -->
     <div class="container">
       <br><hr><br>
-      <h2>Part 7 - Protein Folding: The Amino Acid Chain folds into its final 3D shape called a Protein</h2>
+      <h3>Protein Folding: The Amino Acid Chain folds into its final 3D shape called a Protein</h3>
       <br>
       <!-- <a id="molstar" style="font-size:40px;">Click to View the 3D Structure of the Protein</a> -->
       <div class="charts text-center">
@@ -295,7 +293,7 @@
     <!-- Container for Citations -->
     <div class="container">
       <br><hr>
-      <h2>Sources</h2>
+      <h3>Sources</h3>
       <ul>
         <li>
           <div class="row">
@@ -334,7 +332,7 @@
     <!-- Container for Authors -->
     <div class="container">
       <hr>
-      <h2>Authors</h2>
+      <h3>Authors</h3>
       <ul>
         <li><a href='https://www.linkedin.com/in/eric-ellestad/'>Eric Ellestad</a></li>
         <li><a href='https://www.linkedin.com/in/whitney-fee-2402596b/'>Whitney Fee</a></li>
