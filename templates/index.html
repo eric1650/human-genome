@@ -70,6 +70,16 @@
   </div>
 
 
+  <!-- Introduction to Genome Video -->
+  <div class="container">
+    <br><hr><br>
+    <div class="charts text-center">
+      <iframe width="790" height="444" src="https://www.youtube.com/embed/3fr4jBFs25s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+
+
+
   <!-- Part 1 Container: Genome Summary -->
   <div class="container">
     <br><hr><br>
@@ -119,6 +129,15 @@
     <br><hr><br>
     <div class="row">
       Gene Browser Chart
+    </div>
+  </div>
+
+
+  <!-- Container: Test Youtube Video Embedding -->
+  <div class="container">
+    <br><hr><br>
+    <div class="charts text-center">
+      <iframe width="790" height="444" src="https://www.youtube.com/embed/gG7uCskUOrA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   </div>
 
@@ -200,7 +219,7 @@
           <div id='gene_name'></div>
         </div>
       </div>
-      <div class="row">
+      <!-- <div class="row">
         <br><hr><br>
         <div class="col">
           <h4>Chromosome:</h4>
@@ -208,7 +227,7 @@
         <div class="col-9">
           <div id='chromosome'></div>
         </div>
-      </div>
+      </div> -->
       <div class="row">
         <br><hr><br>
         <div class="col">
@@ -367,7 +386,7 @@
         function get_protein_info() {
           var protein_info_url = '/protein_info/' + gene_name;
           $.getJSON(protein_info_url, function(protein) {
-            document.getElementById("chromosome").innerHTML = protein.chromosome;
+            // document.getElementById("chromosome").innerHTML = protein.chromosome;
             document.getElementById("protein_name").innerHTML = protein.name;
             document.getElementById("protein_function").innerHTML = protein.function;
             document.getElementById("aa_seq").innerHTML = protein.aa_seq;
