@@ -167,54 +167,59 @@ def gene_components(gene_name):
     path = 'data/genes/' + gene_name + '.csv.zip'
     gene = pd.read_csv(path)
 
-    transcripts = gene[gene.feature != 'gene']
+    transcripts = gene[gene.feature.isin(['exon','UTR','CDS'])]
 
     domain_min = gene.start.min()
     domain_max = gene.end.max()
     domain = [domain_min, domain_max]
 
     bar = alt.Chart(transcripts).mark_bar().encode(
-        x=alt.X('start:Q', scale=alt.Scale(domain=domain)),
+        x=alt.X('start:Q', scale=alt.Scale(domain=domain), title='Location of Gene Component on Chromosome'),
         x2='end:Q',
-        y='feature:N',
-        color = 'transcript_type:N',
-        tooltip = alt.Tooltip(['gene_name','feature','transcript_type','exon_id','start','end'])
+        y=alt.Y('feature:N', sort=None),
+        color = 'feature:N',
+        tooltip = alt.Tooltip(['gene_name','feature','start','end'])
     ).properties(
         width = 750,
         title=f'Components of Gene {gene_name}'
     ).interactive()
 
     hist_features = alt.Chart(transcripts).mark_bar().encode(
-        y = 'count(feature)',
-        x = alt.X('feature:N', sort='-y')
-    ).properties(width = 350)
+        x = alt.X('count(feature)', title=f'Count of each feature type in gene {gene_name}'),
+        y = alt.Y('feature:N', sort='-x'),
+        color = 'feature:N',
+        tooltip = alt.Tooltip(['gene_name','feature','count(feature)'])
+    ).properties(width=750)
 
-    hist_transcript_type = alt.Chart(transcripts).mark_bar().encode(
-        y = 'count(transcript_type)',
-        x = alt.X('transcript_type:N', sort='-y')
-    ).properties(width = 350)
-
-    gene_layout = bar & (hist_features | hist_transcript_type)
+    gene_layout = bar & hist_features
 
     return gene_layout.to_json()
 
 
 # render altair chart of gene transcription
-@app.route('/chart/transcription/<gene_name>')
-def transcription(gene_name):
+@app.route('/chart/gene_expression/<gene_name>')
+def gene_expression(gene_name):
 
-    # gene = genome[genome.gene_name == gene_name]
+    # import gene
     path = 'data/genes/' + gene_name + '.csv.zip'
     gene = pd.read_csv(path)
 
+    # get exons only
     transcripts = gene[gene.feature != 'gene']
     exons = transcripts[transcripts.feature == 'exon']
-    exons = exons[exons.transcript_type != 'nonsense_mediated_decay']
 
+    # get spliced components
+    spliced = transcripts[transcripts.feature.isin(['UTR','CDS'])]
+
+    # get translated components
+    translated = spliced[spliced.feature.isin(['CDS'])]
+
+    # set chart domain
     domain_min = gene.start.min()
     domain_max = gene.end.max()
     domain = [domain_min, domain_max]
 
+    # build transcription chart
     transcription = alt.Chart(exons).mark_bar().encode(
         x = alt.X('start', scale=alt.Scale(domain=domain), title='Location of Gene Features'),
         x2 = 'end',
@@ -223,28 +228,10 @@ def transcription(gene_name):
         tooltip = alt.Tooltip(['gene_name','feature','transcript_type','exon_id','start','end'])
     ).properties(
         width = 750,
-        title = f"Transcribed Exons of Gene {gene_name}"
-    ).interactive()
+        title = f"Exons are the portions of a gene that get transcribed into RNA"
+    )
 
-    return transcription.to_json()
-
-
-# render altair chart of gene splicing
-@app.route('/chart/splicing/<gene_name>')
-def splicing(gene_name):
-
-    # gene = genome[genome.gene_name == gene_name]
-    path = 'data/genes/' + gene_name + '.csv.zip'
-    gene = pd.read_csv(path)
-
-    transcripts = gene[gene.feature != 'gene']
-    spliced = transcripts[transcripts.feature.isin(['UTR','CDS','start_codon','stop_codon'])]
-    spliced = spliced[spliced.transcript_type != 'nonsense_mediated_decay']
-
-    domain_min = gene.start.min()
-    domain_max = gene.end.max()
-    domain = [domain_min, domain_max]
-
+    # build splicing chart
     splicing = alt.Chart(spliced).mark_bar().encode(
         x = alt.X('start', scale=alt.Scale(domain=domain), title='Location of Gene Features'),
         x2 = 'end',
@@ -253,28 +240,8 @@ def splicing(gene_name):
         tooltip = alt.Tooltip(['gene_name','feature','transcript_type','exon_id','start','end'])
     ).properties(
         width = 750,
-        title = f"Spliced mRNA Components of Gene {gene_name}"
-    ).interactive()
-
-    return splicing.to_json()
-
-
-# render altair chart of gene translation
-@app.route('/chart/translation/<gene_name>')
-def translation(gene_name):
-
-    # gene = genome[genome.gene_name == gene_name]
-    path = 'data/genes/' + gene_name + '.csv.zip'
-    gene = pd.read_csv(path)
-
-    transcripts = gene[gene.feature != 'gene']
-    spliced = transcripts[transcripts.feature.isin(['UTR','CDS','start_codon','stop_codon'])]
-    spliced = spliced[spliced.transcript_type != 'nonsense_mediated_decay']
-    translated = spliced[spliced.feature.isin(['CDS','start_codon','stop_codon'])]
-
-    domain_min = gene.start.min()
-    domain_max = gene.end.max()
-    domain = [domain_min, domain_max]
+        title = f"Exons are divided into Untranslated Regions (UTR) and Coding DNA Sequences (CDS)"
+    )
 
     translation = alt.Chart(translated).mark_bar().encode(
         x = alt.X('start', scale=alt.Scale(domain=domain), title='Location of Gene Features'),
@@ -284,10 +251,13 @@ def translation(gene_name):
         tooltip = alt.Tooltip(['gene_name','feature','transcript_type','exon_id','start','end'])
     ).properties(
         width = 750,
-        title = f"Translated CDS Regions of Gene {gene_name}"
-    ).interactive()
+        title = f"UTR sections get spliced out and the remaining CDS regions get translated into an Amino Acid Chain"
+    )
 
-    return translation.to_json()
+    chart = alt.vconcat(transcription & splicing & translation)
+
+    return chart.to_json()
+
 
 
 # render altair chart of protein composition by amino acid
@@ -322,7 +292,8 @@ def protein_composition(gene_name):
     amino_acid_composition = alt.Chart(aa_count).mark_bar().encode(
         x = alt.X('Count', title='Count of Amino Acid in Protein'),
         y = alt.Y('Amino_Acid:N', sort='-x', title='Amino Acid'),
-        tooltip = alt.Tooltip(['Amino_Acid','Count'])
+        tooltip = alt.Tooltip(['Amino_Acid','Count']),
+        color = 'Amino_Acid'
     ).properties(
         width = 750,
         title=f'Count of each Amino Acid in Protein from Gene: {gene_name}'
