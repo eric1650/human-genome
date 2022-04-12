@@ -116,26 +116,48 @@ def definitions_part_5_6_7():
 # Altair routes
 ##############################
 
-# Render altair chart of gene overview
-@app.route('/chart/gene_overview/<gene_name>')
-def gene_overview(genome=genome, gene_name=gene_names[0]):
-    # transform genome dataframe
-    # altar chart (chart = # your Altair code)
+# Render altair chart of gene composition by genome
+@app.route('/chart/gene_composition_genome')
+def gene_composition_genome():
+
+    genome_composition = pd.read_csv('data/gene_composition/genome_composition.csv')
+
+    pie_chart = alt.Chart(genome_composition, title= 'Percentage of DNA in Genome that are Genes').mark_arc().encode(
+        theta= alt.Theta('Percent of Genome:Q'),
+        color=alt.Color('Protein Coding:N', title= 'Gene Label'),
+        tooltip=['Protein Coding', 'Percent of Genome']
+    )
+
+    return pie_chart.to_json()
+
+# Render altair chart of gene composition by chromosome
+@app.route('/chart/gene_composition_chr')
+def gene_composition_chr():
+
+    chr_composition = pd.read_csv('data/gene_composition/chr_composition.csv')
+
+    protein_coding_bar_bp = alt.Chart(chr_composition, title='Amount of DNA within Each Chromosome that are in Genes').mark_bar().encode(
+        x = alt.X('Chromosome:N', sort=None),
+        y = alt.Y('Base Pair Length:Q', title="Total Amount of DNA Base Pairs"),
+        color = 'Protein Coding',
+        tooltip = alt.Tooltip(['Chromosome','Base Pair Length','Protein Coding'])
+    ).properties(
+        width = 750
+    )
+
+    protein_coding_bar_pct = alt.Chart(chr_composition, title='Percent of DNA in Each Chromosome that is in a Gene').mark_bar().encode(
+        x = alt.X('Chromosome:N', sort=None),
+        y = alt.Y('Percent of Chromosome:Q', scale=alt.Scale(domain=[0,100])),
+        color = 'Protein Coding',
+        tooltip = alt.Tooltip(['Chromosome','Percent of Chromosome','Protein Coding'])
+    ).properties(
+        width = 750
+    )
+
+    chart = alt.vconcat(protein_coding_bar_bp & protein_coding_bar_pct)
+
     return chart.to_json()
-#
-# # Render altair chart of gene browser
-# @app.route('/chart/gene_browser/')
-# def gene_browser():
-#     with open("static/charts/gene_browser.vg.json", "r") as read_file:
-#         chart = json.load(read_file)
-#     return chart
-#
-# # Render altair chart of gene browser by chromosome
-# @app.route('/chart/gene_browser_by_chr/')
-# def gene_browser_by_chr():
-#     with open("static/charts/gene_browser_by_chr.vg.json", "r") as read_file:
-#         chart = json.load(read_file)
-#     return chart
+
 
 # Render altair chart of gene components
 @app.route('/chart/gene_components/<gene_name>')

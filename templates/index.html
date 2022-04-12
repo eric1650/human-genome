@@ -89,7 +89,7 @@
     <br><hr><br>
     <div class="row">
       <h3>The Genome Consists of 23 Pairs of Chromosomes</h3>
-      <a href="/definitions_part_1" style="font-size:22px;">Definitions for Part 1</a>
+      <a href="templates/definitions_page_consolidated" style="font-size:22px;">Definitions</a>
     </div>
     <div class="row">
       <!-- Visualization 1: Genome Summary -->
@@ -106,7 +106,7 @@
     <br><hr><br>
     <div class="row">
       <h3>Within each Chromosome there are regions of DNA called Genes</h3>
-      <a href="/definitions_part_2" style="font-size:22px;">Definitions for Part 2</a>
+      <a href="/definitions" style="font-size:22px;">Definitions for Part 2</a>
     </div>
     <div class="row">
       <!-- Visualization 1: Genome Summary -->
@@ -117,20 +117,27 @@
   </div>
 
 
+  <!-- Render Gene Composition by Genome Chart -->
   <div class="container">
     <br><hr><br>
     <div class="row">
-      Chromosome Composition: Protein vs Non-Protein Coding
+      <h3>Most of the DNA in the Genome is not actually contained in a Gene</h3>
     </div>
-  </div>
-
-
-  <div class="container">
-    <br><hr><br>
+    <br><br>
     <div class="row">
-      Gene Browser Chart
+      <br><br><br><br>
+      <div class="charts text-center">
+        <div class="row"><div id="gene_composition_genome"></div></div>
+      </div>
+    </div>
+    <br><br>
+    <div class="row">
+      <div class="charts text-center">
+        <div class="row"><div id="gene_composition_chr"></div></div>
+      </div>
     </div>
   </div>
+
 
 
   <!-- Container: Test Youtube Video Embedding -->
@@ -370,9 +377,8 @@
       function displayGene() {
         var gene_name = document.getElementById("gene_dropdown").value;
 
-        // parse("/chart/gene_overview/", "gene_overview")
-        // parse("/chart/gene_browser/", "gene_browser")
-        // parse("/chart/gene_browser_by_chr/", "gene_browser_by_chr")
+        parse("/chart/gene_composition_genome", "gene_composition_genome")
+        parse("/chart/gene_composition_chr", "gene_composition_chr")
         parse("/chart/gene_components/" + gene_name, "gene_components")
         parse("/chart/transcription/" + gene_name, "transcription")
         parse("/chart/splicing/" + gene_name, "splicing")
