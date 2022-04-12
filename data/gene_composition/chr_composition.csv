@@ -1,49 +1,49 @@
 Chromosome,Base Pair Length,Percent of Chromosome,Protein Coding
-chr1,108729868,43.98,Gene
-chr1,138469851,56.02,Non-Gene
-chr2,102883538,42.38,Gene
-chr2,139867611,57.62,Non-Gene
-chr3,95333797,47.8,Gene
-chr3,104113030,52.2,Non-Gene
-chr4,70137697,36.67,Gene
-chr4,121125366,63.33,Non-Gene
-chr5,68145620,37.68,Gene
-chr5,112692246,62.32,Non-Gene
-chr6,70200529,41.08,Gene
-chr6,100696464,58.92,Non-Gene
-chr7,73558016,46.31,Gene
-chr7,85263408,53.69,Non-Gene
-chr8,59601868,40.75,Gene
-chr8,86672958,59.25,Non-Gene
-chr9,48214844,34.33,Gene
-chr9,92227454,65.67,Non-Gene
-chr10,61274622,45.26,Gene
-chr10,74100115,54.74,Non-Gene
-chr11,62537157,46.51,Gene
-chr11,71915227,53.49,Non-Gene
-chr12,64487429,48.75,Gene
-chr12,67802105,51.25,Non-Gene
-chr13,32128997,28.15,Gene
-chr13,81998983,71.85,Non-Gene
-chr14,38024484,35.75,Gene
-chr14,68336101,64.25,Non-Gene
-chr15,41328652,41.19,Gene
-chr15,59010263,58.81,Non-Gene
-chr16,38373153,43.2,Gene
-chr16,50449101,56.8,Non-Gene
-chr17,42816816,54.44,Gene
-chr17,35837926,45.56,Non-Gene
-chr18,29069150,38.19,Gene
-chr18,47048003,61.81,Non-Gene
-chr19,31841679,49.9,Gene
-chr19,31964972,50.1,Non-Gene
-chr20,25981281,41.61,Gene
-chr20,36454684,58.39,Non-Gene
-chr21,13463420,28.68,Gene
-chr21,33480903,71.32,Non-Gene
-chr22,18343496,37.04,Gene
-chr22,31185457,62.96,Non-Gene
-chrX,46935226,30.3,Gene
-chrX,107978528,69.7,Non-Gene
-chrY,3284961,5.69,Gene
-chrY,54456691,94.31,Non-Gene
+Chromosome 1,108729868,43.98,Gene
+Chromosome 1,138469851,56.02,Non-Gene
+Chromosome 2,102883538,42.38,Gene
+Chromosome 2,139867611,57.62,Non-Gene
+Chromosome 3,95333797,47.8,Gene
+Chromosome 3,104113030,52.2,Non-Gene
+Chromosome 4,70137697,36.67,Gene
+Chromosome 4,121125366,63.33,Non-Gene
+Chromosome 5,68145620,37.68,Gene
+Chromosome 5,112692246,62.32,Non-Gene
+Chromosome 6,70200529,41.08,Gene
+Chromosome 6,100696464,58.92,Non-Gene
+Chromosome 7,73558016,46.31,Gene
+Chromosome 7,85263408,53.69,Non-Gene
+Chromosome 8,59601868,40.75,Gene
+Chromosome 8,86672958,59.25,Non-Gene
+Chromosome 9,48214844,34.33,Gene
+Chromosome 9,92227454,65.67,Non-Gene
+Chromosome 10,61274622,45.26,Gene
+Chromosome 10,74100115,54.74,Non-Gene
+Chromosome 11,62537157,46.51,Gene
+Chromosome 11,71915227,53.49,Non-Gene
+Chromosome 12,64487429,48.75,Gene
+Chromosome 12,67802105,51.25,Non-Gene
+Chromosome 13,32128997,28.15,Gene
+Chromosome 13,81998983,71.85,Non-Gene
+Chromosome 14,38024484,35.75,Gene
+Chromosome 14,68336101,64.25,Non-Gene
+Chromosome 15,41328652,41.19,Gene
+Chromosome 15,59010263,58.81,Non-Gene
+Chromosome 16,38373153,43.2,Gene
+Chromosome 16,50449101,56.8,Non-Gene
+Chromosome 17,42816816,54.44,Gene
+Chromosome 17,35837926,45.56,Non-Gene
+Chromosome 18,29069150,38.19,Gene
+Chromosome 18,47048003,61.81,Non-Gene
+Chromosome 19,31841679,49.9,Gene
+Chromosome 19,31964972,50.1,Non-Gene
+Chromosome 20,25981281,41.61,Gene
+Chromosome 20,36454684,58.39,Non-Gene
+Chromosome 21,13463420,28.68,Gene
+Chromosome 21,33480903,71.32,Non-Gene
+Chromosome 22,18343496,37.04,Gene
+Chromosome 22,31185457,62.96,Non-Gene
+Chromosome X,46935226,30.3,Gene
+Chromosome X,107978528,69.7,Non-Gene
+Chromosome Y,3284961,5.69,Gene
+Chromosome Y,54456691,94.31,Non-Gene
