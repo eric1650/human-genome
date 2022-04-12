@@ -161,7 +161,7 @@ def gene_composition_chr():
 
 # Render altair chart of gene components
 @app.route('/chart/gene_components/<gene_name>')
-def gene_components(gene_name=gene_names[0]):
+def gene_components(gene_name):
 
     # gene = genome[genome.gene_name == gene_name]
     path = 'data/genes/' + gene_name + '.csv.zip'
@@ -201,7 +201,7 @@ def gene_components(gene_name=gene_names[0]):
 
 # render altair chart of gene transcription
 @app.route('/chart/transcription/<gene_name>')
-def transcription(gene_name=gene_names[0]):
+def transcription(gene_name):
 
     # gene = genome[genome.gene_name == gene_name]
     path = 'data/genes/' + gene_name + '.csv.zip'
@@ -231,7 +231,7 @@ def transcription(gene_name=gene_names[0]):
 
 # render altair chart of gene splicing
 @app.route('/chart/splicing/<gene_name>')
-def splicing(gene_name=gene_names[0]):
+def splicing(gene_name):
 
     # gene = genome[genome.gene_name == gene_name]
     path = 'data/genes/' + gene_name + '.csv.zip'
@@ -261,7 +261,7 @@ def splicing(gene_name=gene_names[0]):
 
 # render altair chart of gene translation
 @app.route('/chart/translation/<gene_name>')
-def translation(gene_name=gene_names[0]):
+def translation(gene_name):
 
     # gene = genome[genome.gene_name == gene_name]
     path = 'data/genes/' + gene_name + '.csv.zip'
@@ -292,7 +292,7 @@ def translation(gene_name=gene_names[0]):
 
 # render altair chart of protein composition by amino acid
 @app.route('/chart/protein_composition/<gene_name>')
-def protein_composition(gene_name=gene_names[0]):
+def protein_composition(gene_name):
 
     # gene = genome[genome.gene_name == gene_name]
     path = 'data/genes/' + gene_name + '.csv.zip'
