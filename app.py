@@ -222,7 +222,7 @@ def transcription(gene_name=gene_names[0]):
         color = 'feature',
         tooltip = alt.Tooltip(['gene_name','feature','transcript_type','exon_id','start','end'])
     ).properties(
-        width = 350,
+        width = 750,
         title = f"Transcribed Exons of Gene {gene_name}"
     ).interactive()
 

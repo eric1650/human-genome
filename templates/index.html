@@ -8,6 +8,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <a href="https://www.flaticon.com/free-icons/dna" title="dna icons"></a>
 
   <!-- Vega Embed CDN -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
@@ -162,7 +163,8 @@
       <!-- Dropdown List to Select Gene -->
       <!-- <label for="gene_dropdown">Select a Gene:</label> -->
       <select name="gene_dropdown" id="gene_dropdown" onchange="displayGene()">
-        {% for gene in gene_names %}
+        <option value = "TP53" selected>TP53</option>
+        {% for gene in gene_names %}        
         <option value="{{gene}}">{{gene}}</option>
         {% endfor %}
       </select>
