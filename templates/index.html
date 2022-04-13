@@ -160,7 +160,7 @@
       <!-- <a href="/definitions_part_3" style="font-size:22px;">Definitions for Part 3</a> -->
     <!-- </div> -->
     <div class="row">
-      <h3>Select a Gene to Activate ("Express") that Gene:</h3>
+      <h3>Select the Gene that you want to Express:</h3>
       <!-- Dropdown List to Select Gene -->
       <!-- <label for="gene_dropdown">Select a Gene:</label> -->
       <select name="gene_dropdown" id="gene_dropdown" onchange="displayGene()">
@@ -172,18 +172,39 @@
     </div>
   </div>
 
-
-  <!-- Render Gene Browser Chart -->
+  <!-- Container for Selected Gene Information -->
   <div class="container">
-    <br><hr><br>
-    <div class="row">
-      <h3>Sub-Components of Selected Gene</h3>
+    <br>
+      <div class="row">
+        <div class="col">
+          <h4>Gene Name:</h4>
+        </div>
+        <div class="col-9">
+          <div id='gene_name'></div>
+        </div>
+      </div>
+      <div class="row">
+        <br><hr><br>
+        <div class="col">
+          <h4>Gene is Located On:</h4>
+        </div>
+        <div class="col-9">
+          <div id='chromosome'></div>
+        </div>
+      </div>
     </div>
-    <br><br>
-    <div class="charts text-center">
-      <div class="row"><div id="gene_components"></div></div>
+
+    <!-- Render Gene Browser Chart -->
+    <div class="container">
+      <br><hr><br>
+      <div class="row">
+        <h3 id='sub-components-name'></h3>
+      </div>
+      <br><br>
+      <div class="charts text-center">
+        <div class="row"><div id="gene_components"></div></div>
+      </div>
     </div>
-  </div>
 
 
   <!-- Render Gene Transcription Chart -->
@@ -224,7 +245,6 @@
       </div>
     </div>
     <div class="row">
-
       <div class="row">
         <div class="col">
           <h5>4. Protein Folding</h5>
@@ -234,7 +254,17 @@
         </div>
       </div>
     </div>
+    <br>
+    <div class="charts text-center">
+      <img src="static/images/gene_expression.jpeg" width="650">
+    </div>
+  </div>
+
+  <!-- Container for Gene Expression Chart -->
+  <div class="container">
     <br><hr><br>
+    <h3 id="gene-expression-name"></h3>
+    <br>
     <div class="charts text-center">
       <div class="row"><div id="gene_expression"></div></div>
     </div>
@@ -244,26 +274,8 @@
   <!-- Container for Protein Information -->
   <div class="container">
     <br><hr><br>
-    <h3>Translated Amino Acid Chain Info</h3>
+    <h3 id="gene-translation-name"></h3>
     <br>
-      <!-- <div class="row">
-        <br><hr><br>
-        <div class="col">
-          <h4>Gene Name:</h4>
-        </div>
-        <div class="col-9">
-          <div id='gene_name'></div>
-        </div>
-      </div> -->
-      <!-- <div class="row">
-        <br><hr><br>
-        <div class="col">
-          <h4>Chromosome:</h4>
-        </div>
-        <div class="col-9">
-          <div id='chromosome'></div>
-        </div>
-      </div> -->
       <div class="row">
         <br><hr><br>
         <div class="col">
@@ -318,7 +330,7 @@
         </div>
       </div>
       <br><hr><br>
-      <h3>3D Protein Visualization</h3>
+      <h3 id="protein-viz-name"></h3>
       <br>
       <div class="charts text-center">
         <iframe id="molstar" title="Molstar Protein Viewer" height="1000" width="1000"></iframe>
@@ -416,16 +428,20 @@
         var molstar_url = "/molstar/" + gene_name;
         document.getElementById("molstar").src = molstar_url;
 
-        // document.getElementById("gene_name").innerHTML = gene_name;
+        document.getElementById("gene_name").innerHTML = gene_name;
+        document.getElementById("sub-components-name").innerHTML = "Sub-Components of Gene: " + gene_name;
+        document.getElementById("gene-expression-name").innerHTML = "Expression of Gene: " + gene_name;
+        document.getElementById("gene-translation-name").innerHTML = "Translated Amino Acid Chain of Gene: " + gene_name;
 
         function get_protein_info() {
           var protein_info_url = '/protein_info/' + gene_name;
           $.getJSON(protein_info_url, function(protein) {
-            // document.getElementById("chromosome").innerHTML = protein.chromosome;
+            document.getElementById("chromosome").innerHTML = protein.chromosome;
             document.getElementById("protein_name").innerHTML = protein.name;
             document.getElementById("protein_function").innerHTML = protein.function;
             document.getElementById("aa_seq").innerHTML = protein.aa_seq;
             document.getElementById("aa_length").innerHTML = protein.aa_length;
+            document.getElementById("protein-viz-name").innerHTML = "3D Protein Visualization of Protein: " + protein.name;
           });
         }
         get_protein_info()
