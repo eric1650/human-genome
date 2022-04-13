@@ -378,7 +378,11 @@
     </div>
     <div class="container">
       <br><hr><br>
-      <h3 id="protein-viz-name"></h3>
+      <h3>3D Visualization of Protein:</h3>
+      <div class="row">
+        <h5 id="protein-viz-name"></h5>
+      </div>
+      <br>
       <div class="row">
         <h7>Click and drag in the viewer to rotate the protein. Scroll to zoom in/out.</h7>
         <h7>Hover mouse over a part of the protein to identify the amino acid. Click to zoom in and view details.</h7>
@@ -499,7 +503,7 @@
             document.getElementById("protein_function").innerHTML = protein.function;
             document.getElementById("aa_seq").innerHTML = protein.aa_seq;
             document.getElementById("aa_length").innerHTML = protein.aa_length;
-            document.getElementById("protein-viz-name").innerHTML = "3D Protein Visualization of Protein: " + protein.name;
+            document.getElementById("protein-viz-name").innerHTML = protein.name;
           });
         }
         get_protein_info()
