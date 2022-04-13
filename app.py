@@ -95,9 +95,9 @@ def gene_composition_genome(genome_composition=genome_composition):
 @app.route('/chart/gene_composition_chr/')
 def gene_composition_chr(chr_composition=chr_composition):
 
-    protein_coding_bar_bp = alt.Chart(chr_composition, title='Amount of DNA within Each Chromosome that are in Genes').mark_bar().encode(
+    protein_coding_bar_bp = alt.Chart(chr_composition, title='Total Number of DNA Base Pairs within Each Chromosome that are in Genes').mark_bar().encode(
         x = alt.X('Chromosome:N', sort=None),
-        y = alt.Y('Base Pair Length:Q', title="Total Amount of DNA Base Pairs"),
+        y = alt.Y('Base Pair Length:Q', title="Total Number of DNA Base Pairs"),
         color = 'Protein Coding',
         tooltip = alt.Tooltip(['Chromosome','Base Pair Length','Protein Coding'])
     ).properties(
