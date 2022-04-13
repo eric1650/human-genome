@@ -158,7 +158,7 @@ def gene_components(gene_name):
         tooltip = alt.Tooltip(['gene_name','feature','start','end'])
     ).properties(
         width = 750,
-        title=f'Components of Gene {gene_name}'
+        title=f'Sub-Components of Gene {gene_name}'
     ).interactive()
 
     hist_features = alt.Chart(gene[gene.feature.isin(['exon','UTR','CDS'])]).mark_bar().encode(
