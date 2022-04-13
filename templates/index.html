@@ -78,8 +78,8 @@
   <div class="container">
     <br><hr><br>
     <h2>Part 1: The Genome</h2>
-    <a href="/definitions" style="font-size:22px;">Definitions</a>
-    <br>
+    <a href="/definitions" style="font-size:22px;">Glossary of Terms and Definitions</a>
+    <br><br>
     <div class="charts text-center">
       <iframe width="790" height="444" src="https://www.youtube.com/embed/3fr4jBFs25s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
@@ -87,7 +87,7 @@
 
 
 
-  <!-- Part 1 Container: Genome Summary -->
+  <!-- Container: Genome Summary -->
   <div class="container">
     <br><hr><br>
     <div class="row">
@@ -103,7 +103,7 @@
 
 
 
-  <!-- Part 2 Container: Chromosome Overview -->
+  <!-- Container: Chromosome Overview -->
   <div class="container">
     <br><hr><br>
     <div class="row">
@@ -145,8 +145,8 @@
   <div class="container">
     <br><hr><br>
     <h2>Part 2: Gene Expression</h2>
-    <a href="/definitions" style="font-size:22px;">Definitions</a>
-    <br>
+    <a href="/definitions" style="font-size:22px;">Glossary of Terms and Definitions</a>
+    <br><br>
     <div class="charts text-center">
       <iframe width="790" height="444" src="https://www.youtube.com/embed/gG7uCskUOrA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
@@ -155,14 +155,9 @@
 
   <div class="container">
     <br><hr><br>
-    <!-- <div class="row"> -->
-      <!-- <h3>Within each Gene there are Exons, Introns, Coding DNA Sequences, Untranslated Regions, and Start and Stop Codons</h3> -->
-      <!-- <a href="/definitions_part_3" style="font-size:22px;">Definitions for Part 3</a> -->
-    <!-- </div> -->
     <div class="row">
       <h3>Select the Gene that you want to Express:</h3>
       <!-- Dropdown List to Select Gene -->
-      <!-- <label for="gene_dropdown">Select a Gene:</label> -->
       <select name="gene_dropdown" id="gene_dropdown" onchange="displayGene()">
         <option value = "TP53" selected>TP53</option>
         {% for gene in gene_names %}
@@ -175,30 +170,49 @@
   <!-- Container for Selected Gene Information -->
   <div class="container">
     <br>
-      <div class="row">
-        <div class="col">
-          <h4>Gene Name:</h4>
-        </div>
-        <div class="col-9">
-          <div id='gene_name'></div>
-        </div>
+    <div class="row">
+      <br><br>
+      <div class="col">
+        <h4>Gene Name:</h4>
       </div>
-      <div class="row">
-        <br><br>
-        <div class="col">
-          <h4>Gene is Located On:</h4>
-        </div>
-        <div class="col-9">
-          <div id='chromosome'></div>
-        </div>
-      </div>
-      <div class="row">
-        <br><br>
-        <div class="charts text-center">
-          <div class="row"><div id="gene_location"></div></div>
-        </div>
+      <div class="col-9">
+        <div id='gene_name'></div>
       </div>
     </div>
+    <div class="row">
+      <br><br>
+      <div class="col">
+        <h4>Gene is Located On:</h4>
+      </div>
+      <div class="col-9">
+        <div id='chromosome'></div>
+      </div>
+    </div>
+    <div class="row">
+      <br><br>
+      <div class="col">
+        <h4>Gene Starts At:</h4>
+      </div>
+      <div class="col-9">
+        <div id='gene_start'></div>
+      </div>
+    </div>
+    <div class="row">
+      <br><br>
+      <div class="col">
+        <h4>Gene Ends At:</h4>
+      </div>
+      <div class="col-9">
+        <div id='gene_end'></div>
+      </div>
+    </div>
+    <div class="row">
+      <br><br>
+      <div class="charts text-center">
+        <div class="row"><div id="gene_location"></div></div>
+      </div>
+    </div>
+  </div>
 
     <!-- Render Gene Browser Chart -->
     <div class="container">
@@ -452,6 +466,8 @@
           var protein_info_url = '/protein_info/' + gene_name;
           $.getJSON(protein_info_url, function(protein) {
             document.getElementById("chromosome").innerHTML = protein.chromosome;
+            document.getElementById("gene_start").innerHTML = "DNA Base Pair # " + protein.gene_start;
+            document.getElementById("gene_end").innerHTML = "DNA Base Pair # " + protein.gene_end;
             document.getElementById("protein_name").innerHTML = protein.name;
             document.getElementById("protein_function").innerHTML = protein.function;
             document.getElementById("aa_seq").innerHTML = protein.aa_seq;
