@@ -1,0 +1,1147 @@
+.definitions_page_consolidated-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.definitions_page_consolidated-part1 {
+  width: 100%;
+  display: flex;
+  padding: var(--dl-space-space-threeunits);
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.definitions_page_consolidated-text {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: var(--dl-space-space-twounits);
+}
+.definitions_page_consolidated-steps {
+  width: 100%;
+  height: 496px;
+  display: flex;
+  padding: var(--dl-space-space-threeunits);
+  max-width: var(--dl-size-size-maxwidth);
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 39px;
+}
+.definitions_page_consolidated-container01 {
+  width: 1022px;
+  height: 434px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+}
+.definitions_page_consolidated-container02 {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+}
+.definitions_page_consolidated-step {
+  width: 402px;
+  height: 472px;
+  display: flex;
+  padding: var(--dl-space-space-oneandhalfunits);
+  align-items: center;
+  flex-direction: column;
+}
+.definitions_page_consolidated-text003 {
+  color: var(--dl-color-gray-900);
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 900;
+  margin-bottom: -30px;
+}
+.definitions_page_consolidated-text005 {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+.definitions_page_consolidated-text007 {
+  color: var(--dl-color-gray-500);
+  font-size: 0.75rem;
+  margin-top: var(--dl-space-space-oneandhalfunits);
+  text-align: center;
+}
+.definitions_page_consolidated-image {
+  width: 190px;
+  height: 206px;
+  object-fit: cover;
+}
+.definitions_page_consolidated-step01 {
+  width: 272px;
+  height: 456px;
+  display: flex;
+  padding: var(--dl-space-space-oneandhalfunits);
+  align-items: center;
+  flex-direction: column;
+}
+.definitions_page_consolidated-text009 {
+  color: var(--dl-color-gray-900);
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 900;
+  margin-bottom: -30px;
+}
+.definitions_page_consolidated-text011 {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+.definitions_page_consolidated-text012 {
+  color: var(--dl-color-gray-500);
+  font-size: 0.75rem;
+  margin-top: var(--dl-space-space-oneandhalfunits);
+  text-align: center;
+}
+.definitions_page_consolidated-image01 {
+  width: 201px;
+  height: 116px;
+  object-fit: cover;
+}
+.definitions_page_consolidated-step02 {
+  width: 414px;
+  height: 451px;
+  display: flex;
+  padding: var(--dl-space-space-oneandhalfunits);
+  align-items: center;
+  padding-left: 24px;
+  flex-direction: column;
+}
+.definitions_page_consolidated-text014 {
+  color: var(--dl-color-gray-900);
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 900;
+  margin-bottom: -30px;
+}
+.definitions_page_consolidated-text016 {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+.definitions_page_consolidated-text018 {
+  color: var(--dl-color-gray-500);
+  font-size: 0.75rem;
+  margin-top: var(--dl-space-space-oneandhalfunits);
+  text-align: center;
+}
+.definitions_page_consolidated-image02 {
+  width: 71px;
+  height: 140px;
+  object-fit: cover;
+}
+.definitions_page_consolidated-part2 {
+  width: 100%;
+  display: flex;
+  padding: var(--dl-space-space-threeunits);
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.definitions_page_consolidated-text024 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: var(--dl-space-space-twounits);
+}
+.definitions_page_consolidated-banner {
+  width: 100%;
+  display: flex;
+  padding: var(--dl-space-space-threeunits);
+  max-width: var(--dl-size-size-maxwidth);
+  align-items: center;
+  padding-bottom: 48px;
+  justify-content: space-between;
+}
+.definitions_page_consolidated-container03 {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  margin-right: var(--dl-space-space-sixunits);
+  flex-direction: column;
+  justify-content: space-between;
+}
+.definitions_page_consolidated-text027 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: var(--dl-space-space-unit);
+}
+.definitions_page_consolidated-text029 {
+  margin-right: var(--dl-space-space-threeunits);
+}
+.definitions_page_consolidated-image03 {
+  width: 447px;
+  height: 282px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.definitions_page_consolidated-part3 {
+  width: 100%;
+  display: flex;
+  padding: var(--dl-space-space-threeunits);
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.definitions_page_consolidated-text032 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: var(--dl-space-space-twounits);
+}
+.definitions_page_consolidated-steps1 {
+  width: 100%;
+  height: 496px;
+  display: flex;
+  padding: var(--dl-space-space-threeunits);
+  max-width: var(--dl-size-size-maxwidth);
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 39px;
+}
+.definitions_page_consolidated-container04 {
+  width: 1022px;
+  height: 434px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+}
+.definitions_page_consolidated-container05 {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+}
+.definitions_page_consolidated-step03 {
+  width: 263px;
+  height: 355px;
+  display: flex;
+  padding: var(--dl-space-space-oneandhalfunits);
+  align-items: center;
+  flex-direction: column;
+}
+.definitions_page_consolidated-text034 {
+  color: var(--dl-color-gray-900);
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 900;
+  margin-bottom: -30px;
+}
+.definitions_page_consolidated-text036 {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+.definitions_page_consolidated-text038 {
+  color: var(--dl-color-gray-500);
+  font-size: 0.75rem;
+  margin-top: var(--dl-space-space-oneandhalfunits);
+  text-align: center;
+}
+.definitions_page_consolidated-step04 {
+  width: 229px;
+  height: 461px;
+  display: flex;
+  padding: var(--dl-space-space-oneandhalfunits);
+  align-items: center;
+  flex-direction: column;
+}
+.definitions_page_consolidated-text043 {
+  color: var(--dl-color-gray-900);
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 900;
+  margin-bottom: -30px;
+}
+.definitions_page_consolidated-text045 {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+.definitions_page_consolidated-text047 {
+  color: var(--dl-color-gray-500);
+  font-size: 0.75rem;
+  margin-top: var(--dl-space-space-oneandhalfunits);
+  text-align: center;
+}
+.definitions_page_consolidated-container06 {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+}
+.definitions_page_consolidated-step05 {
+  width: 278px;
+  height: 451px;
+  display: flex;
+  padding: var(--dl-space-space-oneandhalfunits);
+  align-items: center;
+  flex-direction: column;
+}
+.definitions_page_consolidated-text052 {
+  color: var(--dl-color-gray-900);
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 900;
+  margin-bottom: -30px;
+}
+.definitions_page_consolidated-text054 {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+.definitions_page_consolidated-text056 {
+  color: var(--dl-color-gray-500);
+  font-size: 0.75rem;
+  margin-top: var(--dl-space-space-oneandhalfunits);
+  text-align: center;
+}
+.definitions_page_consolidated-image04 {
+  width: 265px;
+  height: 125px;
+  object-fit: cover;
+}
+.definitions_page_consolidated-step06 {
+  width: 284px;
+  height: 438px;
+  display: flex;
+  padding: var(--dl-space-space-oneandhalfunits);
+  align-items: center;
+  padding-right: 24px;
+  flex-direction: column;
+}
+.definitions_page_consolidated-text061 {
+  color: var(--dl-color-gray-900);
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 900;
+  margin-bottom: -30px;
+}
+.definitions_page_consolidated-text063 {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+.definitions_page_consolidated-text065 {
+  color: var(--dl-color-gray-500);
+  font-size: 0.75rem;
+  margin-top: var(--dl-space-space-oneandhalfunits);
+  text-align: center;
+}
+.definitions_page_consolidated-image05 {
+  width: 265px;
+  height: 125px;
+  object-fit: cover;
+}
+.definitions_page_consolidated-part4 {
+  width: 100%;
+  display: flex;
+  padding: var(--dl-space-space-threeunits);
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.definitions_page_consolidated-text070 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: var(--dl-space-space-twounits);
+}
+.definitions_page_consolidated-steps2 {
+  width: 100%;
+  height: 496px;
+  display: flex;
+  padding: var(--dl-space-space-threeunits);
+  max-width: var(--dl-size-size-maxwidth);
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 39px;
+}
+.definitions_page_consolidated-container07 {
+  width: 1022px;
+  height: 434px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+}
+.definitions_page_consolidated-container08 {
+  width: 1033px;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+}
+.definitions_page_consolidated-step07 {
+  width: 523px;
+  height: 377px;
+  display: flex;
+  padding: var(--dl-space-space-oneandhalfunits);
+  align-items: center;
+  flex-direction: column;
+}
+.definitions_page_consolidated-text072 {
+  color: var(--dl-color-gray-900);
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 900;
+  margin-bottom: -30px;
+}
+.definitions_page_consolidated-text074 {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+.definitions_page_consolidated-text076 {
+  color: var(--dl-color-gray-500);
+  font-size: 0.75rem;
+  margin-top: var(--dl-space-space-oneandhalfunits);
+  text-align: center;
+}
+.definitions_page_consolidated-image06 {
+  width: 247px;
+  height: 178px;
+  object-fit: cover;
+}
+.definitions_page_consolidated-step08 {
+  width: 526px;
+  height: 415px;
+  display: flex;
+  padding: var(--dl-space-space-oneandhalfunits);
+  align-items: center;
+  flex-direction: column;
+}
+.definitions_page_consolidated-text083 {
+  color: var(--dl-color-gray-900);
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 900;
+  margin-bottom: -30px;
+}
+.definitions_page_consolidated-text085 {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+.definitions_page_consolidated-text086 {
+  color: var(--dl-color-gray-500);
+  font-size: 0.75rem;
+  margin-top: var(--dl-space-space-oneandhalfunits);
+  text-align: center;
+}
+.definitions_page_consolidated-image07 {
+  width: 164px;
+  height: 187px;
+  object-fit: cover;
+}
+.definitions_page_consolidated-part5 {
+  width: 100%;
+  display: flex;
+  padding: var(--dl-space-space-threeunits);
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.definitions_page_consolidated-text093 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: var(--dl-space-space-twounits);
+}
+.definitions_page_consolidated-steps3 {
+  width: 100%;
+  height: 496px;
+  display: flex;
+  padding: var(--dl-space-space-threeunits);
+  max-width: var(--dl-size-size-maxwidth);
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 39px;
+}
+.definitions_page_consolidated-container09 {
+  width: 1022px;
+  height: 434px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+}
+.definitions_page_consolidated-container10 {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+}
+.definitions_page_consolidated-step09 {
+  width: 402px;
+  height: 472px;
+  display: flex;
+  padding: var(--dl-space-space-oneandhalfunits);
+  align-items: center;
+  flex-direction: column;
+}
+.definitions_page_consolidated-text095 {
+  color: var(--dl-color-gray-900);
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 900;
+  margin-bottom: -30px;
+}
+.definitions_page_consolidated-text097 {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+.definitions_page_consolidated-text099 {
+  color: var(--dl-color-gray-500);
+  font-size: 0.75rem;
+  margin-top: var(--dl-space-space-oneandhalfunits);
+  text-align: center;
+}
+.definitions_page_consolidated-step10 {
+  width: 272px;
+  height: 456px;
+  display: flex;
+  padding: var(--dl-space-space-oneandhalfunits);
+  align-items: center;
+  flex-direction: column;
+}
+.definitions_page_consolidated-text103 {
+  color: var(--dl-color-gray-900);
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 900;
+  margin-bottom: -30px;
+}
+.definitions_page_consolidated-text105 {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+.definitions_page_consolidated-text106 {
+  color: var(--dl-color-gray-500);
+  font-size: 0.75rem;
+  margin-top: var(--dl-space-space-oneandhalfunits);
+  text-align: center;
+}
+.definitions_page_consolidated-image08 {
+  width: 217px;
+  height: 123px;
+  object-fit: cover;
+}
+.definitions_page_consolidated-step11 {
+  width: 414px;
+  height: 451px;
+  display: flex;
+  padding: var(--dl-space-space-oneandhalfunits);
+  align-items: center;
+  padding-left: 24px;
+  flex-direction: column;
+}
+.definitions_page_consolidated-text114 {
+  color: var(--dl-color-gray-900);
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 900;
+  margin-bottom: -30px;
+}
+.definitions_page_consolidated-text116 {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+.definitions_page_consolidated-text118 {
+  color: var(--dl-color-gray-500);
+  font-size: 0.75rem;
+  margin-top: var(--dl-space-space-oneandhalfunits);
+  text-align: center;
+}
+.definitions_page_consolidated-image09 {
+  width: 220px;
+  height: 151px;
+  object-fit: cover;
+}
+.definitions_page_consolidated-part6 {
+  width: 100%;
+  display: flex;
+  padding: var(--dl-space-space-threeunits);
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.definitions_page_consolidated-text126 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: var(--dl-space-space-twounits);
+}
+.definitions_page_consolidated-steps4 {
+  width: 100%;
+  height: 496px;
+  display: flex;
+  padding: var(--dl-space-space-threeunits);
+  max-width: var(--dl-size-size-maxwidth);
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 39px;
+}
+.definitions_page_consolidated-container11 {
+  width: 1022px;
+  height: 434px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+}
+.definitions_page_consolidated-container12 {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+}
+.definitions_page_consolidated-step12 {
+  width: 263px;
+  height: 355px;
+  display: flex;
+  padding: var(--dl-space-space-oneandhalfunits);
+  align-items: center;
+  flex-direction: column;
+}
+.definitions_page_consolidated-text128 {
+  color: var(--dl-color-gray-900);
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 900;
+  margin-bottom: -30px;
+}
+.definitions_page_consolidated-text130 {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+.definitions_page_consolidated-text132 {
+  color: var(--dl-color-gray-500);
+  font-size: 0.75rem;
+  margin-top: var(--dl-space-space-oneandhalfunits);
+  text-align: center;
+}
+.definitions_page_consolidated-image10 {
+  width: 50%;
+  height: 110px;
+  object-fit: cover;
+}
+.definitions_page_consolidated-step13 {
+  width: 229px;
+  height: 461px;
+  display: flex;
+  padding: var(--dl-space-space-oneandhalfunits);
+  align-items: center;
+  flex-direction: column;
+}
+.definitions_page_consolidated-text137 {
+  color: var(--dl-color-gray-900);
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 900;
+  margin-bottom: -30px;
+}
+.definitions_page_consolidated-text139 {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+.definitions_page_consolidated-text141 {
+  color: var(--dl-color-gray-500);
+  font-size: 0.75rem;
+  margin-top: var(--dl-space-space-oneandhalfunits);
+  text-align: center;
+}
+.definitions_page_consolidated-image11 {
+  width: 209px;
+  height: 116px;
+  object-fit: cover;
+}
+.definitions_page_consolidated-container13 {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+}
+.definitions_page_consolidated-step14 {
+  width: 278px;
+  height: 451px;
+  display: flex;
+  padding: var(--dl-space-space-oneandhalfunits);
+  align-items: center;
+  flex-direction: column;
+}
+.definitions_page_consolidated-text146 {
+  color: var(--dl-color-gray-900);
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 900;
+  margin-bottom: -30px;
+}
+.definitions_page_consolidated-text148 {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+.definitions_page_consolidated-text150 {
+  color: var(--dl-color-gray-500);
+  font-size: 0.75rem;
+  margin-top: var(--dl-space-space-oneandhalfunits);
+  text-align: center;
+}
+.definitions_page_consolidated-image12 {
+  width: 99px;
+  height: 108px;
+  object-fit: cover;
+}
+.definitions_page_consolidated-step15 {
+  width: 284px;
+  height: 438px;
+  display: flex;
+  padding: var(--dl-space-space-oneandhalfunits);
+  align-items: center;
+  padding-right: 24px;
+  flex-direction: column;
+}
+.definitions_page_consolidated-text157 {
+  color: var(--dl-color-gray-900);
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 900;
+  margin-bottom: -30px;
+}
+.definitions_page_consolidated-text159 {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+.definitions_page_consolidated-text161 {
+  color: var(--dl-color-gray-500);
+  font-size: 0.75rem;
+  margin-top: var(--dl-space-space-oneandhalfunits);
+  text-align: center;
+}
+.definitions_page_consolidated-image13 {
+  width: 121px;
+  height: 114px;
+  object-fit: cover;
+}
+.definitions_page_consolidated-part7 {
+  width: 100%;
+  display: flex;
+  padding: var(--dl-space-space-threeunits);
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.definitions_page_consolidated-text166 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: var(--dl-space-space-twounits);
+}
+.definitions_page_consolidated-banner1 {
+  width: 100%;
+  display: flex;
+  padding: var(--dl-space-space-threeunits);
+  max-width: var(--dl-size-size-maxwidth);
+  align-items: center;
+  padding-bottom: 48px;
+  justify-content: space-between;
+}
+.definitions_page_consolidated-container14 {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  margin-right: var(--dl-space-space-sixunits);
+  flex-direction: column;
+  justify-content: space-between;
+}
+.definitions_page_consolidated-text167 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: var(--dl-space-space-unit);
+}
+.definitions_page_consolidated-text169 {
+  margin-right: var(--dl-space-space-threeunits);
+}
+.definitions_page_consolidated-image14 {
+  width: 391px;
+  height: 490px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+@media(max-width: 991px) {
+  .definitions_page_consolidated-text {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text003 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text005 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text009 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text011 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text014 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text016 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text024 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-banner {
+    flex-direction: column;
+  }
+  .definitions_page_consolidated-container03 {
+    align-items: center;
+    margin-right: 0px;
+    margin-bottom: var(--dl-space-space-threeunits);
+  }
+  .definitions_page_consolidated-text029 {
+    text-align: center;
+    margin-left: var(--dl-space-space-threeunits);
+  }
+  .definitions_page_consolidated-image03 {
+    width: var(--dl-size-size-xxlarge);
+    height: var(--dl-size-size-xxlarge);
+  }
+  .definitions_page_consolidated-text032 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text034 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text036 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text043 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text045 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text052 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text054 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text061 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text063 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text070 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text072 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text074 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text083 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text085 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text093 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text095 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text097 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text103 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text105 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text114 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text116 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text126 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text128 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text130 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text137 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text139 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text146 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text148 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text157 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text159 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-text166 {
+    text-align: center;
+  }
+  .definitions_page_consolidated-banner1 {
+    flex-direction: column;
+  }
+  .definitions_page_consolidated-container14 {
+    align-items: center;
+    margin-right: 0px;
+    margin-bottom: var(--dl-space-space-threeunits);
+  }
+  .definitions_page_consolidated-text169 {
+    text-align: center;
+    margin-left: var(--dl-space-space-threeunits);
+  }
+  .definitions_page_consolidated-image14 {
+    width: var(--dl-size-size-xxlarge);
+    height: var(--dl-size-size-xxlarge);
+  }
+}
+@media(max-width: 767px) {
+  .definitions_page_consolidated-part1 {
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
+  }
+  .definitions_page_consolidated-steps {
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
+  }
+  .definitions_page_consolidated-container01 {
+    flex-direction: column;
+  }
+  .definitions_page_consolidated-step {
+    padding: var(--dl-space-space-unit);
+  }
+  .definitions_page_consolidated-step01 {
+    padding: var(--dl-space-space-unit);
+  }
+  .definitions_page_consolidated-step02 {
+    padding: var(--dl-space-space-unit);
+  }
+  .definitions_page_consolidated-part2 {
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
+  }
+  .definitions_page_consolidated-banner {
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
+  }
+  .definitions_page_consolidated-text029 {
+    margin-left: var(--dl-space-space-unit);
+    margin-right: var(--dl-space-space-unit);
+  }
+  .definitions_page_consolidated-part3 {
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
+  }
+  .definitions_page_consolidated-steps1 {
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
+  }
+  .definitions_page_consolidated-container04 {
+    flex-direction: column;
+  }
+  .definitions_page_consolidated-step03 {
+    padding: var(--dl-space-space-unit);
+  }
+  .definitions_page_consolidated-step04 {
+    padding: var(--dl-space-space-unit);
+  }
+  .definitions_page_consolidated-step05 {
+    padding: var(--dl-space-space-unit);
+  }
+  .definitions_page_consolidated-step06 {
+    padding: var(--dl-space-space-unit);
+  }
+  .definitions_page_consolidated-part4 {
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
+  }
+  .definitions_page_consolidated-steps2 {
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
+  }
+  .definitions_page_consolidated-container07 {
+    flex-direction: column;
+  }
+  .definitions_page_consolidated-step07 {
+    padding: var(--dl-space-space-unit);
+  }
+  .definitions_page_consolidated-step08 {
+    padding: var(--dl-space-space-unit);
+  }
+  .definitions_page_consolidated-part5 {
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
+  }
+  .definitions_page_consolidated-steps3 {
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
+  }
+  .definitions_page_consolidated-container09 {
+    flex-direction: column;
+  }
+  .definitions_page_consolidated-step09 {
+    padding: var(--dl-space-space-unit);
+  }
+  .definitions_page_consolidated-step10 {
+    padding: var(--dl-space-space-unit);
+  }
+  .definitions_page_consolidated-step11 {
+    padding: var(--dl-space-space-unit);
+  }
+  .definitions_page_consolidated-part6 {
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
+  }
+  .definitions_page_consolidated-steps4 {
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
+  }
+  .definitions_page_consolidated-container11 {
+    flex-direction: column;
+  }
+  .definitions_page_consolidated-step12 {
+    padding: var(--dl-space-space-unit);
+  }
+  .definitions_page_consolidated-step13 {
+    padding: var(--dl-space-space-unit);
+  }
+  .definitions_page_consolidated-step14 {
+    padding: var(--dl-space-space-unit);
+  }
+  .definitions_page_consolidated-step15 {
+    padding: var(--dl-space-space-unit);
+  }
+  .definitions_page_consolidated-part7 {
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
+  }
+  .definitions_page_consolidated-banner1 {
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
+  }
+  .definitions_page_consolidated-text169 {
+    margin-left: var(--dl-space-space-unit);
+    margin-right: var(--dl-space-space-unit);
+  }
+}
+@media(max-width: 479px) {
+  .definitions_page_consolidated-part1 {
+    padding-top: var(--dl-space-space-twounits);
+    padding-left: var(--dl-space-space-unit);
+    padding-right: var(--dl-space-space-unit);
+    padding-bottom: var(--dl-space-space-twounits);
+  }
+  .definitions_page_consolidated-steps {
+    padding-top: var(--dl-space-space-twounits);
+    padding-left: var(--dl-space-space-unit);
+    padding-right: var(--dl-space-space-unit);
+    padding-bottom: var(--dl-space-space-twounits);
+  }
+  .definitions_page_consolidated-container02 {
+    flex-direction: column;
+  }
+  .definitions_page_consolidated-part2 {
+    padding-top: var(--dl-space-space-twounits);
+    padding-left: var(--dl-space-space-unit);
+    padding-right: var(--dl-space-space-unit);
+    padding-bottom: var(--dl-space-space-twounits);
+  }
+  .definitions_page_consolidated-banner {
+    padding-top: var(--dl-space-space-twounits);
+    padding-left: var(--dl-space-space-unit);
+    padding-right: var(--dl-space-space-unit);
+    padding-bottom: var(--dl-space-space-twounits);
+  }
+  .definitions_page_consolidated-image03 {
+    width: var(--dl-size-size-xlarge);
+    height: var(--dl-size-size-xlarge);
+  }
+  .definitions_page_consolidated-part3 {
+    padding-top: var(--dl-space-space-twounits);
+    padding-left: var(--dl-space-space-unit);
+    padding-right: var(--dl-space-space-unit);
+    padding-bottom: var(--dl-space-space-twounits);
+  }
+  .definitions_page_consolidated-steps1 {
+    padding-top: var(--dl-space-space-twounits);
+    padding-left: var(--dl-space-space-unit);
+    padding-right: var(--dl-space-space-unit);
+    padding-bottom: var(--dl-space-space-twounits);
+  }
+  .definitions_page_consolidated-container05 {
+    flex-direction: column;
+  }
+  .definitions_page_consolidated-container06 {
+    flex-direction: column;
+  }
+  .definitions_page_consolidated-part4 {
+    padding-top: var(--dl-space-space-twounits);
+    padding-left: var(--dl-space-space-unit);
+    padding-right: var(--dl-space-space-unit);
+    padding-bottom: var(--dl-space-space-twounits);
+  }
+  .definitions_page_consolidated-steps2 {
+    padding-top: var(--dl-space-space-twounits);
+    padding-left: var(--dl-space-space-unit);
+    padding-right: var(--dl-space-space-unit);
+    padding-bottom: var(--dl-space-space-twounits);
+  }
+  .definitions_page_consolidated-container08 {
+    flex-direction: column;
+  }
+  .definitions_page_consolidated-part5 {
+    padding-top: var(--dl-space-space-twounits);
+    padding-left: var(--dl-space-space-unit);
+    padding-right: var(--dl-space-space-unit);
+    padding-bottom: var(--dl-space-space-twounits);
+  }
+  .definitions_page_consolidated-steps3 {
+    padding-top: var(--dl-space-space-twounits);
+    padding-left: var(--dl-space-space-unit);
+    padding-right: var(--dl-space-space-unit);
+    padding-bottom: var(--dl-space-space-twounits);
+  }
+  .definitions_page_consolidated-container10 {
+    flex-direction: column;
+  }
+  .definitions_page_consolidated-part6 {
+    padding-top: var(--dl-space-space-twounits);
+    padding-left: var(--dl-space-space-unit);
+    padding-right: var(--dl-space-space-unit);
+    padding-bottom: var(--dl-space-space-twounits);
+  }
+  .definitions_page_consolidated-steps4 {
+    padding-top: var(--dl-space-space-twounits);
+    padding-left: var(--dl-space-space-unit);
+    padding-right: var(--dl-space-space-unit);
+    padding-bottom: var(--dl-space-space-twounits);
+  }
+  .definitions_page_consolidated-container12 {
+    flex-direction: column;
+  }
+  .definitions_page_consolidated-container13 {
+    flex-direction: column;
+  }
+  .definitions_page_consolidated-part7 {
+    padding-top: var(--dl-space-space-twounits);
+    padding-left: var(--dl-space-space-unit);
+    padding-right: var(--dl-space-space-unit);
+    padding-bottom: var(--dl-space-space-twounits);
+  }
+  .definitions_page_consolidated-banner1 {
+    padding-top: var(--dl-space-space-twounits);
+    padding-left: var(--dl-space-space-unit);
+    padding-right: var(--dl-space-space-unit);
+    padding-bottom: var(--dl-space-space-twounits);
+  }
+  .definitions_page_consolidated-image14 {
+    width: var(--dl-size-size-xlarge);
+    height: var(--dl-size-size-xlarge);
+  }
+}
