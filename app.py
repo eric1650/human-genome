@@ -51,8 +51,9 @@ def protein_info(gene_name, genome=genome):
     gene = gene[gene.feature == 'gene'].reset_index()
 
     chromosome = gene.loc[0, 'chromosome']
-    gene_start = str(gene.loc[0, 'start'])
-    gene_end = str(gene.loc[0, 'end'])
+    gene_start = gene.loc[0, 'start']
+    gene_end = gene.loc[0, 'end']
+    gene_length = gene_end - gene_start
     protein_name = gene.loc[0, 'protein_name']
     protein_function = gene.loc[0, 'protein_function']
     aa_seq = gene.loc[0, 'aa_sequence']
@@ -60,8 +61,9 @@ def protein_info(gene_name, genome=genome):
 
     return jsonify(
     chromosome=chromosome,
-    gene_start=gene_start,
-    gene_end=gene_end,
+    gene_start=str(gene_start),
+    gene_end=str(gene_end),
+    gene_length=str(gene_length),
     name=protein_name,
     function=protein_function,
     aa_seq=aa_seq,
@@ -130,9 +132,9 @@ def gene_location(gene_name, genome=genome, chr_composition=chr_composition):
     chart = alt.Chart(gene).mark_point(size=150, filled=True).encode(
         x = alt.X('start:Q', title=f"DNA Base Pair Position on {chromosome}", scale=alt.Scale(domain=domain)),
         y = alt.Y('chromosome', title=None),
-        color = alt.Color('gene_name', title=None),
+        color = alt.Color('gene_name', title='Gene'),
         tooltip = alt.Tooltip(['gene_name', 'chromosome' ,'start', 'end'])
-    ).properties(width=750, title=f"Location of {gene_name} on {chromosome}")
+    ).properties(width=750, title=f"Location of Gene {gene_name} on {chromosome}")
 
     return chart.to_json()
 

@@ -208,6 +208,15 @@
     </div>
     <div class="row">
       <br><br>
+      <div class="col">
+        <h4>Gene Length:</h4>
+      </div>
+      <div class="col-9">
+        <div id='gene_length'></div>
+      </div>
+    </div>
+    <div class="row">
+      <br><br>
       <div class="charts text-center">
         <div class="row"><div id="gene_location"></div></div>
       </div>
@@ -468,6 +477,7 @@
             document.getElementById("chromosome").innerHTML = protein.chromosome;
             document.getElementById("gene_start").innerHTML = "DNA Base Pair # " + protein.gene_start;
             document.getElementById("gene_end").innerHTML = "DNA Base Pair # " + protein.gene_end;
+            document.getElementById("gene_length").innerHTML = protein.gene_length + " Base Pairs Long";
             document.getElementById("protein_name").innerHTML = protein.name;
             document.getElementById("protein_function").innerHTML = protein.function;
             document.getElementById("aa_seq").innerHTML = protein.aa_seq;
