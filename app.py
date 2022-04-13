@@ -124,17 +124,39 @@ def gene_composition_chr(chr_composition=chr_composition):
 @app.route('/chart/gene_location/<gene_name>')
 def gene_location(gene_name, genome=genome, chr_composition=chr_composition):
 
-    gene = genome[genome.gene_name == gene_name].reset_index()
-    chromosome = gene.loc[0,'chromosome']
+    chromosome= genome[genome.gene_name == gene_name]['chromosome'].values[0]
+
+    index= genome[genome.gene_name == gene_name].index[0]
+
+    if (index + 8) > len(genome):
+        end= len(genome)
+        start= index - 8
+    elif (index - 8) < 0:
+        end= index + 8
+        start= 0
+    else:
+        end= index + 8
+        start= index - 8
+
+    genes= genome.iloc[start:end,:]
+
     chr_length = chr_composition[chr_composition.Chromosome == chromosome]['Base Pair Length'].sum()
+
     domain = [0, chr_length]
 
-    chart = alt.Chart(gene).mark_point(size=150, filled=True).encode(
-        x = alt.X('start:Q', title=f"DNA Base Pair Position on {chromosome}", scale=alt.Scale(domain=domain)),
-        y = alt.Y('chromosome', title=None),
-        color = alt.Color('gene_name', title='Gene'),
+    chart=alt.Chart(genes).mark_point(size=150, filled=True).encode(
+        x = alt.X('start:Q', title=f"Gene Location on {chromosome}", scale=alt.Scale(domain=[genes.start.min(),
+                                                                                            genes.start.max()])),
+        y = 'chromosome',
+        color = alt.condition(
+          alt.datum.gene_name == gene_name,
+          alt.value('slateblue'),
+            alt.value('darkorange')),
+        opacity= alt.value(.8),
         tooltip = alt.Tooltip(['gene_name', 'chromosome' ,'start', 'end'])
-    ).properties(width=750, title=f"Location of Gene {gene_name} on {chromosome}")
+    ).properties(width=750, title=f"Location of {gene_name} on {chromosome}")
+
+    genes= list()
 
     return chart.to_json()
 
