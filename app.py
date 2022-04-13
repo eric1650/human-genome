@@ -22,32 +22,10 @@ genome = pd.read_csv('data/genome_genes/genome.csv.zip')
 gene_names = list(genome.gene_name.unique())
 gene_names.sort()
 
-chr_dict = {
- 'chr1': "Chromosome 1",
- 'chr2': "Chromosome 2",
- 'chr3': "Chromosome 3",
- 'chr4': "Chromosome 4",
- 'chr5': "Chromosome 5",
- 'chr6': "Chromosome 6",
- 'chr7': "Chromosome 7",
- 'chr8': "Chromosome 8",
- 'chr9': "Chromosome 9",
- 'chr10': "Chromosome 10",
- 'chr11': "Chromosome 11",
- 'chr12': "Chromosome 12",
- 'chr13': "Chromosome 13",
- 'chr14': "Chromosome 14",
- 'chr15': "Chromosome 15",
- 'chr16': "Chromosome 16",
- 'chr17': "Chromosome 17",
- 'chr18': "Chromosome 18",
- 'chr19': "Chromosome 19",
- 'chr20': "Chromosome 20",
- 'chr21': "Chromosome 21",
- 'chr22': "Chromosome 22",
- 'chrX': "Chromosome X",
- 'chrY': "Chromosome Y"
-}
+chr_composition = pd.read_csv('data/gene_composition/chr_composition.csv')
+genome_composition = pd.read_csv('data/gene_composition/genome_composition.csv')
+
+
 
 ##############################
 # Flask routes
@@ -60,7 +38,7 @@ def index(gene_names=gene_names):
 
 # Render molstar.html viewer of selected gene
 @app.route('/molstar/<gene_name>')
-def molstar(genome=genome, gene_name=gene_names[0]):
+def molstar(gene_name, genome=genome):
     gene = genome[genome.gene_name == gene_name]
     gene = gene[gene.feature == 'gene'].reset_index()
     uniprot_id = gene.loc[0, 'uniprot_id']
@@ -68,11 +46,11 @@ def molstar(genome=genome, gene_name=gene_names[0]):
 
 # Retrieve Protein Info for a Specific Gene
 @app.route('/protein_info/<gene_name>')
-def protein_info(genome=genome, chr_dict=chr_dict, gene_name=gene_names[0]):
+def protein_info(gene_name, genome=genome):
     gene = genome[genome.gene_name == gene_name]
     gene = gene[gene.feature == 'gene'].reset_index()
 
-    chromosome = chr_dict[gene.loc[0, 'seqname']]
+    chromosome = gene.loc[0, 'chromosome']
     protein_name = gene.loc[0, 'protein_name']
     protein_function = gene.loc[0, 'protein_function']
     aa_seq = gene.loc[0, 'aa_sequence']
@@ -87,29 +65,9 @@ def protein_info(genome=genome, chr_dict=chr_dict, gene_name=gene_names[0]):
     )
 
 # Render definitions.html for part 1
-@app.route('/definitions_part_1')
-def definitions_part_1():
-    return render_template('definitions_part_1.html')
-
-# Render definitions.html for part 2
-@app.route('/definitions_part_2')
-def definitions_part_2():
-    return render_template('definitions_part_2.html')
-
-# Render definitions.html for part 3
-@app.route('/definitions_part_3')
-def definitions_part_3():
-    return render_template('definitions_part_3.html')
-
-# Render definitions.html for part 4
-@app.route('/definitions_part_4')
-def definitions_part_4():
-    return render_template('definitions_part_4.html')
-
-# Render definitions.html for parts 5, 6, 7
-@app.route('/definitions_part_5_6_7')
-def definitions_part_5_6_7():
-    return render_template('definitions_part_5_6_7.html')
+@app.route('/definitions')
+def definitions():
+    return render_template('definitions.html')
 
 
 ##############################
@@ -118,9 +76,7 @@ def definitions_part_5_6_7():
 
 # Render altair chart of gene composition by genome
 @app.route('/chart/gene_composition_genome/')
-def gene_composition_genome():
-
-    genome_composition = pd.read_csv('data/gene_composition/genome_composition.csv')
+def gene_composition_genome(genome_composition=genome_composition):
 
     pie_chart = alt.Chart(genome_composition, title= 'Percentage of DNA in Genome that are Genes').mark_arc().encode(
         theta= alt.Theta('Percent of Genome:Q'),
@@ -132,9 +88,7 @@ def gene_composition_genome():
 
 # Render altair chart of gene composition by chromosome
 @app.route('/chart/gene_composition_chr/')
-def gene_composition_chr():
-
-    chr_composition = pd.read_csv('data/gene_composition/chr_composition.csv')
+def gene_composition_chr(chr_composition=chr_composition):
 
     protein_coding_bar_bp = alt.Chart(chr_composition, title='Amount of DNA within Each Chromosome that are in Genes').mark_bar().encode(
         x = alt.X('Chromosome:N', sort=None),
@@ -155,6 +109,25 @@ def gene_composition_chr():
     )
 
     chart = alt.vconcat(protein_coding_bar_bp & protein_coding_bar_pct)
+
+    return chart.to_json()
+
+
+# Render altair chart of gene components
+@app.route('/chart/gene_location/<gene_name>')
+def gene_location(gene_name, genome=genome, chr_composition=chr_composition):
+
+    gene = genome[genome.gene_name == gene_name].reset_index()
+    chromosome = gene.loc[0,'chromosome']
+    chr_length = chr_composition[chr_composition.Chromosome == chromosome]['Base Pair Length'].sum()
+    domain = [0, chr_length]
+
+    chart = alt.Chart(gene).mark_point(size=150, filled=True).encode(
+        x = alt.X('start:Q', title=f"Gene Location on {chromosome}", scale=alt.Scale(domain=domain)),
+        y = 'chromosome',
+        color = 'gene_name',
+        tooltip = alt.Tooltip(['gene_name', 'chromosome' ,'start', 'end'])
+    ).properties(width=750, title=f"Location of {gene_name} on {chromosome}")
 
     return chart.to_json()
 
@@ -223,9 +196,9 @@ def gene_expression(gene_name):
     transcription = alt.Chart(exons).mark_bar().encode(
         x = alt.X('start', scale=alt.Scale(domain=domain), title='Location of Gene Features'),
         x2 = 'end',
-        y = alt.Y('seqname', title='Chromosome'),
+        y = alt.Y('chromosome:N'),
         color = 'feature',
-        tooltip = alt.Tooltip(['gene_name','feature','transcript_type','exon_id','start','end'])
+        tooltip = alt.Tooltip(['gene_name','feature','start','end'])
     ).properties(
         width = 750,
         title = f"Transcription: Exons are the portions of a gene that get transcribed into RNA"
@@ -235,9 +208,9 @@ def gene_expression(gene_name):
     splicing = alt.Chart(spliced).mark_bar().encode(
         x = alt.X('start', scale=alt.Scale(domain=domain), title='Location of Gene Features'),
         x2 = 'end',
-        y = alt.Y('seqname', title='Chromosome'),
+        y = alt.Y('chromosome:N'),
         color = 'feature',
-        tooltip = alt.Tooltip(['gene_name','feature','transcript_type','exon_id','start','end'])
+        tooltip = alt.Tooltip(['gene_name','feature','start','end'])
     ).properties(
         width = 750,
         title = f"Splicing: Untranslated Regions (UTR) of Exons are spliced out leaving only Coding DNA Sequences (CDS)"
@@ -246,9 +219,9 @@ def gene_expression(gene_name):
     translation = alt.Chart(translated).mark_bar().encode(
         x = alt.X('start', scale=alt.Scale(domain=domain), title='Location of Gene Features'),
         x2 = 'end',
-        y = alt.Y('seqname', title='Chromosome'),
+        y = alt.Y('chromosome:N'),
         color = 'feature',
-        tooltip = alt.Tooltip(['gene_name','feature','transcript_type','exon_id','start','end'])
+        tooltip = alt.Tooltip(['gene_name','feature','start','end'])
     ).properties(
         width = 750,
         title = f"Translation: The remaining CDS regions get translated into an Amino Acid Chain"
