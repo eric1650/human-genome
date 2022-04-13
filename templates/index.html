@@ -155,8 +155,12 @@
 
   <div class="container">
     <br><hr><br>
+    <h3>Pick Gene to Explore Further and Express ("Activate"):</h3>
     <div class="row">
-      <h3>Select the Gene that you want to Express:</h3>
+      <h7>Click on the dropdown bar and start typing the gene name you are looking for:</h7>
+    </div>
+    <div class="row">
+      <br>
       <!-- Dropdown List to Select Gene -->
       <select name="gene_dropdown" id="gene_dropdown" onchange="displayGene()">
         <option value = "TP53" selected>TP53</option>
@@ -170,64 +174,67 @@
   <!-- Container for Selected Gene Information -->
   <div class="container">
     <br>
-    <div class="row">
-      <br><br>
-      <div class="col">
-        <h4>Gene Name:</h4>
+      <div class="row">
+        <br><br>
+        <div class="col">
+          <h5>Gene Name:</h5>
+        </div>
+        <div class="col-9">
+          <div id='gene_name'></div>
+        </div>
       </div>
-      <div class="col-9">
-        <div id='gene_name'></div>
+      <div class="row">
+        <br><br>
+        <div class="col">
+          <h5>Gene is Located On:</h5>
+        </div>
+        <div class="col-9">
+          <div id='chromosome'></div>
+        </div>
+      </div>
+      <div class="row">
+        <br><br>
+        <div class="col">
+          <h5>Gene Starts At:</h5>
+        </div>
+        <div class="col-9">
+          <div id='gene_start'></div>
+        </div>
+      </div>
+      <div class="row">
+        <br><br>
+        <div class="col">
+          <h5>Gene Ends At:</h5>
+        </div>
+        <div class="col-9">
+          <div id='gene_end'></div>
+        </div>
+      </div>
+      <div class="row">
+        <br><br>
+        <div class="col">
+          <h5>Gene Length:</h5>
+        </div>
+        <div class="col-9">
+          <div id='gene_length'></div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <br><br>
+        <div class="charts text-center">
+          <div class="row"><div id="gene_location"></div></div>
+        </div>
       </div>
     </div>
-    <div class="row">
-      <br><br>
-      <div class="col">
-        <h4>Gene is Located On:</h4>
-      </div>
-      <div class="col-9">
-        <div id='chromosome'></div>
-      </div>
-    </div>
-    <div class="row">
-      <br><br>
-      <div class="col">
-        <h4>Gene Starts At:</h4>
-      </div>
-      <div class="col-9">
-        <div id='gene_start'></div>
-      </div>
-    </div>
-    <div class="row">
-      <br><br>
-      <div class="col">
-        <h4>Gene Ends At:</h4>
-      </div>
-      <div class="col-9">
-        <div id='gene_end'></div>
-      </div>
-    </div>
-    <div class="row">
-      <br><br>
-      <div class="col">
-        <h4>Gene Length:</h4>
-      </div>
-      <div class="col-9">
-        <div id='gene_length'></div>
-      </div>
-    </div>
-    <div class="row">
-      <br><br>
-      <div class="charts text-center">
-        <div class="row"><div id="gene_location"></div></div>
-      </div>
-    </div>
-  </div>
 
     <!-- Render Gene Browser Chart -->
     <div class="container">
       <hr><br>
+      <h3 id='sub-components-name'></h3>
       <div class="row">
-        <h3 id='sub-components-name'></h3>
+        <h7>Hover for more information on any of the gene transcripts.</h7>
+        <h7>Scroll to zoom into a region of the gene. Double click to reset the view.</h7>
       </div>
       <br><br>
       <div class="charts text-center">
@@ -239,9 +246,7 @@
   <!-- Render Gene Transcription Chart -->
   <div class="container">
     <br><hr><br>
-    <div class="row">
-      <h3>Gene Expression Consists of Several Steps:</h3>
-    </div>
+    <h3>Gene Expression Consists of Several Steps:</h3>
     <br>
     <div class="row">
       <div class="row">
@@ -301,7 +306,8 @@
   <div class="container">
     <br><hr><br>
     <h3 id="gene-expression-name"></h3>
-    <br>
+    <h7>Hover for more information on any of the gene transcripts.</h7>
+    <br><br>
     <div class="charts text-center">
       <div class="row"><div id="gene_expression"></div></div>
     </div>
@@ -366,9 +372,16 @@
           <span id='protein_function' style="width:100%; word-wrap:break-word; display:inline-block;"></span>
         </div>
       </div>
+    </div>
+    <div class="container">
       <br><hr><br>
       <h3 id="protein-viz-name"></h3>
-      <br>
+      <div class="row">
+        <h7>Click and drag in the viewer to rotate the protein. Scroll to zoom in/out and double click to reset the view.</h7>
+        <h7>Hover mouse over a part of the protein to identify the amino acid. Click to zoom in and view details. Double Click to reset the view.</h7>
+        <h7>Click on an amino acid from the sequence in the upper right of the viewer to zoom in and view details that amino acid in the protein.</h7>
+      </div>
+      <br><br>
       <div class="charts text-center">
         <iframe id="molstar" title="Molstar Protein Viewer" height="1000" width="1000"></iframe>
       </div>
