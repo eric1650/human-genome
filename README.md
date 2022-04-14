@@ -6,6 +6,26 @@
 - Angel Ortiz Nuñez
 
 
+## Division of Responsibilities:
+- Whitney Fee:
+  - Tableau Visualizations
+  - CSS and Website Formatting
+  - Definitions
+
+- Angel Ortiz Nuñez
+  - Altair Charts - Gene Chromosome
+  - Altair Charts - Protein Coding Composition by Chromosome & Genome
+  - Altair Interactivity Across Charts
+  - Altair Gene Function Charts
+
+- Eric Ellestad:
+  - Protein viewer
+  - Bootstrap Formatting
+  - Gene Expression Charts
+  - Flask Integration
+
+
+
 ## Introduction
 
 [The Human Genome Project](https://www.genome.gov/human-genome-project) was completed in 2003 which ushered in the genomics era by sequencing an entire human genome for the very first time. In the following two decades, advances in modern high-throughput genetic sequencing technologies have made DNA sequencing faster, cheaper, and widely available. This has lead to a proliferation of genomic "big data" and the availability of large-scale public databases of detailed human genomic data.

@@ -143,7 +143,7 @@ def gene_location(gene_name, genome=genome, chr_composition=chr_composition):
             alt.value('darkorange')),
         opacity= alt.value(.8),
         tooltip = alt.Tooltip(['gene_name', 'chromosome' ,'start', 'end'])
-    ).properties(width=750, title=f"Location of {gene_name} on {chromosome}")
+    ).properties(width=1000, height=75, title=f"Location of {gene_name} on {chromosome}")
 
     genes= list()
 
@@ -170,7 +170,8 @@ def gene_components(gene_name):
         color = alt.Color('feature:N', title='Gene Component'),
         tooltip = alt.Tooltip(['gene_name','feature','start','end'])
     ).properties(
-        width = 750,
+        width = 1000,
+        height=4*75,
         title=f'Sub-Components of Gene {gene_name}'
     ).interactive()
 
@@ -179,7 +180,7 @@ def gene_components(gene_name):
         y = alt.Y('feature:N', sort='-x', title='Gene Component'),
         color = alt.Color('feature:N', title='Gene Component'),
         tooltip = alt.Tooltip(['gene_name','feature','count(feature)'])
-    ).properties(width=750)
+    ).properties(width=1000, height=150)
 
     gene_layout = bar & hist_features
 
@@ -218,7 +219,8 @@ def gene_expression(gene_name):
         color = 'feature',
         tooltip = alt.Tooltip(['gene_name','feature','start','end'])
     ).properties(
-        width = 750,
+        width = 1000,
+        height = 75,
         title = f"1. Transcription: Exons are the portions of a gene that get transcribed into RNA"
     )
 
@@ -230,7 +232,8 @@ def gene_expression(gene_name):
         color = 'feature',
         tooltip = alt.Tooltip(['gene_name','feature','start','end'])
     ).properties(
-        width = 750,
+        width = 1000,
+        height = 75,
         title = f"2. Splicing: Untranslated Regions (UTR) of Exons are spliced out leaving only Coding DNA Sequences (CDS)"
     )
 
@@ -241,7 +244,8 @@ def gene_expression(gene_name):
         color = 'feature',
         tooltip = alt.Tooltip(['gene_name','feature','start','end'])
     ).properties(
-        width = 750,
+        width = 1000,
+        height = 75,
         title = f"3. Translation: The remaining CDS regions get translated into an Amino Acid Chain"
     )
 
@@ -284,7 +288,7 @@ def protein_composition(gene_name):
         x = alt.X('Count', title='Count of Amino Acid in Protein'),
         y = alt.Y('Amino_Acid:N', sort='-x', title='Amino Acid'),
         tooltip = alt.Tooltip(['Amino_Acid','Count']),
-        color = 'Amino_Acid'
+        color = alt.Color('Count', scale=alt.Scale(scheme='oranges'))
     ).properties(
         width = 750,
         title=f'Count of each Amino Acid in Protein from Gene: {gene_name}'
