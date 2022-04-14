@@ -71,10 +71,15 @@ def protein_info(gene_name, genome=genome):
     )
 
 
-# Render definitions.html for part 1
+# Render definitions.html
 @app.route('/definitions')
 def definitions():
     return render_template('definitions.html')
+
+# Render about.html
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 
 ##############################

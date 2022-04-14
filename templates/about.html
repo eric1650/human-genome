@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+
+  <!-- Bootstrap CSS CDN-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootrap JavaScript CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <a href="https://www.flaticon.com/free-icons/dna" title="dna icons"></a>
+
+</head>
+
+<body>
+
+  <!-- Header Container -->
+  <div class="container">
+    <span style="width:100%; text-align:center; word-wrap:break-word; display:block">
+      <br>
+      <h1>About the Project: Visualizing the Human Genome</h1>
+      <br>
+      <h3>UC Berkeley School of Information</h3>
+      <br>
+      <h4>Spring 2022 - W209 Data Visualization - Final Project</h4>
+    </span>
+  </div>
+
+  <div class="container">
+    <br><br>
+    <h2>Background on Each Interactive Chart</h1>
+    <hr><br>
+    <h3>The Human Genome:</h3>
+    <div class="col-10">
+        This is a table chart that exemplifies the size of a chromosome by the size of the chromosomes section in the chart. Hovering over a chromosomes table section will show its size, gene count and exon count. Similarly, hovering over the numbered results at the top of the chart gives a brief explanation of what exons, chromosomes and genes are.
+        The tasks this dashboard accomplishes are 
+        to present genome size and exons/gene counts and to
+        summarize chromosome information
+    </div>
+    <br><hr><br>
+    <h3>Chromosome Overview:</h3>
+    <div class="col-10">
+        This visualization has both a bar chart that demonstrates the number of unique genes in each chromosome and a bubble chart which shows the amount of features within all chromosomes. If a chromosome is selected (by clicking the chromosomes corresponding bar in the bar chart) it will filter the bubble chart below it to show the features for only that chromosome.
+        The purpose of this chart is to help users
+        compare gene counts between chromosomes and to
+        compare feature counts between chromosomes.
+    </div>
+    <br><hr><br>
+    <h3>Chromosome Composition:</h3>
+    <div class="col-10">
+        The following charts are a pie chart that illustrates the gene to non-gene DNA in all chromosomes and a bar chart that shows the amount of DNA base pairs in each chromosome. There is a selection bar at the bottom of the visualization with all the chromosomes in the bar chart. If you select an option from the selection bar, the pie chart will demonstrate the percentages of gene to non gene DNA in that chromosome. To change the pie chart back to the total percentages, select the ‘All’ option.
+        The goal of this visualization is to help a user
+        Present human genome gene distribution (both in amount and percentage).
+        Compare the distribution of genes between chromosomes.
+    </div>
+    <br><hr><br>
+    <h3>Gene Location:</h3>
+    <div class="col-10">
+        After selecting a gene name, this chart displays the position of the selected gene within the chromosome it resides on, as well as it displays its 8-16 closest surrounding genes. The selected gene will be colored blue and the surrounding genes will be colored orange.
+        The objective of this plot is to help a user
+        search for genes,
+        identify gene position,
+        identify gene chromosome, and
+        identify surrounding genes to a given gene.
+    </div>
+    <br><hr><br>
+    <h3>Sub-Components of a Gene:</h3>
+    <div class="col-10">
+        In this visualization the top bar chart communicates the location of segments of a gene, divided into that gene's features, and the bottom chart presents the amount of any given feature within the gene. If a user wants to better view any segment, they can drag the top chart from left to right to move its location. In order to reset the chart to its original position, one can double click within the chart’s white space.
+        This chart aims to help users:
+        identify features present in gene and their locations, and
+        compare gene feature counts
+    </div>
+    <br><hr><br>
+    <h3>Expression of Gene:</h3>
+    <div class="col-10">
+        This visualization demonstrates the exon segments of a gene and their positions with its top chart. It then illustrates what portions of those exons will be translated into an amino acid chain (CDS regions) and which won't (UTR regions) with the middle chart. Finally, it shows the resulting translation segments, and their positions in the gene,  with its bottom chart.
+        The purpose of this chart is to
+        locate exons within a gene and
+        identify translation segments within a gene
+    </div>
+    <br><hr><br>
+    <h3>Translated Amino Acid Chain:</h3>
+    <div class="col-10">
+        This chart shows the amino acid sequences for the translated amino acid chain of a gene, as well as their amounts
+        The tasks this chart undertakes are
+        to identify amino acid sequences in amino acid chain and to
+        compare amino acid sequence amounts
+    </div>
+  </div>
+
+</body>
