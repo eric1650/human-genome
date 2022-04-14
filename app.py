@@ -111,7 +111,7 @@ def gene_composition_chr(chr_composition=chr_composition):
 
 # Render altair chart of gene components
 @app.route('/chart/gene_location/<gene_name>')
-def gene_location(gene_name, genome=genome, chr_composition=chr_composition):
+def gene_location(gene_name, genome=genome):
 
     chromosome= genome[genome.gene_name == gene_name]['chromosome'].values[0]
 
@@ -129,21 +129,24 @@ def gene_location(gene_name, genome=genome, chr_composition=chr_composition):
 
     genes= genome.iloc[start:end,:]
 
-    chr_length = chr_composition[chr_composition.Chromosome == chromosome]['Base Pair Length'].sum()
-
-    domain = [0, chr_length]
-
-    chart=alt.Chart(genes).mark_point(size=150, filled=True).encode(
-        x = alt.X('start:Q', title=f"Gene Location on {chromosome}", scale=alt.Scale(domain=[genes.start.min(),
+    chart=alt.Chart(genes).mark_point(size=350, filled=True).encode(
+        x = alt.X('start:Q', title=f"DNA Base Pair Position on {chromosome}", scale=alt.Scale(domain=[genes.start.min(),
                                                                                             genes.start.max()])),
-        y = 'chromosome',
+        y = alt.Y('chromosome', title=None),
         color = alt.condition(
           alt.datum.gene_name == gene_name,
           alt.value('slateblue'),
             alt.value('darkorange')),
-        opacity= alt.value(.8),
+        opacity= alt.condition(
+          alt.datum.gene_name == gene_name,
+          alt.value(1.0),
+            alt.value(0.5)),
         tooltip = alt.Tooltip(['gene_name', 'chromosome' ,'start', 'end'])
-    ).properties(width=1000, height=75, title=f"Location of {gene_name} on {chromosome}")
+    ).properties(
+    width=1000,
+    height=75,
+    title=f"Location of Gene {gene_name} and its Neighboring Genes"
+    )
 
     genes= list()
 
