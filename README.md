@@ -40,7 +40,7 @@ The human genome consists of 23 chromosome pairs that include around 20,000 gene
 ![](static/images/central_dogma.png)
 
 
-Folder Structure:
+Repository Structure:
 ```
 .
 ├── README.md
@@ -66,8 +66,10 @@ Folder Structure:
 ```
 
 To Launch the Flask App Locally:
-```source venv/bin/activate
-python app.py```
+```
+source venv/bin/activate
+python app.py
+```
 
 
 ### Opensource MIT License
