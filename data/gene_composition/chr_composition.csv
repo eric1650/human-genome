@@ -1,4 +1,6 @@
 Chromosome,Base Pair Length,Percent of Chromosome,Protein Coding
+All,1246696300,40.48,Gene
+All,1833147447,59.52,Non-Gene
 Chromosome 1,108729868,43.98,Gene
 Chromosome 1,138469851,56.02,Non-Gene
 Chromosome 2,102883538,42.38,Gene
