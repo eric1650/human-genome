@@ -98,6 +98,20 @@ oranges = {
     9: '#b93d02'
 }
 
+tableau10 = {
+    'blue': '#4c78a8',
+    'orange': '#f58518',
+    'red': '#e45756',
+    'teal': '#72b7b2',
+    'green': '#54a24b',
+    'yellow': '#eeca3b',
+    'purple': '#b279a2',
+    'light_blue': '#9edae5'
+}
+
+feature_color_domain = ['gene', 'exon', 'UTR', 'CDS']
+feature_color_range = [tableau10['teal'], tableau10['blue'], tableau10['light_blue'], tableau10['purple']]
+
 
 # Render altair pie chart of gene composition by genome
 @app.route('/chart/gene_composition_genome/')
@@ -159,7 +173,7 @@ def gene_location(gene_name, genome=genome):
         y = alt.Y('chromosome', title=None),
         color = alt.condition(
           alt.datum.gene_name == gene_name,
-          alt.value('#72b7b2'),
+          alt.value(tableau10['teal']),
             alt.value(oranges[3])),
         opacity= alt.condition(
           alt.datum.gene_name == gene_name,
@@ -196,7 +210,7 @@ def gene_components(gene_name):
         x=alt.X('start:Q', scale=alt.Scale(domain=domain), title=f"DNA Base Pair Position on {chromosome}"),
         x2='end:Q',
         y=alt.Y('feature:N', sort=None, title='Gene Component'),
-        color = alt.Color('feature:N', title='Gene Component'),
+        color = alt.Color('feature:N', title='Gene Component', scale=alt.Scale(domain=feature_color_domain, range=feature_color_range)),
         tooltip = alt.Tooltip(['gene_name','feature','start','end'])
     ).properties(
         width=global_chart_width,
@@ -207,7 +221,7 @@ def gene_components(gene_name):
     hist_features = alt.Chart(gene[gene.feature.isin(['exon','UTR','CDS'])]).mark_bar().encode(
         x = alt.X('count(feature)', title=f'Count of Each Component Type in Gene {gene_name}'),
         y = alt.Y('feature:N', sort='-x', title='Gene Component'),
-        color = alt.Color('feature:N', title='Gene Component'),
+        color = alt.Color('feature:N', title='Gene Component', scale=alt.Scale(domain=feature_color_domain, range=feature_color_range)),
         tooltip = alt.Tooltip(['gene_name','feature','count(feature)'])
     ).properties(
         width=global_chart_width,
@@ -249,7 +263,7 @@ def gene_expression(gene_name):
         x = alt.X('start', scale=alt.Scale(domain=domain), title=f"DNA Base Pair Position on {chromosome}"),
         x2 = 'end',
         y = alt.Y('chromosome:N', title=None),
-        color = 'feature',
+        color = alt.Color('feature:N', title='Gene Component', scale=alt.Scale(domain=feature_color_domain, range=feature_color_range)),
         tooltip = alt.Tooltip(['gene_name','feature','start','end'])
     ).properties(
         width = global_chart_width,
@@ -262,7 +276,7 @@ def gene_expression(gene_name):
         x = alt.X('start', scale=alt.Scale(domain=domain), title=f"DNA Base Pair Position on {chromosome}"),
         x2 = 'end',
         y = alt.Y('chromosome:N', title=None),
-        color = 'feature',
+        color = alt.Color('feature:N', title='Gene Component', scale=alt.Scale(domain=feature_color_domain, range=feature_color_range)),
         tooltip = alt.Tooltip(['gene_name','feature','start','end'])
     ).properties(
         width = global_chart_width,
@@ -274,7 +288,7 @@ def gene_expression(gene_name):
         x = alt.X('start', scale=alt.Scale(domain=domain), title=f"DNA Base Pair Position on {chromosome}"),
         x2 = 'end',
         y = alt.Y('chromosome:N', title=None),
-        color = 'feature',
+        color = alt.Color('feature:N', title='Gene Component', scale=alt.Scale(domain=feature_color_domain, range=feature_color_range)),
         tooltip = alt.Tooltip(['gene_name','feature','start','end'])
     ).properties(
         width = global_chart_width,
