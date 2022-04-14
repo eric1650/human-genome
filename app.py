@@ -281,7 +281,7 @@ def gene_expression(gene_name):
     ).properties(
         width = global_chart_width,
         height = global_bar_chart_height,
-        title = f"2. Splicing: Untranslated Regions (UTR) of the Exons are spliced out leaving only Coding DNA Sequences (CDS)"
+        title = f"2. Splicing: Untranslated Regions (UTR) are spliced out of RNA leaving only Coding DNA Sequences (CDS) as mRNA"
     )
 
     translation = alt.Chart(translated).mark_bar().encode(
@@ -293,7 +293,7 @@ def gene_expression(gene_name):
     ).properties(
         width = global_chart_width,
         height = global_bar_chart_height,
-        title = "3. Translation: The remaining CDS regions of the Exons get translated into an Amino Acid Chain"
+        title = "3. Translation: The remaining CDS regions (mRNA) get translated into an Amino Acid Chain"
     )
 
     chart = alt.vconcat(transcription & splicing & translation)
