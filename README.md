@@ -1,4 +1,4 @@
-# Visualizing the Human Genome
+# [Visualizing the Human Genome](https://human-genome.herokuapp.com/)
 ### UC Berkeley - W209 Data Visualization - Final Project
 ### Authors:
 - Eric Ellestad
@@ -8,25 +8,34 @@
 
 ## [Link to Project Website](https://human-genome.herokuapp.com/)
 
+## [Link to Youtube Tutorial](https://www.youtube.com/watch?v=fuKv9W4iKtA)
+
 
 ## Division of Responsibilities:
 - Whitney Fee:
-  - Tableau Visualizations
+  - Exploratory Data Analysis
+  - Tableau Visualization - Genome Chromosome
+  - Tableau Visualization - Chromosome Overview
   - CSS and Website Formatting
   - Definitions
 
-- Angel Ortiz Nuñez
+
+- Angel Ortiz Nuñez:
+  - Data Pre-Processing and Data Wrangling
   - Altair Charts - Gene Chromosome
   - Altair Charts - Protein Coding Composition by Chromosome & Genome
-  - Altair Interactivity Across Charts
-  - Altair Gene Function Charts
+  - Altair - Gene Function Charts
+  - Altair - Interactivity Across Charts
+
 
 - Eric Ellestad:
-  - Protein viewer
-  - Gene Expression Charts
-  - Bootstrap Formatting
-  - Flask Backend
-  - Website Integration
+  - Data Collection and Dataset Integration
+  - Protein Viewer
+  - Altair Charts - Gene Expression Charts
+  - Bootstrap and Website Formatting
+  - Javascript Interactivity
+  - Flask Backend and Website Integration
+  - Heroku Platform Integration and Hosting
 
 
 
