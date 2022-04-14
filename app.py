@@ -87,7 +87,7 @@ def gene_composition_genome(genome_composition=genome_composition):
 
     pie_chart = alt.Chart(genome_composition, title= 'Percentage of DNA in Genome that are Genes').mark_arc().encode(
         theta= alt.Theta('Percent of Genome:Q'),
-        color=alt.Color('Protein Coding:N', title= 'Gene Label'),
+        color=alt.Color('Protein Coding:N', title= 'Gene Type', scale=alt.Scale(range=['#d14904','#fdc998'])),
         tooltip=['Protein Coding', 'Percent of Genome']
     )
 
@@ -100,7 +100,7 @@ def gene_composition_chr(chr_composition=chr_composition):
     protein_coding_bar_bp = alt.Chart(chr_composition, title='Total Number of DNA Base Pairs within Each Chromosome that are in Genes').mark_bar().encode(
         x = alt.X('Chromosome:N', sort=None),
         y = alt.Y('Base Pair Length:Q', title="Total Number of DNA Base Pairs"),
-        color = 'Protein Coding',
+        color=alt.Color('Protein Coding:N', title= 'Gene Type', scale=alt.Scale(range=['#d14904','#fdc998'])),
         tooltip = alt.Tooltip(['Chromosome','Base Pair Length','Protein Coding'])
     ).properties(
         width = 750
@@ -146,7 +146,7 @@ def gene_location(gene_name, genome=genome):
     width=1000,
     height=75,
     title=f"Location of Gene {gene_name} and its Neighboring Genes"
-    )
+    ).interactive()
 
     genes= list()
 
