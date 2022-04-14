@@ -57,6 +57,7 @@ Repository Structure:
 ├── requirements.txt
 ├── Procfile
 └── Final_Presentation-Visualizing_the_Human_Genome.pdf
+└── Final_Report-Visualizing_the_Human_Genome.pdf
 └── Visualizing_The_Human_Genome_Tutorial.mp4
 ├── data
 │   ├── genes
