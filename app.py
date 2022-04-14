@@ -23,11 +23,7 @@ gene_names = list(genome.gene_name.unique())
 gene_names.sort()
 
 chr_composition = pd.read_csv('data/gene_composition/chr_composition.csv')
-options=list(chr_composition.Chromosome.unique())
-select_box = alt.binding_select(name='Chromosomes: ',
-                                  options=options)
-selection= alt.selection_single(fields=['Chromosome'],init={'Chromosome':'All'},
-                               bind=select_box)
+genome_composition = pd.read_csv('data/gene_composition/genome_composition.csv')
 
 ##############################
 # Flask routes
@@ -86,47 +82,31 @@ def definitions():
 ##############################
 
 # Render altair pie chart of gene composition by genome
-def gene_composition_genome(genome_composition=chr_composition):
+@app.route('/chart/gene_composition_genome/')
+def gene_composition_genome(genome_composition=genome_composition):
 
     pie_chart = alt.Chart(genome_composition, title= 'Percentage of DNA in Genome that are Genes').mark_arc().encode(
-        theta= alt.Theta('Percent of Chromosome:Q'),
+        theta= alt.Theta('Percent of Genome:Q'),
         color=alt.Color('Protein Coding:N', title= 'Gene Label'),
-        tooltip=['Protein Coding','Percent of Chromosome']
-    ).transform_filter(selection)
+        tooltip=['Protein Coding', 'Percent of Genome']
+    )
 
-
-    return pie_chart
+    return pie_chart.to_json()
 
 # Render altair bar chart of gene composition by chromosome
 @app.route('/chart/gene_composition_chr/')
-def gene_composition_chr(chr_composition=chr_composition[chr_composition.Chromosome != 'All']):
+def gene_composition_chr(chr_composition=chr_composition):
 
     protein_coding_bar_bp = alt.Chart(chr_composition, title='Total Number of DNA Base Pairs within Each Chromosome that are in Genes').mark_bar().encode(
         x = alt.X('Chromosome:N', sort=None),
         y = alt.Y('Base Pair Length:Q', title="Total Number of DNA Base Pairs"),
         color = 'Protein Coding',
-
         tooltip = alt.Tooltip(['Chromosome','Base Pair Length','Protein Coding'])
     ).properties(
         width = 750
-    ).add_selection(selection)
+    )
 
-    pie_chart= gene_composition_genome()
-
-    genome_composition_chart= alt.vconcat(pie_chart & protein_coding_bar_bp)
-
-    # protein_coding_bar_pct = alt.Chart(chr_composition, title='Percent of DNA in Each Chromosome that is in a Gene').mark_bar().encode(
-    #     x = alt.X('Chromosome:N', sort=None),
-    #     y = alt.Y('Percent of Chromosome:Q', scale=alt.Scale(domain=[0,100])),
-    #     color = 'Protein Coding',
-    #     tooltip = alt.Tooltip(['Chromosome','Percent of Chromosome','Protein Coding'])
-    # ).properties(
-    #     width = 750
-    # )
-
-    # chart = alt.vconcat(protein_coding_bar_bp & protein_coding_bar_pct)
-
-    return genome_composition_chart.to_json()
+    return protein_coding_bar_bp.to_json()
 
 
 # Render altair chart of gene components
@@ -161,9 +141,7 @@ def gene_location(gene_name, genome=genome, chr_composition=chr_composition):
           alt.datum.gene_name == gene_name,
           alt.value('slateblue'),
             alt.value('darkorange')),
-        opacity=  alt.condition(alt.datum.gene_name == gene_name,
-          alt.value(1),
-            alt.value(0.5)),
+        opacity= alt.value(.8),
         tooltip = alt.Tooltip(['gene_name', 'chromosome' ,'start', 'end'])
     ).properties(width=750, title=f"Location of {gene_name} on {chromosome}")
 

@@ -164,13 +164,6 @@
     </div>
     <div class="row">
       <br>
-      <select name="chr_dropdown" id="chr_dropdown">
-        <option value = "Chromosome 17" selected>Chromosome 17</option>
-        <!-- {% for gene in gene_names %}
-        <option value="{{gene}}">{{gene}}</option>
-        {% endfor %} -->
-      </select>
-      <br>
       <!-- Dropdown List to Select Gene -->
       <select name="gene_dropdown" id="gene_dropdown" onchange="displayGene()">
         <option value = "TP53" selected>TP53</option>
@@ -480,7 +473,7 @@
         });
       }
 
-      // parse("/chart/gene_composition_genome/", "gene_composition_genome")
+      parse("/chart/gene_composition_genome/", "gene_composition_genome")
       parse("/chart/gene_composition_chr/", "gene_composition_chr")
 
       function displayGene() {
