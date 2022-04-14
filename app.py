@@ -81,14 +81,21 @@ def definitions():
 # Altair routes
 ##############################
 
+# Global Altair Chart Settings
+global_title_fontsize = 24
+global_chart_width = 1000
+
+
 # Render altair pie chart of gene composition by genome
 @app.route('/chart/gene_composition_genome/')
 def gene_composition_genome(genome_composition=genome_composition):
 
-    pie_chart = alt.Chart(genome_composition, title= 'Percentage of DNA in Genome that are Genes').mark_arc().encode(
+    pie_chart = alt.Chart(genome_composition, title= 'Percentage of DNA in the Genome that are Contained in Genes').mark_arc().encode(
         theta= alt.Theta('Percent of Genome:Q'),
-        color=alt.Color('Protein Coding:N', title= 'Gene Type', scale=alt.Scale(range=['#d14904','#fdc998'])),
+        color=alt.Color('Protein Coding:N', title=None, scale=alt.Scale(range=['#d14904','#fdc998'])),
         tooltip=['Protein Coding', 'Percent of Genome']
+    ).configure_title(
+        fontSize=global_title_fontsize
     )
 
     return pie_chart.to_json()
@@ -100,10 +107,12 @@ def gene_composition_chr(chr_composition=chr_composition):
     protein_coding_bar_bp = alt.Chart(chr_composition, title='Total Number of DNA Base Pairs within Each Chromosome that are in Genes').mark_bar().encode(
         x = alt.X('Chromosome:N', sort=None),
         y = alt.Y('Base Pair Length:Q', title="Total Number of DNA Base Pairs"),
-        color=alt.Color('Protein Coding:N', title= 'Gene Type', scale=alt.Scale(range=['#d14904','#fdc998'])),
+        color=alt.Color('Protein Coding:N', title=None, scale=alt.Scale(range=['#d14904','#fdc998'])),
         tooltip = alt.Tooltip(['Chromosome','Base Pair Length','Protein Coding'])
     ).properties(
-        width = 750
+        width = global_chart_width
+    ).configure_title(
+        fontSize=global_title_fontsize
     )
 
     return protein_coding_bar_bp.to_json()
@@ -146,6 +155,8 @@ def gene_location(gene_name, genome=genome):
     width=1000,
     height=75,
     title=f"Location of Gene {gene_name} and its Neighboring Genes"
+    ).configure_title(
+        fontSize=global_title_fontsize
     ).interactive()
 
     genes= list()
@@ -183,9 +194,12 @@ def gene_components(gene_name):
         y = alt.Y('feature:N', sort='-x', title='Gene Component'),
         color = alt.Color('feature:N', title='Gene Component'),
         tooltip = alt.Tooltip(['gene_name','feature','count(feature)'])
-    ).properties(width=1000, height=150)
+    ).properties(
+        width=1000,
+        height=150
+    )
 
-    gene_layout = bar & hist_features
+    gene_layout = alt.vconcat(bar & hist_features)
 
     return gene_layout.to_json()
 
@@ -224,7 +238,7 @@ def gene_expression(gene_name):
     ).properties(
         width = 1000,
         height = 75,
-        title = f"1. Transcription: Exons are the portions of a gene that get transcribed into RNA"
+        title = f"1. Transcription: Exons are the portions of a gene that get transcribed into RNA (Whitespace are Introns)"
     )
 
     # build splicing chart
@@ -237,7 +251,7 @@ def gene_expression(gene_name):
     ).properties(
         width = 1000,
         height = 75,
-        title = f"2. Splicing: Untranslated Regions (UTR) of Exons are spliced out leaving only Coding DNA Sequences (CDS)"
+        title = f"2. Splicing: Untranslated Regions (UTR) of the Exons are spliced out leaving only Coding DNA Sequences (CDS)"
     )
 
     translation = alt.Chart(translated).mark_bar().encode(
@@ -249,7 +263,7 @@ def gene_expression(gene_name):
     ).properties(
         width = 1000,
         height = 75,
-        title = f"3. Translation: The remaining CDS regions get translated into an Amino Acid Chain"
+        title = "3. Translation: The remaining CDS regions of the Exons get translated into an Amino Acid Chain"
     )
 
     chart = alt.vconcat(transcription & splicing & translation)
@@ -294,7 +308,9 @@ def protein_composition(gene_name):
         color = alt.Color('Count', scale=alt.Scale(scheme='oranges'))
     ).properties(
         width = 750,
-        title=f'Count of each Amino Acid in Protein from Gene: {gene_name}'
+        title=f'Count of Each Amino Acid in Protein Expressed by Gene: {gene_name}'
+    ).configure_title(
+        fontSize=global_title_fontsize
     )
 
     return amino_acid_composition.to_json()
