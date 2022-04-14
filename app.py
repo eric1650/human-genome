@@ -82,7 +82,7 @@ def definitions():
 ##############################
 
 # Global Altair Chart Settings
-global_title_fontsize = 24
+global_title_fontsize = 20
 global_chart_width = 1000
 
 
