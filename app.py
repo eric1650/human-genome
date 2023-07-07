@@ -81,6 +81,11 @@ def definitions():
 def about():
     return render_template('about.html')
 
+# Render visualization.html
+@app.route('/visualization')
+def about():
+    return render_template('visualization.html')
+
 
 ##############################
 # Altair routes
