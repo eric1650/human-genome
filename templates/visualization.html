@@ -14,25 +14,42 @@
     {
       "layer": [
         {
-          "data": {"name": "data-e08c2a0254895f31af2a0af0c6d6db26"},
+          "data": {"name": "data-fa09f5a410cc6bed1c43674d6e939ef3"},
           "mark": {"type": "bar", "width": 50},
           "encoding": {
             "color": {"field": "Category", "type": "nominal"},
             "tooltip": [
               {"field": "Year", "type": "quantitative"},
-              {"field": "Month", "type": "quantitative"},
+              {"field": "Month", "type": "nominal"},
               {"field": "Category", "type": "nominal"},
               {"aggregate": "sum", "field": "Amount", "type": "quantitative"},
               {"aggregate": "count", "type": "quantitative"}
             ],
-            "x": {"field": "Month", "type": "nominal"},
+            "x": {
+              "field": "Month",
+              "sort": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December"
+              ],
+              "type": "nominal"
+            },
             "y": {"aggregate": "sum", "field": "Amount", "type": "quantitative"}
           },
           "selection": {
-            "selector002": {"type": "single", "fields": ["Category"]}
+            "selector001": {"type": "single", "fields": ["Category"]}
           },
-          "title": "Spending by Month (Avg $13074)",
-          "transform": [{"filter": {"selection": "selector002"}}],
+          "title": "Spending by Month (Avg $13070)",
+          "transform": [{"filter": {"selection": "selector001"}}],
           "width": 650
         },
         {
@@ -41,7 +58,7 @@
           "encoding": {"y": {"field": "y", "type": "quantitative"}}
         },
         {
-          "data": {"name": "data-bbf5abb06a47cc28d4cf616fabca6f61"},
+          "data": {"name": "data-2c22a2f8101a939c174437552cb984bf"},
           "mark": {"type": "rule", "size": 2},
           "encoding": {
             "tooltip": [
@@ -53,18 +70,18 @@
               "type": "quantitative"
             }
           },
-          "transform": [{"filter": {"selection": "selector002"}}],
+          "transform": [{"filter": {"selection": "selector001"}}],
           "width": 650
         }
       ]
     },
     {
-      "data": {"name": "data-e08c2a0254895f31af2a0af0c6d6db26"},
+      "data": {"name": "data-fa09f5a410cc6bed1c43674d6e939ef3"},
       "mark": "bar",
       "encoding": {
         "color": {"field": "Category", "type": "nominal"},
         "opacity": {
-          "condition": {"value": 1, "selection": "selector002"},
+          "condition": {"value": 1, "selection": "selector001"},
           "value": 0.15
         },
         "tooltip": [
@@ -75,12 +92,12 @@
         "x": {"aggregate": "mean", "field": "Amount", "type": "quantitative"},
         "y": {"field": "Category", "sort": "-x", "type": "nominal"}
       },
-      "selection": {"selector002": {"type": "single", "fields": ["Category"]}},
+      "selection": {"selector001": {"type": "single", "fields": ["Category"]}},
       "title": "Average Monthly Spend by Category",
       "width": 650
     },
     {
-      "data": {"name": "data-fc3a2d8bb02b5734e0219e36611dfafb"},
+      "data": {"name": "data-13f37ab9bf00f16f643573668578073f"},
       "mark": "bar",
       "encoding": {
         "color": {"field": "Category", "type": "nominal"},
@@ -98,459 +115,670 @@
           "type": "nominal"
         }
       },
-      "selection": {"selector002": {"type": "single", "fields": ["Category"]}},
+      "selection": {"selector001": {"type": "single", "fields": ["Category"]}},
       "title": "Spend by Description (Sum of past 7 Months)",
-      "transform": [{"filter": {"selection": "selector002"}}],
+      "transform": [{"filter": {"selection": "selector001"}}],
       "width": 650
     }
   ],
   "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json",
   "datasets": {
-    "data-e08c2a0254895f31af2a0af0c6d6db26": [
+    "data-fa09f5a410cc6bed1c43674d6e939ef3": [
       {
         "Year": 2023,
-        "Month": 1,
-        "Category": "Cable/Satellite",
-        "Amount": 127.04
-      },
-      {"Year": 2023, "Month": 1, "Category": "Charitable Giving", "Amount": 50},
-      {
-        "Year": 2023,
-        "Month": 1,
-        "Category": "Clothing/Shoes",
-        "Amount": 701.14
-      },
-      {"Year": 2023, "Month": 1, "Category": "Electronics", "Amount": 11.49},
-      {"Year": 2023, "Month": 1, "Category": "Entertainment", "Amount": 9.99},
-      {
-        "Year": 2023,
-        "Month": 1,
-        "Category": "General Merchandise",
-        "Amount": 2232.96
-      },
-      {"Year": 2023, "Month": 1, "Category": "Gifts", "Amount": 24.93},
-      {"Year": 2023, "Month": 1, "Category": "Groceries", "Amount": 655.62},
-      {
-        "Year": 2023,
-        "Month": 1,
-        "Category": "Healthcare/Medical",
-        "Amount": 704.18
-      },
-      {
-        "Year": 2023,
-        "Month": 1,
-        "Category": "Home Improvement",
-        "Amount": 2529.76
-      },
-      {"Year": 2023, "Month": 1, "Category": "Personal Care", "Amount": 896.05},
-      {
-        "Year": 2023,
-        "Month": 1,
-        "Category": "Postage & Shipping",
-        "Amount": 82.99
-      },
-      {"Year": 2023, "Month": 1, "Category": "Restaurants", "Amount": 379.55},
-      {"Year": 2023, "Month": 1, "Category": "Telephone", "Amount": 132.27},
-      {"Year": 2023, "Month": 1, "Category": "Travel", "Amount": 349.02},
-      {"Year": 2023, "Month": 1, "Category": "Utilities", "Amount": 268.88},
-      {"Year": 2023, "Month": 2, "Category": "Automotive", "Amount": 294},
-      {
-        "Year": 2023,
-        "Month": 2,
-        "Category": "Cable/Satellite",
-        "Amount": 127.05
-      },
-      {"Year": 2023, "Month": 2, "Category": "Checks", "Amount": 150},
-      {
-        "Year": 2023,
-        "Month": 2,
-        "Category": "Clothing/Shoes",
-        "Amount": 1867.02
-      },
-      {
-        "Year": 2023,
-        "Month": 2,
-        "Category": "Dues & Subscriptions",
-        "Amount": 6.04
-      },
-      {"Year": 2023, "Month": 2, "Category": "Electronics", "Amount": 27.48},
-      {"Year": 2023, "Month": 2, "Category": "Entertainment", "Amount": 19.98},
-      {"Year": 2023, "Month": 2, "Category": "Gasoline/Fuel", "Amount": 110.1},
-      {
-        "Year": 2023,
-        "Month": 2,
-        "Category": "General Merchandise",
-        "Amount": 832.82
-      },
-      {"Year": 2023, "Month": 2, "Category": "Groceries", "Amount": 192.11},
-      {
-        "Year": 2023,
-        "Month": 2,
-        "Category": "Healthcare/Medical",
-        "Amount": 941.11
-      },
-      {"Year": 2023, "Month": 2, "Category": "Hobbies", "Amount": 125},
-      {
-        "Year": 2023,
-        "Month": 2,
-        "Category": "Home Improvement",
-        "Amount": 6833.11
-      },
-      {"Year": 2023, "Month": 2, "Category": "Online Services", "Amount": 2.14},
-      {"Year": 2023, "Month": 2, "Category": "Other Expenses", "Amount": 63.46},
-      {"Year": 2023, "Month": 2, "Category": "Personal Care", "Amount": 943.09},
-      {
-        "Year": 2023,
-        "Month": 2,
-        "Category": "Restaurants",
-        "Amount": 561.3100000000001
-      },
-      {"Year": 2023, "Month": 2, "Category": "Telephone", "Amount": 132.27},
-      {"Year": 2023, "Month": 2, "Category": "Travel", "Amount": 475.39},
-      {"Year": 2023, "Month": 2, "Category": "Utilities", "Amount": 107.36},
-      {
-        "Year": 2023,
-        "Month": 3,
-        "Category": "Cable/Satellite",
-        "Amount": 131.92000000000002
-      },
-      {"Year": 2023, "Month": 3, "Category": "Charitable Giving", "Amount": 24},
-      {
-        "Year": 2023,
-        "Month": 3,
-        "Category": "Clothing/Shoes",
-        "Amount": 3741.03
-      },
-      {
-        "Year": 2023,
-        "Month": 3,
-        "Category": "Dues & Subscriptions",
-        "Amount": 115.87
-      },
-      {"Year": 2023, "Month": 3, "Category": "Electronics", "Amount": 111.4},
-      {"Year": 2023, "Month": 3, "Category": "Entertainment", "Amount": 150.21},
-      {"Year": 2023, "Month": 3, "Category": "Gasoline/Fuel", "Amount": 152.18},
-      {
-        "Year": 2023,
-        "Month": 3,
-        "Category": "General Merchandise",
-        "Amount": 3377.84
-      },
-      {"Year": 2023, "Month": 3, "Category": "Groceries", "Amount": 1738.4},
-      {
-        "Year": 2023,
-        "Month": 3,
-        "Category": "Healthcare/Medical",
-        "Amount": 2225.09
-      },
-      {
-        "Year": 2023,
-        "Month": 3,
-        "Category": "Hobbies",
-        "Amount": 176.54000000000002
-      },
-      {"Year": 2023, "Month": 3, "Category": "Insurance", "Amount": 119.98},
-      {"Year": 2023, "Month": 3, "Category": "Online Services", "Amount": 2.14},
-      {
-        "Year": 2023,
-        "Month": 3,
-        "Category": "Other Expenses",
-        "Amount": 101.94
-      },
-      {
-        "Year": 2023,
-        "Month": 3,
-        "Category": "Personal Care",
-        "Amount": 1684.97
-      },
-      {"Year": 2023, "Month": 3, "Category": "Restaurants", "Amount": 2069.91},
-      {
-        "Year": 2023,
-        "Month": 3,
-        "Category": "Service Charges/Fees",
-        "Amount": 1.35
-      },
-      {"Year": 2023, "Month": 3, "Category": "Telephone", "Amount": 243.46},
-      {"Year": 2023, "Month": 3, "Category": "Travel", "Amount": 355.75},
-      {"Year": 2023, "Month": 3, "Category": "Utilities", "Amount": 543.43},
-      {
-        "Year": 2023,
-        "Month": 4,
+        "Month": "April",
         "Category": "Cable/Satellite",
         "Amount": 142.99
       },
-      {"Year": 2023, "Month": 4, "Category": "Charitable Giving", "Amount": 25},
       {
         "Year": 2023,
-        "Month": 4,
+        "Month": "April",
+        "Category": "Charitable Giving",
+        "Amount": 25
+      },
+      {
+        "Year": 2023,
+        "Month": "April",
         "Category": "Clothing/Shoes",
         "Amount": 90.83999999999986
       },
       {
         "Year": 2023,
-        "Month": 4,
+        "Month": "April",
         "Category": "Dues & Subscriptions",
         "Amount": 87.5
       },
-      {"Year": 2023, "Month": 4, "Category": "Education", "Amount": 7},
-      {"Year": 2023, "Month": 4, "Category": "Electronics", "Amount": 58.44},
-      {"Year": 2023, "Month": 4, "Category": "Entertainment", "Amount": 181.02},
-      {"Year": 2023, "Month": 4, "Category": "Gasoline/Fuel", "Amount": 56.2},
+      {"Year": 2023, "Month": "April", "Category": "Education", "Amount": 7},
       {
         "Year": 2023,
-        "Month": 4,
+        "Month": "April",
+        "Category": "Electronics",
+        "Amount": 58.44
+      },
+      {
+        "Year": 2023,
+        "Month": "April",
+        "Category": "Entertainment",
+        "Amount": 181.02
+      },
+      {
+        "Year": 2023,
+        "Month": "April",
+        "Category": "Gasoline/Fuel",
+        "Amount": 56.2
+      },
+      {
+        "Year": 2023,
+        "Month": "April",
         "Category": "General Merchandise",
         "Amount": 1175.8400000000001
       },
-      {"Year": 2023, "Month": 4, "Category": "Groceries", "Amount": 1325.78},
       {
         "Year": 2023,
-        "Month": 4,
+        "Month": "April",
+        "Category": "Groceries",
+        "Amount": 1325.78
+      },
+      {
+        "Year": 2023,
+        "Month": "April",
         "Category": "Healthcare/Medical",
         "Amount": 759.7
       },
-      {"Year": 2023, "Month": 4, "Category": "Insurance", "Amount": 59.99},
-      {"Year": 2023, "Month": 4, "Category": "Online Services", "Amount": 2.14},
-      {"Year": 2023, "Month": 4, "Category": "Other Expenses", "Amount": 300.6},
-      {"Year": 2023, "Month": 4, "Category": "Personal Care", "Amount": 1991.3},
-      {"Year": 2023, "Month": 4, "Category": "Restaurants", "Amount": 1853.03},
       {
         "Year": 2023,
-        "Month": 4,
+        "Month": "April",
+        "Category": "Insurance",
+        "Amount": 59.99
+      },
+      {
+        "Year": 2023,
+        "Month": "April",
+        "Category": "Online Services",
+        "Amount": 2.14
+      },
+      {
+        "Year": 2023,
+        "Month": "April",
+        "Category": "Other Expenses",
+        "Amount": 300.6
+      },
+      {
+        "Year": 2023,
+        "Month": "April",
+        "Category": "Personal Care",
+        "Amount": 2099.3
+      },
+      {
+        "Year": 2023,
+        "Month": "April",
+        "Category": "Restaurants",
+        "Amount": 1745.03
+      },
+      {
+        "Year": 2023,
+        "Month": "April",
         "Category": "Service Charges/Fees",
         "Amount": 15.51
       },
-      {"Year": 2023, "Month": 4, "Category": "Telephone", "Amount": 244.07},
-      {"Year": 2023, "Month": 4, "Category": "Travel", "Amount": 1406.45},
-      {"Year": 2023, "Month": 4, "Category": "Utilities", "Amount": 750.65},
-      {"Year": 2023, "Month": 5, "Category": "Automotive", "Amount": 415},
       {
         "Year": 2023,
-        "Month": 5,
-        "Category": "Cable/Satellite",
-        "Amount": 142.59
-      },
-      {"Year": 2023, "Month": 5, "Category": "Checks", "Amount": 705},
-      {
-        "Year": 2023,
-        "Month": 5,
-        "Category": "Clothing/Shoes",
-        "Amount": 1559.21
-      },
-      {
-        "Year": 2023,
-        "Month": 5,
-        "Category": "Dues & Subscriptions",
-        "Amount": 290.73
-      },
-      {"Year": 2023, "Month": 5, "Category": "Electronics", "Amount": 210.05},
-      {"Year": 2023, "Month": 5, "Category": "Entertainment", "Amount": 469.61},
-      {"Year": 2023, "Month": 5, "Category": "Gasoline/Fuel", "Amount": 5},
-      {
-        "Year": 2023,
-        "Month": 5,
-        "Category": "General Merchandise",
-        "Amount": 5953.08
-      },
-      {"Year": 2023, "Month": 5, "Category": "Gifts", "Amount": 99.4},
-      {"Year": 2023, "Month": 5, "Category": "Groceries", "Amount": 1940.66},
-      {
-        "Year": 2023,
-        "Month": 5,
-        "Category": "Healthcare/Medical",
-        "Amount": 2400.44
-      },
-      {"Year": 2023, "Month": 5, "Category": "Insurance", "Amount": 81.42},
-      {"Year": 2023, "Month": 5, "Category": "Online Services", "Amount": 2.14},
-      {"Year": 2023, "Month": 5, "Category": "Other Expenses", "Amount": 25},
-      {
-        "Year": 2023,
-        "Month": 5,
-        "Category": "Personal Care",
-        "Amount": 2139.65
-      },
-      {"Year": 2023, "Month": 5, "Category": "Pets/Pet Care", "Amount": 204.31},
-      {
-        "Year": 2023,
-        "Month": 5,
-        "Category": "Postage & Shipping",
-        "Amount": 16.17
-      },
-      {"Year": 2023, "Month": 5, "Category": "Restaurants", "Amount": 2309.07},
-      {
-        "Year": 2023,
-        "Month": 5,
-        "Category": "Service Charges/Fees",
-        "Amount": -127.19999999999999
-      },
-      {
-        "Year": 2023,
-        "Month": 5,
+        "Month": "April",
         "Category": "Telephone",
-        "Amount": 244.85000000000002
+        "Amount": 244.07
       },
-      {"Year": 2023, "Month": 5, "Category": "Travel", "Amount": 1785.49},
+      {"Year": 2023, "Month": "April", "Category": "Travel", "Amount": 1406.45},
       {
         "Year": 2023,
-        "Month": 5,
+        "Month": "April",
         "Category": "Utilities",
-        "Amount": 442.40999999999997
+        "Amount": 750.65
       },
       {
         "Year": 2023,
-        "Month": 6,
+        "Month": "February",
+        "Category": "Automotive",
+        "Amount": 294
+      },
+      {
+        "Year": 2023,
+        "Month": "February",
+        "Category": "Cable/Satellite",
+        "Amount": 127.05
+      },
+      {"Year": 2023, "Month": "February", "Category": "Checks", "Amount": 150},
+      {
+        "Year": 2023,
+        "Month": "February",
+        "Category": "Clothing/Shoes",
+        "Amount": 1867.02
+      },
+      {
+        "Year": 2023,
+        "Month": "February",
+        "Category": "Dues & Subscriptions",
+        "Amount": 6.04
+      },
+      {
+        "Year": 2023,
+        "Month": "February",
+        "Category": "Electronics",
+        "Amount": 27.48
+      },
+      {
+        "Year": 2023,
+        "Month": "February",
+        "Category": "Entertainment",
+        "Amount": 19.98
+      },
+      {
+        "Year": 2023,
+        "Month": "February",
+        "Category": "Gasoline/Fuel",
+        "Amount": 110.1
+      },
+      {
+        "Year": 2023,
+        "Month": "February",
+        "Category": "General Merchandise",
+        "Amount": 832.82
+      },
+      {
+        "Year": 2023,
+        "Month": "February",
+        "Category": "Groceries",
+        "Amount": 192.11
+      },
+      {
+        "Year": 2023,
+        "Month": "February",
+        "Category": "Healthcare/Medical",
+        "Amount": 941.11
+      },
+      {"Year": 2023, "Month": "February", "Category": "Hobbies", "Amount": 125},
+      {
+        "Year": 2023,
+        "Month": "February",
+        "Category": "Home Improvement",
+        "Amount": 6833.11
+      },
+      {
+        "Year": 2023,
+        "Month": "February",
+        "Category": "Online Services",
+        "Amount": 2.14
+      },
+      {
+        "Year": 2023,
+        "Month": "February",
+        "Category": "Other Expenses",
+        "Amount": 63.46
+      },
+      {
+        "Year": 2023,
+        "Month": "February",
+        "Category": "Personal Care",
+        "Amount": 943.09
+      },
+      {
+        "Year": 2023,
+        "Month": "February",
+        "Category": "Restaurants",
+        "Amount": 561.3100000000001
+      },
+      {
+        "Year": 2023,
+        "Month": "February",
+        "Category": "Telephone",
+        "Amount": 132.27
+      },
+      {
+        "Year": 2023,
+        "Month": "February",
+        "Category": "Travel",
+        "Amount": 475.39
+      },
+      {
+        "Year": 2023,
+        "Month": "February",
+        "Category": "Utilities",
+        "Amount": 107.36
+      },
+      {
+        "Year": 2023,
+        "Month": "January",
+        "Category": "Cable/Satellite",
+        "Amount": 127.04
+      },
+      {
+        "Year": 2023,
+        "Month": "January",
+        "Category": "Charitable Giving",
+        "Amount": 50
+      },
+      {
+        "Year": 2023,
+        "Month": "January",
+        "Category": "Clothing/Shoes",
+        "Amount": 701.14
+      },
+      {
+        "Year": 2023,
+        "Month": "January",
+        "Category": "Electronics",
+        "Amount": 11.49
+      },
+      {
+        "Year": 2023,
+        "Month": "January",
+        "Category": "Entertainment",
+        "Amount": 9.99
+      },
+      {
+        "Year": 2023,
+        "Month": "January",
+        "Category": "General Merchandise",
+        "Amount": 2232.96
+      },
+      {"Year": 2023, "Month": "January", "Category": "Gifts", "Amount": 24.93},
+      {
+        "Year": 2023,
+        "Month": "January",
+        "Category": "Groceries",
+        "Amount": 655.62
+      },
+      {
+        "Year": 2023,
+        "Month": "January",
+        "Category": "Healthcare/Medical",
+        "Amount": 704.18
+      },
+      {
+        "Year": 2023,
+        "Month": "January",
+        "Category": "Home Improvement",
+        "Amount": 2529.76
+      },
+      {
+        "Year": 2023,
+        "Month": "January",
+        "Category": "Personal Care",
+        "Amount": 896.05
+      },
+      {
+        "Year": 2023,
+        "Month": "January",
+        "Category": "Postage & Shipping",
+        "Amount": 82.99
+      },
+      {
+        "Year": 2023,
+        "Month": "January",
+        "Category": "Restaurants",
+        "Amount": 379.55
+      },
+      {
+        "Year": 2023,
+        "Month": "January",
+        "Category": "Telephone",
+        "Amount": 132.27
+      },
+      {
+        "Year": 2023,
+        "Month": "January",
+        "Category": "Travel",
+        "Amount": 349.02
+      },
+      {
+        "Year": 2023,
+        "Month": "January",
+        "Category": "Utilities",
+        "Amount": 268.88
+      },
+      {
+        "Year": 2023,
+        "Month": "June",
         "Category": "Cable/Satellite",
         "Amount": 97.59
       },
       {
         "Year": 2023,
-        "Month": 6,
+        "Month": "June",
         "Category": "Clothing/Shoes",
         "Amount": -110.8
       },
-      {"Year": 2023, "Month": 6, "Category": "Electronics", "Amount": 46.45},
-      {"Year": 2023, "Month": 6, "Category": "Entertainment", "Amount": 247.09},
       {
         "Year": 2023,
-        "Month": 6,
+        "Month": "June",
+        "Category": "Electronics",
+        "Amount": 46.45
+      },
+      {
+        "Year": 2023,
+        "Month": "June",
+        "Category": "Entertainment",
+        "Amount": 247.09
+      },
+      {
+        "Year": 2023,
+        "Month": "June",
         "Category": "Gasoline/Fuel",
         "Amount": 121.02000000000001
       },
       {
         "Year": 2023,
-        "Month": 6,
+        "Month": "June",
         "Category": "General Merchandise",
         "Amount": 318.98
       },
-      {"Year": 2023, "Month": 6, "Category": "Gifts", "Amount": 384.18},
-      {"Year": 2023, "Month": 6, "Category": "Groceries", "Amount": 691.52},
+      {"Year": 2023, "Month": "June", "Category": "Gifts", "Amount": 384.18},
       {
         "Year": 2023,
-        "Month": 6,
+        "Month": "June",
+        "Category": "Groceries",
+        "Amount": 691.52
+      },
+      {
+        "Year": 2023,
+        "Month": "June",
         "Category": "Healthcare/Medical",
         "Amount": 298.69
       },
-      {"Year": 2023, "Month": 6, "Category": "Insurance", "Amount": 81.42},
+      {"Year": 2023, "Month": "June", "Category": "Insurance", "Amount": 81.42},
       {
         "Year": 2023,
-        "Month": 6,
+        "Month": "June",
         "Category": "Office Supplies",
         "Amount": 15.43
       },
       {
         "Year": 2023,
-        "Month": 6,
+        "Month": "June",
         "Category": "Online Services",
         "Amount": 32.14
       },
       {
         "Year": 2023,
-        "Month": 6,
+        "Month": "June",
         "Category": "Personal Care",
-        "Amount": 1026.63
+        "Amount": 1139.13
       },
-      {"Year": 2023, "Month": 6, "Category": "Pets/Pet Care", "Amount": 710.63},
       {
         "Year": 2023,
-        "Month": 6,
+        "Month": "June",
+        "Category": "Pets/Pet Care",
+        "Amount": 710.63
+      },
+      {
+        "Year": 2023,
+        "Month": "June",
         "Category": "Postage & Shipping",
         "Amount": 11.5
       },
-      {"Year": 2023, "Month": 6, "Category": "Restaurants", "Amount": 563.36},
       {
         "Year": 2023,
-        "Month": 6,
+        "Month": "June",
+        "Category": "Restaurants",
+        "Amount": 450.86
+      },
+      {
+        "Year": 2023,
+        "Month": "June",
         "Category": "Service Charges/Fees",
         "Amount": 93.27
       },
-      {"Year": 2023, "Month": 6, "Category": "Telephone", "Amount": 277.97},
       {
         "Year": 2023,
-        "Month": 6,
+        "Month": "June",
+        "Category": "Telephone",
+        "Amount": 277.97
+      },
+      {
+        "Year": 2023,
+        "Month": "June",
         "Category": "Travel",
         "Amount": 1231.2900000000002
       },
-      {"Year": 2023, "Month": 6, "Category": "Utilities", "Amount": 422.13},
-      {"Year": 2023, "Month": 1, "Category": "Automotive", "Amount": 0},
-      {"Year": 2023, "Month": 1, "Category": "Checks", "Amount": 0},
       {
         "Year": 2023,
-        "Month": 1,
+        "Month": "June",
+        "Category": "Utilities",
+        "Amount": 422.13
+      },
+      {
+        "Year": 2023,
+        "Month": "March",
+        "Category": "Cable/Satellite",
+        "Amount": 131.92000000000002
+      },
+      {
+        "Year": 2023,
+        "Month": "March",
+        "Category": "Charitable Giving",
+        "Amount": 24
+      },
+      {
+        "Year": 2023,
+        "Month": "March",
+        "Category": "Clothing/Shoes",
+        "Amount": 3741.03
+      },
+      {
+        "Year": 2023,
+        "Month": "March",
         "Category": "Dues & Subscriptions",
-        "Amount": 0
+        "Amount": 115.87
       },
-      {"Year": 2023, "Month": 1, "Category": "Gasoline/Fuel", "Amount": 0},
-      {"Year": 2023, "Month": 1, "Category": "Hobbies", "Amount": 0},
-      {"Year": 2023, "Month": 1, "Category": "Online Services", "Amount": 0},
-      {"Year": 2023, "Month": 1, "Category": "Other Expenses", "Amount": 0},
-      {"Year": 2023, "Month": 1, "Category": "Insurance", "Amount": 0},
       {
         "Year": 2023,
-        "Month": 1,
+        "Month": "March",
+        "Category": "Electronics",
+        "Amount": 111.4
+      },
+      {
+        "Year": 2023,
+        "Month": "March",
+        "Category": "Entertainment",
+        "Amount": 150.21
+      },
+      {
+        "Year": 2023,
+        "Month": "March",
+        "Category": "Gasoline/Fuel",
+        "Amount": 152.18
+      },
+      {
+        "Year": 2023,
+        "Month": "March",
+        "Category": "General Merchandise",
+        "Amount": 3377.84
+      },
+      {
+        "Year": 2023,
+        "Month": "March",
+        "Category": "Groceries",
+        "Amount": 1738.4
+      },
+      {
+        "Year": 2023,
+        "Month": "March",
+        "Category": "Healthcare/Medical",
+        "Amount": 2225.09
+      },
+      {
+        "Year": 2023,
+        "Month": "March",
+        "Category": "Hobbies",
+        "Amount": 176.54000000000002
+      },
+      {
+        "Year": 2023,
+        "Month": "March",
+        "Category": "Insurance",
+        "Amount": 119.98
+      },
+      {
+        "Year": 2023,
+        "Month": "March",
+        "Category": "Online Services",
+        "Amount": 2.14
+      },
+      {
+        "Year": 2023,
+        "Month": "March",
+        "Category": "Other Expenses",
+        "Amount": 101.94
+      },
+      {
+        "Year": 2023,
+        "Month": "March",
+        "Category": "Personal Care",
+        "Amount": 2008.97
+      },
+      {
+        "Year": 2023,
+        "Month": "March",
+        "Category": "Restaurants",
+        "Amount": 1745.9099999999999
+      },
+      {
+        "Year": 2023,
+        "Month": "March",
         "Category": "Service Charges/Fees",
-        "Amount": 0
+        "Amount": 1.35
       },
-      {"Year": 2023, "Month": 1, "Category": "Education", "Amount": 0},
-      {"Year": 2023, "Month": 1, "Category": "Pets/Pet Care", "Amount": 0},
-      {"Year": 2023, "Month": 1, "Category": "Office Supplies", "Amount": 0},
-      {"Year": 2023, "Month": 2, "Category": "Charitable Giving", "Amount": 0},
-      {"Year": 2023, "Month": 2, "Category": "Gifts", "Amount": 0},
-      {"Year": 2023, "Month": 2, "Category": "Postage & Shipping", "Amount": 0},
-      {"Year": 2023, "Month": 2, "Category": "Insurance", "Amount": 0},
       {
         "Year": 2023,
-        "Month": 2,
-        "Category": "Service Charges/Fees",
-        "Amount": 0
+        "Month": "March",
+        "Category": "Telephone",
+        "Amount": 243.46
       },
-      {"Year": 2023, "Month": 2, "Category": "Education", "Amount": 0},
-      {"Year": 2023, "Month": 2, "Category": "Pets/Pet Care", "Amount": 0},
-      {"Year": 2023, "Month": 2, "Category": "Office Supplies", "Amount": 0},
-      {"Year": 2023, "Month": 3, "Category": "Gifts", "Amount": 0},
-      {"Year": 2023, "Month": 3, "Category": "Home Improvement", "Amount": 0},
-      {"Year": 2023, "Month": 3, "Category": "Postage & Shipping", "Amount": 0},
-      {"Year": 2023, "Month": 3, "Category": "Automotive", "Amount": 0},
-      {"Year": 2023, "Month": 3, "Category": "Checks", "Amount": 0},
-      {"Year": 2023, "Month": 3, "Category": "Education", "Amount": 0},
-      {"Year": 2023, "Month": 3, "Category": "Pets/Pet Care", "Amount": 0},
-      {"Year": 2023, "Month": 3, "Category": "Office Supplies", "Amount": 0},
-      {"Year": 2023, "Month": 4, "Category": "Gifts", "Amount": 0},
-      {"Year": 2023, "Month": 4, "Category": "Home Improvement", "Amount": 0},
-      {"Year": 2023, "Month": 4, "Category": "Postage & Shipping", "Amount": 0},
-      {"Year": 2023, "Month": 4, "Category": "Automotive", "Amount": 0},
-      {"Year": 2023, "Month": 4, "Category": "Checks", "Amount": 0},
-      {"Year": 2023, "Month": 4, "Category": "Hobbies", "Amount": 0},
-      {"Year": 2023, "Month": 4, "Category": "Pets/Pet Care", "Amount": 0},
-      {"Year": 2023, "Month": 4, "Category": "Office Supplies", "Amount": 0},
-      {"Year": 2023, "Month": 5, "Category": "Charitable Giving", "Amount": 0},
-      {"Year": 2023, "Month": 5, "Category": "Home Improvement", "Amount": 0},
-      {"Year": 2023, "Month": 5, "Category": "Hobbies", "Amount": 0},
-      {"Year": 2023, "Month": 5, "Category": "Education", "Amount": 0},
-      {"Year": 2023, "Month": 5, "Category": "Office Supplies", "Amount": 0},
-      {"Year": 2023, "Month": 6, "Category": "Charitable Giving", "Amount": 0},
-      {"Year": 2023, "Month": 6, "Category": "Home Improvement", "Amount": 0},
-      {"Year": 2023, "Month": 6, "Category": "Automotive", "Amount": 0},
-      {"Year": 2023, "Month": 6, "Category": "Checks", "Amount": 0},
+      {"Year": 2023, "Month": "March", "Category": "Travel", "Amount": 355.75},
       {
         "Year": 2023,
-        "Month": 6,
+        "Month": "March",
+        "Category": "Utilities",
+        "Amount": 543.43
+      },
+      {"Year": 2023, "Month": "May", "Category": "Automotive", "Amount": 415},
+      {
+        "Year": 2023,
+        "Month": "May",
+        "Category": "Cable/Satellite",
+        "Amount": 142.59
+      },
+      {"Year": 2023, "Month": "May", "Category": "Checks", "Amount": 705},
+      {
+        "Year": 2023,
+        "Month": "May",
+        "Category": "Clothing/Shoes",
+        "Amount": 1559.21
+      },
+      {
+        "Year": 2023,
+        "Month": "May",
         "Category": "Dues & Subscriptions",
+        "Amount": 290.73
+      },
+      {
+        "Year": 2023,
+        "Month": "May",
+        "Category": "Electronics",
+        "Amount": 210.05
+      },
+      {
+        "Year": 2023,
+        "Month": "May",
+        "Category": "Entertainment",
+        "Amount": 469.61
+      },
+      {"Year": 2023, "Month": "May", "Category": "Gasoline/Fuel", "Amount": 5},
+      {
+        "Year": 2023,
+        "Month": "May",
+        "Category": "General Merchandise",
+        "Amount": 5953.08
+      },
+      {"Year": 2023, "Month": "May", "Category": "Gifts", "Amount": 99.4},
+      {
+        "Year": 2023,
+        "Month": "May",
+        "Category": "Groceries",
+        "Amount": 1940.66
+      },
+      {
+        "Year": 2023,
+        "Month": "May",
+        "Category": "Healthcare/Medical",
+        "Amount": 2400.44
+      },
+      {"Year": 2023, "Month": "May", "Category": "Insurance", "Amount": 81.42},
+      {
+        "Year": 2023,
+        "Month": "May",
+        "Category": "Online Services",
+        "Amount": 2.14
+      },
+      {
+        "Year": 2023,
+        "Month": "May",
+        "Category": "Office Supplies",
         "Amount": 0
       },
-      {"Year": 2023, "Month": 6, "Category": "Hobbies", "Amount": 0},
-      {"Year": 2023, "Month": 6, "Category": "Other Expenses", "Amount": 0},
-      {"Year": 2023, "Month": 6, "Category": "Education", "Amount": 0}
+      {
+        "Year": 2023,
+        "Month": "May",
+        "Category": "Personal Care",
+        "Amount": 2139.65
+      },
+      {
+        "Year": 2023,
+        "Month": "May",
+        "Category": "Pets/Pet Care",
+        "Amount": 204.31
+      },
+      {
+        "Year": 2023,
+        "Month": "May",
+        "Category": "Postage & Shipping",
+        "Amount": 16.17
+      },
+      {
+        "Year": 2023,
+        "Month": "May",
+        "Category": "Restaurants",
+        "Amount": 2309.07
+      },
+      {
+        "Year": 2023,
+        "Month": "May",
+        "Category": "Service Charges/Fees",
+        "Amount": -127.19999999999999
+      },
+      {
+        "Year": 2023,
+        "Month": "May",
+        "Category": "Telephone",
+        "Amount": 244.85000000000002
+      },
+      {"Year": 2023, "Month": "May", "Category": "Travel", "Amount": 1785.49},
+      {
+        "Year": 2023,
+        "Month": "May",
+        "Category": "Utilities",
+        "Amount": 442.40999999999997
+      }
     ],
     "data-06fd9f850666401b4599de5588b60692": [{"y": 0}],
-    "data-bbf5abb06a47cc28d4cf616fabca6f61": [
-      {"Month": 1, "Amount": 9155.87},
-      {"Month": 2, "Amount": 13810.84},
-      {"Month": 3, "Amount": 17067.41},
-      {"Month": 4, "Amount": 10534.05},
-      {"Month": 5, "Amount": 21314.08},
-      {"Month": 6, "Amount": 6560.490000000001}
+    "data-2c22a2f8101a939c174437552cb984bf": [
+      {"Month": "April", "Amount": 10534.05},
+      {"Month": "February", "Amount": 13810.84},
+      {"Month": "January", "Amount": 9155.87},
+      {"Month": "June", "Amount": 6560.490000000001},
+      {"Month": "March", "Amount": 17067.41},
+      {"Month": "May", "Amount": 21289.08}
     ],
-    "data-fc3a2d8bb02b5734e0219e36611dfafb": [
+    "data-13f37ab9bf00f16f643573668578073f": [
       {
         "Date": "2023-07-07T00:00:00",
         "Account": "Joint Delta AmEx - 5003",
@@ -559,7 +787,7 @@
         "Tags": null,
         "Amount": 35.3,
         "Year": 2023,
-        "Month": 7
+        "Month": "July"
       },
       {
         "Date": "2023-07-06T00:00:00",
@@ -569,7 +797,7 @@
         "Tags": null,
         "Amount": 5.6,
         "Year": 2023,
-        "Month": 7
+        "Month": "July"
       },
       {
         "Date": "2023-07-06T00:00:00",
@@ -579,7 +807,7 @@
         "Tags": null,
         "Amount": 9.83,
         "Year": 2023,
-        "Month": 7
+        "Month": "July"
       },
       {
         "Date": "2023-07-06T00:00:00",
@@ -589,7 +817,7 @@
         "Tags": null,
         "Amount": 9.99,
         "Year": 2023,
-        "Month": 7
+        "Month": "July"
       },
       {
         "Date": "2023-07-06T00:00:00",
@@ -599,7 +827,7 @@
         "Tags": null,
         "Amount": 14.95,
         "Year": 2023,
-        "Month": 7
+        "Month": "July"
       },
       {
         "Date": "2023-07-05T00:00:00",
@@ -609,7 +837,7 @@
         "Tags": null,
         "Amount": 63.22,
         "Year": 2023,
-        "Month": 7
+        "Month": "July"
       },
       {
         "Date": "2023-07-05T00:00:00",
@@ -619,7 +847,7 @@
         "Tags": null,
         "Amount": 67.87,
         "Year": 2023,
-        "Month": 7
+        "Month": "July"
       },
       {
         "Date": "2023-07-05T00:00:00",
@@ -629,7 +857,7 @@
         "Tags": null,
         "Amount": 4.36,
         "Year": 2023,
-        "Month": 7
+        "Month": "July"
       },
       {
         "Date": "2023-07-04T00:00:00",
@@ -639,7 +867,7 @@
         "Tags": null,
         "Amount": 1.25,
         "Year": 2023,
-        "Month": 7
+        "Month": "July"
       },
       {
         "Date": "2023-07-04T00:00:00",
@@ -649,7 +877,7 @@
         "Tags": null,
         "Amount": 121,
         "Year": 2023,
-        "Month": 7
+        "Month": "July"
       },
       {
         "Date": "2023-07-04T00:00:00",
@@ -659,7 +887,7 @@
         "Tags": null,
         "Amount": 162.94,
         "Year": 2023,
-        "Month": 7
+        "Month": "July"
       },
       {
         "Date": "2023-07-04T00:00:00",
@@ -669,7 +897,7 @@
         "Tags": null,
         "Amount": 9.97,
         "Year": 2023,
-        "Month": 7
+        "Month": "July"
       },
       {
         "Date": "2023-07-03T00:00:00",
@@ -679,7 +907,7 @@
         "Tags": null,
         "Amount": 4.95,
         "Year": 2023,
-        "Month": 7
+        "Month": "July"
       },
       {
         "Date": "2023-07-03T00:00:00",
@@ -689,7 +917,7 @@
         "Tags": null,
         "Amount": 11.49,
         "Year": 2023,
-        "Month": 7
+        "Month": "July"
       },
       {
         "Date": "2023-07-03T00:00:00",
@@ -699,7 +927,7 @@
         "Tags": null,
         "Amount": 156.1,
         "Year": 2023,
-        "Month": 7
+        "Month": "July"
       },
       {
         "Date": "2023-07-03T00:00:00",
@@ -709,7 +937,7 @@
         "Tags": null,
         "Amount": 54.62,
         "Year": 2023,
-        "Month": 7
+        "Month": "July"
       },
       {
         "Date": "2023-07-03T00:00:00",
@@ -719,7 +947,7 @@
         "Tags": null,
         "Amount": 179.69,
         "Year": 2023,
-        "Month": 7
+        "Month": "July"
       },
       {
         "Date": "2023-07-03T00:00:00",
@@ -729,7 +957,7 @@
         "Tags": null,
         "Amount": 105,
         "Year": 2023,
-        "Month": 7
+        "Month": "July"
       },
       {
         "Date": "2023-07-02T00:00:00",
@@ -739,7 +967,7 @@
         "Tags": null,
         "Amount": 113.26,
         "Year": 2023,
-        "Month": 7
+        "Month": "July"
       },
       {
         "Date": "2023-07-01T00:00:00",
@@ -749,7 +977,7 @@
         "Tags": null,
         "Amount": 238.05,
         "Year": 2023,
-        "Month": 7
+        "Month": "July"
       },
       {
         "Date": "2023-07-01T00:00:00",
@@ -759,7 +987,7 @@
         "Tags": null,
         "Amount": 1.5,
         "Year": 2023,
-        "Month": 7
+        "Month": "July"
       },
       {
         "Date": "2023-07-01T00:00:00",
@@ -769,7 +997,7 @@
         "Tags": null,
         "Amount": 11.95,
         "Year": 2023,
-        "Month": 7
+        "Month": "July"
       },
       {
         "Date": "2023-07-01T00:00:00",
@@ -779,7 +1007,7 @@
         "Tags": null,
         "Amount": 14.91,
         "Year": 2023,
-        "Month": 7
+        "Month": "July"
       },
       {
         "Date": "2023-07-01T00:00:00",
@@ -789,7 +1017,7 @@
         "Tags": null,
         "Amount": 415.3,
         "Year": 2023,
-        "Month": 7
+        "Month": "July"
       },
       {
         "Date": "2023-07-01T00:00:00",
@@ -799,7 +1027,7 @@
         "Tags": null,
         "Amount": 55.09,
         "Year": 2023,
-        "Month": 7
+        "Month": "July"
       },
       {
         "Date": "2023-06-30T00:00:00",
@@ -809,7 +1037,7 @@
         "Tags": null,
         "Amount": 10.56,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-30T00:00:00",
@@ -819,7 +1047,7 @@
         "Tags": null,
         "Amount": 18.94,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-29T00:00:00",
@@ -829,7 +1057,7 @@
         "Tags": null,
         "Amount": 5.15,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-29T00:00:00",
@@ -839,7 +1067,7 @@
         "Tags": null,
         "Amount": 18.44,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-29T00:00:00",
@@ -849,7 +1077,7 @@
         "Tags": null,
         "Amount": 287.38,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-29T00:00:00",
@@ -859,7 +1087,7 @@
         "Tags": null,
         "Amount": 88,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-29T00:00:00",
@@ -869,7 +1097,7 @@
         "Tags": null,
         "Amount": 30,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-29T00:00:00",
@@ -879,7 +1107,7 @@
         "Tags": null,
         "Amount": 170,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-29T00:00:00",
@@ -889,7 +1117,7 @@
         "Tags": null,
         "Amount": 67.05,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-29T00:00:00",
@@ -899,7 +1127,7 @@
         "Tags": null,
         "Amount": 81.42,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-29T00:00:00",
@@ -909,7 +1137,7 @@
         "Tags": null,
         "Amount": 8.99,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-28T00:00:00",
@@ -919,7 +1147,7 @@
         "Tags": null,
         "Amount": 198,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-28T00:00:00",
@@ -929,7 +1157,7 @@
         "Tags": null,
         "Amount": 11.39,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-27T00:00:00",
@@ -939,7 +1167,7 @@
         "Tags": null,
         "Amount": 271.75,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-27T00:00:00",
@@ -949,7 +1177,7 @@
         "Tags": null,
         "Amount": 82.99,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-27T00:00:00",
@@ -959,7 +1187,7 @@
         "Tags": null,
         "Amount": 30,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-27T00:00:00",
@@ -969,7 +1197,7 @@
         "Tags": null,
         "Amount": 15.81,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-27T00:00:00",
@@ -979,7 +1207,7 @@
         "Tags": null,
         "Amount": 9.99,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-27T00:00:00",
@@ -989,7 +1217,7 @@
         "Tags": null,
         "Amount": 109.08,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-26T00:00:00",
@@ -999,7 +1227,7 @@
         "Tags": null,
         "Amount": 34.24,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-26T00:00:00",
@@ -1009,7 +1237,7 @@
         "Tags": null,
         "Amount": 57.52,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-26T00:00:00",
@@ -1019,7 +1247,7 @@
         "Tags": null,
         "Amount": 69.02,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-26T00:00:00",
@@ -1029,7 +1257,7 @@
         "Tags": null,
         "Amount": 370,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-25T00:00:00",
@@ -1039,7 +1267,7 @@
         "Tags": null,
         "Amount": 35.84,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-25T00:00:00",
@@ -1049,7 +1277,7 @@
         "Tags": null,
         "Amount": 532.96,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-25T00:00:00",
@@ -1059,7 +1287,7 @@
         "Tags": null,
         "Amount": 86.62,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-25T00:00:00",
@@ -1069,7 +1297,7 @@
         "Tags": null,
         "Amount": 532.96,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-24T00:00:00",
@@ -1079,7 +1307,7 @@
         "Tags": null,
         "Amount": 304.63,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-24T00:00:00",
@@ -1089,7 +1317,7 @@
         "Tags": null,
         "Amount": 41.66,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-23T00:00:00",
@@ -1099,7 +1327,7 @@
         "Tags": null,
         "Amount": -52.14,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-22T00:00:00",
@@ -1109,7 +1337,7 @@
         "Tags": null,
         "Amount": 18.43,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-22T00:00:00",
@@ -1119,7 +1347,7 @@
         "Tags": null,
         "Amount": 9.99,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-21T00:00:00",
@@ -1129,7 +1357,7 @@
         "Tags": null,
         "Amount": 27.72,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-19T00:00:00",
@@ -1139,7 +1367,7 @@
         "Tags": null,
         "Amount": 97.59,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-19T00:00:00",
@@ -1149,7 +1377,7 @@
         "Tags": null,
         "Amount": 166.18,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-18T00:00:00",
@@ -1159,7 +1387,7 @@
         "Tags": null,
         "Amount": 43.95,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-17T00:00:00",
@@ -1169,7 +1397,7 @@
         "Tags": null,
         "Amount": 4.99,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-15T00:00:00",
@@ -1179,7 +1407,7 @@
         "Tags": null,
         "Amount": 11.5,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-13T00:00:00",
@@ -1189,7 +1417,7 @@
         "Tags": null,
         "Amount": 9.99,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-13T00:00:00",
@@ -1199,7 +1427,7 @@
         "Tags": null,
         "Amount": 1.35,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-13T00:00:00",
@@ -1209,7 +1437,7 @@
         "Tags": null,
         "Amount": 313.05,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-12T00:00:00",
@@ -1219,7 +1447,7 @@
         "Tags": null,
         "Amount": 59.33,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-12T00:00:00",
@@ -1229,7 +1457,7 @@
         "Tags": null,
         "Amount": 45,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-09T00:00:00",
@@ -1239,7 +1467,7 @@
         "Tags": null,
         "Amount": 19.98,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-08T00:00:00",
@@ -1249,7 +1477,7 @@
         "Tags": null,
         "Amount": 15.49,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-07T00:00:00",
@@ -1259,7 +1487,7 @@
         "Tags": null,
         "Amount": 34.24,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-07T00:00:00",
@@ -1269,7 +1497,7 @@
         "Tags": null,
         "Amount": 2.14,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-07T00:00:00",
@@ -1279,7 +1507,7 @@
         "Tags": null,
         "Amount": 39.99,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-07T00:00:00",
@@ -1289,7 +1517,7 @@
         "Tags": null,
         "Amount": 59.99,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-07T00:00:00",
@@ -1299,7 +1527,7 @@
         "Tags": null,
         "Amount": 384.18,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-07T00:00:00",
@@ -1309,7 +1537,7 @@
         "Tags": null,
         "Amount": 4.99,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-07T00:00:00",
@@ -1319,7 +1547,7 @@
         "Tags": null,
         "Amount": 13.45,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-06T00:00:00",
@@ -1329,7 +1557,7 @@
         "Tags": null,
         "Amount": -58.66,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-06T00:00:00",
@@ -1339,7 +1567,7 @@
         "Tags": null,
         "Amount": 15.43,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-06T00:00:00",
@@ -1349,7 +1577,7 @@
         "Tags": null,
         "Amount": 9.99,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-06T00:00:00",
@@ -1359,7 +1587,7 @@
         "Tags": null,
         "Amount": 14.95,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-06T00:00:00",
@@ -1369,7 +1597,7 @@
         "Tags": null,
         "Amount": 145.17,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-05T00:00:00",
@@ -1379,7 +1607,7 @@
         "Tags": null,
         "Amount": 25,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-05T00:00:00",
@@ -1389,7 +1617,7 @@
         "Tags": null,
         "Amount": 83.03,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-05T00:00:00",
@@ -1399,7 +1627,7 @@
         "Tags": null,
         "Amount": 257.6,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-05T00:00:00",
@@ -1409,7 +1637,7 @@
         "Tags": null,
         "Amount": 166.4,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-04T00:00:00",
@@ -1419,7 +1647,7 @@
         "Tags": null,
         "Amount": 19.29,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-04T00:00:00",
@@ -1429,7 +1657,7 @@
         "Tags": null,
         "Amount": 14.16,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-03T00:00:00",
@@ -1439,7 +1667,7 @@
         "Tags": null,
         "Amount": 86.84,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-03T00:00:00",
@@ -1449,7 +1677,7 @@
         "Tags": null,
         "Amount": 111.79,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-02T00:00:00",
@@ -1459,7 +1687,7 @@
         "Tags": null,
         "Amount": 8.83,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-02T00:00:00",
@@ -1469,7 +1697,7 @@
         "Tags": null,
         "Amount": 283.25,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-02T00:00:00",
@@ -1479,7 +1707,7 @@
         "Tags": null,
         "Amount": 11.49,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-02T00:00:00",
@@ -1489,7 +1717,7 @@
         "Tags": null,
         "Amount": 22.95,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-02T00:00:00",
@@ -1499,7 +1727,7 @@
         "Tags": null,
         "Amount": 150.18,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-01T00:00:00",
@@ -1509,7 +1737,7 @@
         "Tags": null,
         "Amount": 18.92,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-01T00:00:00",
@@ -1519,7 +1747,7 @@
         "Tags": null,
         "Amount": 14.92,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-01T00:00:00",
@@ -1529,7 +1757,7 @@
         "Tags": null,
         "Amount": 42.5,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-01T00:00:00",
@@ -1539,17 +1767,17 @@
         "Tags": null,
         "Amount": 28.69,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-01T00:00:00",
         "Account": "Joint Delta AmEx - 5003",
         "Description": "Shade",
-        "Category": "Restaurants",
+        "Category": "Personal Care",
         "Tags": null,
         "Amount": 112.5,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-06-01T00:00:00",
@@ -1559,7 +1787,7 @@
         "Tags": null,
         "Amount": 63.5,
         "Year": 2023,
-        "Month": 6
+        "Month": "June"
       },
       {
         "Date": "2023-05-31T00:00:00",
@@ -1569,7 +1797,7 @@
         "Tags": null,
         "Amount": 164.08,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-31T00:00:00",
@@ -1579,7 +1807,7 @@
         "Tags": null,
         "Amount": 93.87,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-31T00:00:00",
@@ -1589,7 +1817,7 @@
         "Tags": null,
         "Amount": 533.37,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-31T00:00:00",
@@ -1599,7 +1827,7 @@
         "Tags": null,
         "Amount": 671.88,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-31T00:00:00",
@@ -1609,7 +1837,7 @@
         "Tags": null,
         "Amount": 30,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-31T00:00:00",
@@ -1619,7 +1847,7 @@
         "Tags": null,
         "Amount": 471.92,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-31T00:00:00",
@@ -1629,7 +1857,7 @@
         "Tags": null,
         "Amount": 81.96,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-31T00:00:00",
@@ -1639,7 +1867,7 @@
         "Tags": null,
         "Amount": 49.7,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-30T00:00:00",
@@ -1649,7 +1877,7 @@
         "Tags": null,
         "Amount": 15,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-30T00:00:00",
@@ -1659,7 +1887,7 @@
         "Tags": null,
         "Amount": 0.99,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-30T00:00:00",
@@ -1669,7 +1897,7 @@
         "Tags": null,
         "Amount": 400,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-30T00:00:00",
@@ -1679,7 +1907,7 @@
         "Tags": null,
         "Amount": 11.39,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-30T00:00:00",
@@ -1689,7 +1917,7 @@
         "Tags": null,
         "Amount": 705,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-30T00:00:00",
@@ -1699,7 +1927,7 @@
         "Tags": null,
         "Amount": 5,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-30T00:00:00",
@@ -1709,7 +1937,7 @@
         "Tags": null,
         "Amount": 81.25,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-30T00:00:00",
@@ -1719,7 +1947,7 @@
         "Tags": null,
         "Amount": 745,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-30T00:00:00",
@@ -1729,7 +1957,7 @@
         "Tags": null,
         "Amount": 67.33,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-29T00:00:00",
@@ -1739,7 +1967,7 @@
         "Tags": null,
         "Amount": 3,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-29T00:00:00",
@@ -1749,7 +1977,7 @@
         "Tags": null,
         "Amount": 88,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-29T00:00:00",
@@ -1759,7 +1987,7 @@
         "Tags": null,
         "Amount": 81.42,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-29T00:00:00",
@@ -1769,7 +1997,7 @@
         "Tags": null,
         "Amount": 8.99,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-29T00:00:00",
@@ -1779,7 +2007,7 @@
         "Tags": null,
         "Amount": 119.16,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-29T00:00:00",
@@ -1789,7 +2017,7 @@
         "Tags": null,
         "Amount": 324,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-28T00:00:00",
@@ -1799,7 +2027,7 @@
         "Tags": null,
         "Amount": 17.49,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-28T00:00:00",
@@ -1809,7 +2037,7 @@
         "Tags": null,
         "Amount": 112.97,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-28T00:00:00",
@@ -1819,7 +2047,7 @@
         "Tags": null,
         "Amount": 28.84,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-28T00:00:00",
@@ -1829,7 +2057,7 @@
         "Tags": null,
         "Amount": 183.58,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-28T00:00:00",
@@ -1839,7 +2067,7 @@
         "Tags": null,
         "Amount": 73.19,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-28T00:00:00",
@@ -1849,7 +2077,7 @@
         "Tags": null,
         "Amount": -32.58,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-28T00:00:00",
@@ -1859,7 +2087,7 @@
         "Tags": null,
         "Amount": 119.15,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-27T00:00:00",
@@ -1869,7 +2097,7 @@
         "Tags": null,
         "Amount": 16.17,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-27T00:00:00",
@@ -1879,7 +2107,7 @@
         "Tags": null,
         "Amount": 96.2,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-27T00:00:00",
@@ -1889,7 +2117,7 @@
         "Tags": null,
         "Amount": 35.3,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-27T00:00:00",
@@ -1899,7 +2127,7 @@
         "Tags": null,
         "Amount": 9.99,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-26T00:00:00",
@@ -1909,7 +2137,7 @@
         "Tags": null,
         "Amount": 129.31,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-26T00:00:00",
@@ -1919,7 +2147,7 @@
         "Tags": null,
         "Amount": 8.24,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-26T00:00:00",
@@ -1929,7 +2157,7 @@
         "Tags": null,
         "Amount": 160,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-25T00:00:00",
@@ -1939,7 +2167,7 @@
         "Tags": null,
         "Amount": 44,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-25T00:00:00",
@@ -1949,7 +2177,7 @@
         "Tags": null,
         "Amount": 11.92,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-25T00:00:00",
@@ -1959,7 +2187,7 @@
         "Tags": null,
         "Amount": 8.15,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-25T00:00:00",
@@ -1969,7 +2197,7 @@
         "Tags": null,
         "Amount": 125.25,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-24T00:00:00",
@@ -1979,7 +2207,7 @@
         "Tags": null,
         "Amount": 4.1,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-24T00:00:00",
@@ -1989,7 +2217,7 @@
         "Tags": null,
         "Amount": 12.91,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-24T00:00:00",
@@ -1999,7 +2227,7 @@
         "Tags": null,
         "Amount": 34.24,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-24T00:00:00",
@@ -2009,7 +2237,7 @@
         "Tags": null,
         "Amount": 22,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-24T00:00:00",
@@ -2019,7 +2247,7 @@
         "Tags": null,
         "Amount": 27.72,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-24T00:00:00",
@@ -2029,7 +2257,7 @@
         "Tags": null,
         "Amount": 69.63,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-24T00:00:00",
@@ -2039,7 +2267,7 @@
         "Tags": null,
         "Amount": 24.43,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-23T00:00:00",
@@ -2049,7 +2277,7 @@
         "Tags": null,
         "Amount": 10.85,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-23T00:00:00",
@@ -2059,7 +2287,7 @@
         "Tags": null,
         "Amount": 65.7,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-23T00:00:00",
@@ -2069,7 +2297,7 @@
         "Tags": null,
         "Amount": 58.59,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-23T00:00:00",
@@ -2079,7 +2307,7 @@
         "Tags": null,
         "Amount": 24.98,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-23T00:00:00",
@@ -2089,7 +2317,7 @@
         "Tags": null,
         "Amount": 22.8,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-23T00:00:00",
@@ -2099,7 +2327,7 @@
         "Tags": null,
         "Amount": 60,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-23T00:00:00",
@@ -2109,7 +2337,7 @@
         "Tags": null,
         "Amount": 30,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-23T00:00:00",
@@ -2119,7 +2347,7 @@
         "Tags": null,
         "Amount": 18.97,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-22T00:00:00",
@@ -2129,7 +2357,7 @@
         "Tags": null,
         "Amount": 89.57,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-22T00:00:00",
@@ -2139,7 +2367,7 @@
         "Tags": null,
         "Amount": 207.03,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-22T00:00:00",
@@ -2149,7 +2377,7 @@
         "Tags": null,
         "Amount": 8.65,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-22T00:00:00",
@@ -2159,7 +2387,7 @@
         "Tags": null,
         "Amount": 202,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-22T00:00:00",
@@ -2169,7 +2397,7 @@
         "Tags": null,
         "Amount": 3.96,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-22T00:00:00",
@@ -2179,7 +2407,7 @@
         "Tags": null,
         "Amount": 9.99,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-22T00:00:00",
@@ -2189,7 +2417,7 @@
         "Tags": null,
         "Amount": 47.25,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-22T00:00:00",
@@ -2199,7 +2427,7 @@
         "Tags": null,
         "Amount": 2.75,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-21T00:00:00",
@@ -2209,7 +2437,7 @@
         "Tags": null,
         "Amount": 121.13,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-21T00:00:00",
@@ -2219,7 +2447,7 @@
         "Tags": null,
         "Amount": 144.31,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-21T00:00:00",
@@ -2229,7 +2457,7 @@
         "Tags": null,
         "Amount": 13.59,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-20T00:00:00",
@@ -2239,7 +2467,7 @@
         "Tags": null,
         "Amount": 78.57,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-20T00:00:00",
@@ -2249,7 +2477,7 @@
         "Tags": null,
         "Amount": 8.95,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-20T00:00:00",
@@ -2259,7 +2487,7 @@
         "Tags": null,
         "Amount": 132.53,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-19T00:00:00",
@@ -2269,7 +2497,7 @@
         "Tags": null,
         "Amount": 31.06,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-19T00:00:00",
@@ -2279,7 +2507,7 @@
         "Tags": null,
         "Amount": -26.59,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-19T00:00:00",
@@ -2289,7 +2517,7 @@
         "Tags": null,
         "Amount": 67,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-19T00:00:00",
@@ -2299,7 +2527,7 @@
         "Tags": null,
         "Amount": 61.76,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-19T00:00:00",
@@ -2309,7 +2537,7 @@
         "Tags": null,
         "Amount": 200,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-19T00:00:00",
@@ -2319,7 +2547,7 @@
         "Tags": null,
         "Amount": 97.59,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-19T00:00:00",
@@ -2329,7 +2557,7 @@
         "Tags": null,
         "Amount": 19.63,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-19T00:00:00",
@@ -2339,7 +2567,7 @@
         "Tags": null,
         "Amount": 116.45,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-19T00:00:00",
@@ -2349,7 +2577,7 @@
         "Tags": null,
         "Amount": 133.06,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-19T00:00:00",
@@ -2359,7 +2587,7 @@
         "Tags": null,
         "Amount": 10,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-18T00:00:00",
@@ -2369,7 +2597,7 @@
         "Tags": null,
         "Amount": 64.02,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-18T00:00:00",
@@ -2379,7 +2607,7 @@
         "Tags": null,
         "Amount": 71.65,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-18T00:00:00",
@@ -2389,7 +2617,7 @@
         "Tags": null,
         "Amount": 236.81,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-18T00:00:00",
@@ -2399,7 +2627,7 @@
         "Tags": null,
         "Amount": 1360,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-17T00:00:00",
@@ -2409,7 +2637,7 @@
         "Tags": null,
         "Amount": 4.99,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-17T00:00:00",
@@ -2419,7 +2647,7 @@
         "Tags": null,
         "Amount": 8.99,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-17T00:00:00",
@@ -2429,7 +2657,7 @@
         "Tags": null,
         "Amount": 17.36,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-17T00:00:00",
@@ -2439,7 +2667,7 @@
         "Tags": null,
         "Amount": -70.6,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-16T00:00:00",
@@ -2449,7 +2677,7 @@
         "Tags": null,
         "Amount": 39.85,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-16T00:00:00",
@@ -2459,7 +2687,7 @@
         "Tags": null,
         "Amount": 275.92,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-16T00:00:00",
@@ -2469,7 +2697,7 @@
         "Tags": null,
         "Amount": 290.73,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-16T00:00:00",
@@ -2479,7 +2707,7 @@
         "Tags": null,
         "Amount": -132.51,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-16T00:00:00",
@@ -2489,7 +2717,7 @@
         "Tags": null,
         "Amount": 9.99,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-16T00:00:00",
@@ -2499,7 +2727,7 @@
         "Tags": null,
         "Amount": 46.84,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-16T00:00:00",
@@ -2509,7 +2737,7 @@
         "Tags": null,
         "Amount": 14.44,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-16T00:00:00",
@@ -2519,7 +2747,7 @@
         "Tags": null,
         "Amount": 8.44,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-16T00:00:00",
@@ -2529,7 +2757,7 @@
         "Tags": null,
         "Amount": 83.89,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-16T00:00:00",
@@ -2539,7 +2767,7 @@
         "Tags": null,
         "Amount": 2000,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-16T00:00:00",
@@ -2549,7 +2777,7 @@
         "Tags": null,
         "Amount": 180,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-16T00:00:00",
@@ -2559,7 +2787,7 @@
         "Tags": null,
         "Amount": 40,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-15T00:00:00",
@@ -2569,7 +2797,7 @@
         "Tags": null,
         "Amount": 75.43,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-15T00:00:00",
@@ -2579,7 +2807,7 @@
         "Tags": null,
         "Amount": 30,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-15T00:00:00",
@@ -2589,7 +2817,7 @@
         "Tags": null,
         "Amount": 200,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-15T00:00:00",
@@ -2599,7 +2827,7 @@
         "Tags": null,
         "Amount": 44.91,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-15T00:00:00",
@@ -2609,7 +2837,7 @@
         "Tags": null,
         "Amount": 147.16,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-15T00:00:00",
@@ -2619,7 +2847,7 @@
         "Tags": null,
         "Amount": 224.88,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-14T00:00:00",
@@ -2629,7 +2857,7 @@
         "Tags": null,
         "Amount": 66.01,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-14T00:00:00",
@@ -2639,7 +2867,7 @@
         "Tags": null,
         "Amount": 71.85,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-14T00:00:00",
@@ -2649,7 +2877,7 @@
         "Tags": null,
         "Amount": 34.95,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-13T00:00:00",
@@ -2659,7 +2887,7 @@
         "Tags": null,
         "Amount": 87.69,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-13T00:00:00",
@@ -2669,7 +2897,7 @@
         "Tags": null,
         "Amount": 130.11,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-13T00:00:00",
@@ -2679,7 +2907,7 @@
         "Tags": null,
         "Amount": 66.6,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-13T00:00:00",
@@ -2689,7 +2917,7 @@
         "Tags": null,
         "Amount": 6.56,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-13T00:00:00",
@@ -2699,7 +2927,7 @@
         "Tags": null,
         "Amount": 60.37,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-13T00:00:00",
@@ -2709,7 +2937,7 @@
         "Tags": null,
         "Amount": 86.51,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-13T00:00:00",
@@ -2719,7 +2947,7 @@
         "Tags": null,
         "Amount": 39.45,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-13T00:00:00",
@@ -2729,7 +2957,7 @@
         "Tags": null,
         "Amount": 1050.17,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-13T00:00:00",
@@ -2739,7 +2967,7 @@
         "Tags": null,
         "Amount": 9.99,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-13T00:00:00",
@@ -2749,7 +2977,7 @@
         "Tags": null,
         "Amount": 11.93,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-13T00:00:00",
@@ -2759,7 +2987,7 @@
         "Tags": null,
         "Amount": 40.98,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-13T00:00:00",
@@ -2769,7 +2997,7 @@
         "Tags": null,
         "Amount": 47.86,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-12T00:00:00",
@@ -2779,7 +3007,7 @@
         "Tags": null,
         "Amount": 32.94,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-12T00:00:00",
@@ -2789,7 +3017,7 @@
         "Tags": null,
         "Amount": 350,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-12T00:00:00",
@@ -2799,7 +3027,7 @@
         "Tags": null,
         "Amount": 147.55,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-12T00:00:00",
@@ -2809,7 +3037,7 @@
         "Tags": null,
         "Amount": 45,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-12T00:00:00",
@@ -2819,7 +3047,7 @@
         "Tags": null,
         "Amount": 32.24,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-12T00:00:00",
@@ -2829,7 +3057,7 @@
         "Tags": null,
         "Amount": 11.99,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-12T00:00:00",
@@ -2839,7 +3067,7 @@
         "Tags": null,
         "Amount": 6.39,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-12T00:00:00",
@@ -2849,7 +3077,7 @@
         "Tags": null,
         "Amount": 175,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-12T00:00:00",
@@ -2859,7 +3087,7 @@
         "Tags": null,
         "Amount": 130,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-11T00:00:00",
@@ -2869,7 +3097,7 @@
         "Tags": null,
         "Amount": 173.57,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-11T00:00:00",
@@ -2879,7 +3107,7 @@
         "Tags": null,
         "Amount": 32.58,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-11T00:00:00",
@@ -2889,7 +3117,7 @@
         "Tags": null,
         "Amount": 94.71,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-10T00:00:00",
@@ -2899,7 +3127,7 @@
         "Tags": null,
         "Amount": 347.7,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-10T00:00:00",
@@ -2909,7 +3137,7 @@
         "Tags": null,
         "Amount": 1.35,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-10T00:00:00",
@@ -2919,7 +3147,7 @@
         "Tags": null,
         "Amount": 41.46,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-10T00:00:00",
@@ -2929,7 +3157,7 @@
         "Tags": null,
         "Amount": 75,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-10T00:00:00",
@@ -2939,7 +3167,7 @@
         "Tags": null,
         "Amount": 43.72,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-10T00:00:00",
@@ -2949,7 +3177,7 @@
         "Tags": null,
         "Amount": 34.24,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-10T00:00:00",
@@ -2959,7 +3187,7 @@
         "Tags": null,
         "Amount": 11.98,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-10T00:00:00",
@@ -2969,7 +3197,7 @@
         "Tags": null,
         "Amount": 2.8,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-09T00:00:00",
@@ -2979,7 +3207,7 @@
         "Tags": null,
         "Amount": 24.55,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-09T00:00:00",
@@ -2989,7 +3217,7 @@
         "Tags": null,
         "Amount": -103.19,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-09T00:00:00",
@@ -2999,7 +3227,7 @@
         "Tags": null,
         "Amount": 14.96,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-08T00:00:00",
@@ -3009,7 +3237,7 @@
         "Tags": null,
         "Amount": 15.49,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-08T00:00:00",
@@ -3019,7 +3247,7 @@
         "Tags": null,
         "Amount": 330.54,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-08T00:00:00",
@@ -3029,7 +3257,7 @@
         "Tags": null,
         "Amount": 26.05,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-07T00:00:00",
@@ -3039,7 +3267,7 @@
         "Tags": null,
         "Amount": 78,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-07T00:00:00",
@@ -3049,7 +3277,7 @@
         "Tags": null,
         "Amount": 2.14,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-07T00:00:00",
@@ -3059,7 +3287,7 @@
         "Tags": null,
         "Amount": 142.13,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-07T00:00:00",
@@ -3069,7 +3297,7 @@
         "Tags": null,
         "Amount": 24.32,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-07T00:00:00",
@@ -3079,7 +3307,7 @@
         "Tags": null,
         "Amount": 14.88,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-06T00:00:00",
@@ -3089,7 +3317,7 @@
         "Tags": null,
         "Amount": 99.4,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-06T00:00:00",
@@ -3099,7 +3327,7 @@
         "Tags": null,
         "Amount": 18.94,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-06T00:00:00",
@@ -3109,7 +3337,7 @@
         "Tags": null,
         "Amount": 14.95,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-06T00:00:00",
@@ -3119,7 +3347,7 @@
         "Tags": null,
         "Amount": 40.96,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-06T00:00:00",
@@ -3129,7 +3357,7 @@
         "Tags": null,
         "Amount": 25.72,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-06T00:00:00",
@@ -3139,7 +3367,7 @@
         "Tags": null,
         "Amount": 28.35,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-06T00:00:00",
@@ -3149,7 +3377,7 @@
         "Tags": null,
         "Amount": 5,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-06T00:00:00",
@@ -3159,7 +3387,7 @@
         "Tags": null,
         "Amount": -130.35,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-06T00:00:00",
@@ -3169,7 +3397,7 @@
         "Tags": null,
         "Amount": 16.24,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-06T00:00:00",
@@ -3179,7 +3407,7 @@
         "Tags": null,
         "Amount": 27.57,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-06T00:00:00",
@@ -3189,7 +3417,7 @@
         "Tags": null,
         "Amount": 141.91,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-06T00:00:00",
@@ -3199,7 +3427,7 @@
         "Tags": null,
         "Amount": 9.99,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-05T00:00:00",
@@ -3209,7 +3437,7 @@
         "Tags": null,
         "Amount": 81.25,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-05T00:00:00",
@@ -3219,7 +3447,7 @@
         "Tags": null,
         "Amount": 542.33,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-05T00:00:00",
@@ -3229,7 +3457,7 @@
         "Tags": null,
         "Amount": 35.3,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-05T00:00:00",
@@ -3239,7 +3467,7 @@
         "Tags": null,
         "Amount": 107.34,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-05T00:00:00",
@@ -3249,7 +3477,7 @@
         "Tags": null,
         "Amount": 152.98,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-04T00:00:00",
@@ -3259,7 +3487,7 @@
         "Tags": null,
         "Amount": 49.42,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-04T00:00:00",
@@ -3269,7 +3497,7 @@
         "Tags": null,
         "Amount": 200,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-04T00:00:00",
@@ -3279,7 +3507,7 @@
         "Tags": null,
         "Amount": 32,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-04T00:00:00",
@@ -3289,7 +3517,7 @@
         "Tags": null,
         "Amount": 10,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-03T00:00:00",
@@ -3299,7 +3527,7 @@
         "Tags": null,
         "Amount": 6.23,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-03T00:00:00",
@@ -3309,7 +3537,7 @@
         "Tags": null,
         "Amount": 111.79,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-03T00:00:00",
@@ -3319,7 +3547,7 @@
         "Tags": null,
         "Amount": 16.28,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-03T00:00:00",
@@ -3329,7 +3557,7 @@
         "Tags": null,
         "Amount": 50,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-02T00:00:00",
@@ -3339,7 +3567,7 @@
         "Tags": null,
         "Amount": 126.39,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-02T00:00:00",
@@ -3349,7 +3577,7 @@
         "Tags": null,
         "Amount": 622.66,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-02T00:00:00",
@@ -3359,7 +3587,7 @@
         "Tags": null,
         "Amount": 16.29,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-02T00:00:00",
@@ -3369,7 +3597,7 @@
         "Tags": null,
         "Amount": 11.49,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-02T00:00:00",
@@ -3379,7 +3607,7 @@
         "Tags": null,
         "Amount": 79.68,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-02T00:00:00",
@@ -3389,7 +3617,7 @@
         "Tags": null,
         "Amount": 26.05,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-01T00:00:00",
@@ -3399,7 +3627,7 @@
         "Tags": null,
         "Amount": 69.51,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-01T00:00:00",
@@ -3409,7 +3637,7 @@
         "Tags": null,
         "Amount": 30,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-01T00:00:00",
@@ -3419,7 +3647,7 @@
         "Tags": null,
         "Amount": 671.88,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-01T00:00:00",
@@ -3429,7 +3657,7 @@
         "Tags": null,
         "Amount": 156.42,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-01T00:00:00",
@@ -3439,7 +3667,7 @@
         "Tags": null,
         "Amount": 25,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-01T00:00:00",
@@ -3449,7 +3677,7 @@
         "Tags": null,
         "Amount": 22.19,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-05-01T00:00:00",
@@ -3459,7 +3687,7 @@
         "Tags": null,
         "Amount": 151.97,
         "Year": 2023,
-        "Month": 5
+        "Month": "May"
       },
       {
         "Date": "2023-04-30T00:00:00",
@@ -3469,7 +3697,7 @@
         "Tags": null,
         "Amount": 29.97,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-30T00:00:00",
@@ -3479,7 +3707,7 @@
         "Tags": null,
         "Amount": 36.91,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-30T00:00:00",
@@ -3489,7 +3717,7 @@
         "Tags": null,
         "Amount": 54.8,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-30T00:00:00",
@@ -3499,7 +3727,7 @@
         "Tags": null,
         "Amount": 26.93,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-30T00:00:00",
@@ -3509,7 +3737,7 @@
         "Tags": null,
         "Amount": 74.85,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-30T00:00:00",
@@ -3519,7 +3747,7 @@
         "Tags": null,
         "Amount": 25.98,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-30T00:00:00",
@@ -3529,7 +3757,7 @@
         "Tags": null,
         "Amount": 106.46,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-29T00:00:00",
@@ -3539,7 +3767,7 @@
         "Tags": null,
         "Amount": 49.44,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-29T00:00:00",
@@ -3549,7 +3777,7 @@
         "Tags": null,
         "Amount": 12,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-29T00:00:00",
@@ -3559,7 +3787,7 @@
         "Tags": null,
         "Amount": 64.62,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-29T00:00:00",
@@ -3569,7 +3797,7 @@
         "Tags": null,
         "Amount": 88,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-29T00:00:00",
@@ -3579,7 +3807,7 @@
         "Tags": null,
         "Amount": 8.4,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-29T00:00:00",
@@ -3589,7 +3817,7 @@
         "Tags": null,
         "Amount": 8.99,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-29T00:00:00",
@@ -3599,7 +3827,7 @@
         "Tags": null,
         "Amount": 30.73,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-29T00:00:00",
@@ -3609,7 +3837,7 @@
         "Tags": null,
         "Amount": 27.99,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-29T00:00:00",
@@ -3619,7 +3847,7 @@
         "Tags": null,
         "Amount": 17.49,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-29T00:00:00",
@@ -3629,7 +3857,7 @@
         "Tags": null,
         "Amount": 17.35,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-29T00:00:00",
@@ -3639,7 +3867,7 @@
         "Tags": null,
         "Amount": 59.99,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-29T00:00:00",
@@ -3649,7 +3877,7 @@
         "Tags": null,
         "Amount": 25.59,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-29T00:00:00",
@@ -3659,7 +3887,7 @@
         "Tags": null,
         "Amount": 1.99,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-28T00:00:00",
@@ -3669,7 +3897,7 @@
         "Tags": null,
         "Amount": 56.2,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-28T00:00:00",
@@ -3679,7 +3907,7 @@
         "Tags": null,
         "Amount": -24.01,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-28T00:00:00",
@@ -3689,7 +3917,7 @@
         "Tags": null,
         "Amount": 30,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-28T00:00:00",
@@ -3699,7 +3927,7 @@
         "Tags": null,
         "Amount": 80.38,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-27T00:00:00",
@@ -3709,7 +3937,7 @@
         "Tags": null,
         "Amount": 20,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-27T00:00:00",
@@ -3719,7 +3947,7 @@
         "Tags": null,
         "Amount": 373.04,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-27T00:00:00",
@@ -3729,7 +3957,7 @@
         "Tags": null,
         "Amount": 25.39,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-27T00:00:00",
@@ -3739,7 +3967,7 @@
         "Tags": null,
         "Amount": 100,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-27T00:00:00",
@@ -3749,7 +3977,7 @@
         "Tags": null,
         "Amount": 9.99,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-27T00:00:00",
@@ -3759,7 +3987,7 @@
         "Tags": null,
         "Amount": 7.14,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-27T00:00:00",
@@ -3769,7 +3997,7 @@
         "Tags": null,
         "Amount": 89.33,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-27T00:00:00",
@@ -3779,7 +4007,7 @@
         "Tags": null,
         "Amount": 110,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-27T00:00:00",
@@ -3789,7 +4017,7 @@
         "Tags": null,
         "Amount": 17.53,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-27T00:00:00",
@@ -3799,7 +4027,7 @@
         "Tags": null,
         "Amount": 10,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-26T00:00:00",
@@ -3809,7 +4037,7 @@
         "Tags": null,
         "Amount": 3,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-26T00:00:00",
@@ -3819,7 +4047,7 @@
         "Tags": null,
         "Amount": 19.96,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-26T00:00:00",
@@ -3829,7 +4057,7 @@
         "Tags": null,
         "Amount": 100,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-25T00:00:00",
@@ -3839,7 +4067,7 @@
         "Tags": null,
         "Amount": 122.46,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-25T00:00:00",
@@ -3849,7 +4077,7 @@
         "Tags": null,
         "Amount": 14.16,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-25T00:00:00",
@@ -3859,7 +4087,7 @@
         "Tags": null,
         "Amount": 15.9,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-25T00:00:00",
@@ -3869,7 +4097,7 @@
         "Tags": null,
         "Amount": 34.24,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-25T00:00:00",
@@ -3879,7 +4107,7 @@
         "Tags": null,
         "Amount": 200,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-25T00:00:00",
@@ -3889,7 +4117,7 @@
         "Tags": null,
         "Amount": 24.18,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-25T00:00:00",
@@ -3899,7 +4127,7 @@
         "Tags": null,
         "Amount": 70.31,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-25T00:00:00",
@@ -3909,7 +4137,7 @@
         "Tags": null,
         "Amount": 39.11,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-25T00:00:00",
@@ -3919,7 +4147,7 @@
         "Tags": null,
         "Amount": 35.3,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-24T00:00:00",
@@ -3929,7 +4157,7 @@
         "Tags": null,
         "Amount": 4.98,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-24T00:00:00",
@@ -3939,7 +4167,7 @@
         "Tags": null,
         "Amount": 283.25,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-24T00:00:00",
@@ -3949,7 +4177,7 @@
         "Tags": null,
         "Amount": 24.98,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-24T00:00:00",
@@ -3959,7 +4187,7 @@
         "Tags": null,
         "Amount": 97.33,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-24T00:00:00",
@@ -3969,7 +4197,7 @@
         "Tags": null,
         "Amount": 295.46,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-24T00:00:00",
@@ -3979,7 +4207,7 @@
         "Tags": null,
         "Amount": -77,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-23T00:00:00",
@@ -3989,7 +4217,7 @@
         "Tags": null,
         "Amount": 105.61,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-23T00:00:00",
@@ -3999,7 +4227,7 @@
         "Tags": null,
         "Amount": 6,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-22T00:00:00",
@@ -4009,7 +4237,7 @@
         "Tags": null,
         "Amount": 24.01,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-22T00:00:00",
@@ -4019,7 +4247,7 @@
         "Tags": null,
         "Amount": 80.01,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-22T00:00:00",
@@ -4029,7 +4257,7 @@
         "Tags": null,
         "Amount": 5.5,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-22T00:00:00",
@@ -4039,7 +4267,7 @@
         "Tags": null,
         "Amount": 9.99,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-22T00:00:00",
@@ -4049,7 +4277,7 @@
         "Tags": null,
         "Amount": 67.91,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-22T00:00:00",
@@ -4059,7 +4287,7 @@
         "Tags": null,
         "Amount": 64.73,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-22T00:00:00",
@@ -4069,7 +4297,7 @@
         "Tags": null,
         "Amount": 28.82,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-22T00:00:00",
@@ -4079,7 +4307,7 @@
         "Tags": null,
         "Amount": 0.5,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-22T00:00:00",
@@ -4089,7 +4317,7 @@
         "Tags": null,
         "Amount": 17.35,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-22T00:00:00",
@@ -4099,7 +4327,7 @@
         "Tags": null,
         "Amount": 4.99,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-22T00:00:00",
@@ -4109,7 +4337,7 @@
         "Tags": null,
         "Amount": 35.3,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-22T00:00:00",
@@ -4119,7 +4347,7 @@
         "Tags": null,
         "Amount": 9.49,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-22T00:00:00",
@@ -4129,7 +4357,7 @@
         "Tags": null,
         "Amount": 16.9,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-22T00:00:00",
@@ -4139,7 +4367,7 @@
         "Tags": null,
         "Amount": 24.98,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-22T00:00:00",
@@ -4149,7 +4377,7 @@
         "Tags": null,
         "Amount": 11.73,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-21T00:00:00",
@@ -4159,7 +4387,7 @@
         "Tags": null,
         "Amount": 103.19,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-21T00:00:00",
@@ -4169,7 +4397,7 @@
         "Tags": null,
         "Amount": 78.21,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-21T00:00:00",
@@ -4179,7 +4407,7 @@
         "Tags": null,
         "Amount": 65.21,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-21T00:00:00",
@@ -4189,7 +4417,7 @@
         "Tags": null,
         "Amount": 49.42,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-21T00:00:00",
@@ -4199,7 +4427,7 @@
         "Tags": null,
         "Amount": 38.01,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-20T00:00:00",
@@ -4209,7 +4437,7 @@
         "Tags": null,
         "Amount": 199,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-20T00:00:00",
@@ -4219,7 +4447,7 @@
         "Tags": null,
         "Amount": 8.69,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-20T00:00:00",
@@ -4229,7 +4457,7 @@
         "Tags": null,
         "Amount": 198,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-19T00:00:00",
@@ -4239,7 +4467,7 @@
         "Tags": null,
         "Amount": 133.06,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-19T00:00:00",
@@ -4249,7 +4477,7 @@
         "Tags": null,
         "Amount": 97.99,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-19T00:00:00",
@@ -4259,7 +4487,7 @@
         "Tags": null,
         "Amount": 118.51,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-19T00:00:00",
@@ -4269,7 +4497,7 @@
         "Tags": null,
         "Amount": -222.16,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-19T00:00:00",
@@ -4279,7 +4507,7 @@
         "Tags": null,
         "Amount": 38.87,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-19T00:00:00",
@@ -4289,7 +4517,7 @@
         "Tags": null,
         "Amount": -450.28,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-18T00:00:00",
@@ -4299,7 +4527,7 @@
         "Tags": null,
         "Amount": 162.99,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-18T00:00:00",
@@ -4309,7 +4537,7 @@
         "Tags": null,
         "Amount": 34.86,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-17T00:00:00",
@@ -4319,7 +4547,7 @@
         "Tags": null,
         "Amount": 161.64,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-17T00:00:00",
@@ -4329,7 +4557,7 @@
         "Tags": null,
         "Amount": 20,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-17T00:00:00",
@@ -4339,7 +4567,7 @@
         "Tags": null,
         "Amount": 108.98,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-17T00:00:00",
@@ -4349,7 +4577,7 @@
         "Tags": null,
         "Amount": 20,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-17T00:00:00",
@@ -4359,7 +4587,7 @@
         "Tags": null,
         "Amount": 58.76,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-16T00:00:00",
@@ -4369,7 +4597,7 @@
         "Tags": null,
         "Amount": 108,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-16T00:00:00",
@@ -4379,7 +4607,7 @@
         "Tags": null,
         "Amount": 193.12,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-16T00:00:00",
@@ -4389,7 +4617,7 @@
         "Tags": null,
         "Amount": 20,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-16T00:00:00",
@@ -4399,7 +4627,7 @@
         "Tags": null,
         "Amount": 489.95,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-16T00:00:00",
@@ -4409,7 +4637,7 @@
         "Tags": null,
         "Amount": 17.37,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-16T00:00:00",
@@ -4419,17 +4647,17 @@
         "Tags": null,
         "Amount": 53.18,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-15T00:00:00",
         "Account": "Joint Chase Mariott - 3526",
         "Description": "Shade",
-        "Category": "Restaurants",
+        "Category": "Personal Care",
         "Tags": null,
         "Amount": 108,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-15T00:00:00",
@@ -4439,7 +4667,7 @@
         "Tags": null,
         "Amount": 36.03,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-15T00:00:00",
@@ -4449,7 +4677,7 @@
         "Tags": null,
         "Amount": 1,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-15T00:00:00",
@@ -4459,7 +4687,7 @@
         "Tags": null,
         "Amount": 18.98,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-15T00:00:00",
@@ -4469,7 +4697,7 @@
         "Tags": null,
         "Amount": 33.2,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-15T00:00:00",
@@ -4479,7 +4707,7 @@
         "Tags": null,
         "Amount": -182.5,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-15T00:00:00",
@@ -4489,7 +4717,7 @@
         "Tags": null,
         "Amount": -573.54,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-15T00:00:00",
@@ -4499,7 +4727,7 @@
         "Tags": null,
         "Amount": 56.17,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-14T00:00:00",
@@ -4509,7 +4737,7 @@
         "Tags": null,
         "Amount": 200,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-14T00:00:00",
@@ -4519,7 +4747,7 @@
         "Tags": null,
         "Amount": 129.32,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-13T00:00:00",
@@ -4529,7 +4757,7 @@
         "Tags": null,
         "Amount": 4.36,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-13T00:00:00",
@@ -4539,7 +4767,7 @@
         "Tags": null,
         "Amount": 48.8,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-13T00:00:00",
@@ -4549,7 +4777,7 @@
         "Tags": null,
         "Amount": 32,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-13T00:00:00",
@@ -4559,7 +4787,7 @@
         "Tags": null,
         "Amount": 21.41,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-13T00:00:00",
@@ -4569,7 +4797,7 @@
         "Tags": null,
         "Amount": -108.63,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-13T00:00:00",
@@ -4579,7 +4807,7 @@
         "Tags": null,
         "Amount": 81.25,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-13T00:00:00",
@@ -4589,7 +4817,7 @@
         "Tags": null,
         "Amount": 9.99,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-13T00:00:00",
@@ -4599,7 +4827,7 @@
         "Tags": null,
         "Amount": 102.22,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-12T00:00:00",
@@ -4609,7 +4837,7 @@
         "Tags": null,
         "Amount": 135.12,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-12T00:00:00",
@@ -4619,7 +4847,7 @@
         "Tags": null,
         "Amount": 69.49,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-12T00:00:00",
@@ -4629,7 +4857,7 @@
         "Tags": null,
         "Amount": 45,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-12T00:00:00",
@@ -4639,7 +4867,7 @@
         "Tags": null,
         "Amount": 87.5,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-12T00:00:00",
@@ -4649,7 +4877,7 @@
         "Tags": null,
         "Amount": -758.2,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-12T00:00:00",
@@ -4659,7 +4887,7 @@
         "Tags": null,
         "Amount": -758.21,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-12T00:00:00",
@@ -4669,7 +4897,7 @@
         "Tags": null,
         "Amount": 59.58,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-11T00:00:00",
@@ -4679,7 +4907,7 @@
         "Tags": null,
         "Amount": 4.36,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-11T00:00:00",
@@ -4689,7 +4917,7 @@
         "Tags": null,
         "Amount": 34.24,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-11T00:00:00",
@@ -4699,7 +4927,7 @@
         "Tags": null,
         "Amount": 62.55,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-11T00:00:00",
@@ -4709,7 +4937,7 @@
         "Tags": null,
         "Amount": 486.79,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-11T00:00:00",
@@ -4719,7 +4947,7 @@
         "Tags": null,
         "Amount": 65.12,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-11T00:00:00",
@@ -4729,7 +4957,7 @@
         "Tags": null,
         "Amount": 146.64,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-11T00:00:00",
@@ -4739,7 +4967,7 @@
         "Tags": null,
         "Amount": 1.35,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-10T00:00:00",
@@ -4749,7 +4977,7 @@
         "Tags": null,
         "Amount": 5.19,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-10T00:00:00",
@@ -4759,7 +4987,7 @@
         "Tags": null,
         "Amount": 108.26,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-10T00:00:00",
@@ -4769,7 +4997,7 @@
         "Tags": null,
         "Amount": 29.66,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-10T00:00:00",
@@ -4779,7 +5007,7 @@
         "Tags": null,
         "Amount": 82.57,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-10T00:00:00",
@@ -4789,7 +5017,7 @@
         "Tags": null,
         "Amount": 48.07,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-09T00:00:00",
@@ -4799,7 +5027,7 @@
         "Tags": null,
         "Amount": 43.53,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-09T00:00:00",
@@ -4809,7 +5037,7 @@
         "Tags": null,
         "Amount": 330,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-09T00:00:00",
@@ -4819,7 +5047,7 @@
         "Tags": null,
         "Amount": 106.36,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-08T00:00:00",
@@ -4829,7 +5057,7 @@
         "Tags": null,
         "Amount": 74.95,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-08T00:00:00",
@@ -4839,7 +5067,7 @@
         "Tags": null,
         "Amount": 354.13,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-08T00:00:00",
@@ -4849,7 +5077,7 @@
         "Tags": null,
         "Amount": 256.36,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-08T00:00:00",
@@ -4859,7 +5087,7 @@
         "Tags": null,
         "Amount": 25,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-08T00:00:00",
@@ -4869,7 +5097,7 @@
         "Tags": null,
         "Amount": 143.36,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-08T00:00:00",
@@ -4879,7 +5107,7 @@
         "Tags": null,
         "Amount": 7,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-08T00:00:00",
@@ -4889,7 +5117,7 @@
         "Tags": null,
         "Amount": 150.66,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-08T00:00:00",
@@ -4899,7 +5127,7 @@
         "Tags": null,
         "Amount": 9,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-08T00:00:00",
@@ -4909,7 +5137,7 @@
         "Tags": null,
         "Amount": 15.49,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-08T00:00:00",
@@ -4919,7 +5147,7 @@
         "Tags": null,
         "Amount": 35.47,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-07T00:00:00",
@@ -4929,7 +5157,7 @@
         "Tags": null,
         "Amount": 200,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-07T00:00:00",
@@ -4939,7 +5167,7 @@
         "Tags": null,
         "Amount": 2.14,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-07T00:00:00",
@@ -4949,7 +5177,7 @@
         "Tags": null,
         "Amount": 107.26,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-07T00:00:00",
@@ -4959,7 +5187,7 @@
         "Tags": null,
         "Amount": 309.58,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-07T00:00:00",
@@ -4969,7 +5197,7 @@
         "Tags": null,
         "Amount": 24.59,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-06T00:00:00",
@@ -4979,7 +5207,7 @@
         "Tags": null,
         "Amount": 22,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-06T00:00:00",
@@ -4989,7 +5217,7 @@
         "Tags": null,
         "Amount": 14.95,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-06T00:00:00",
@@ -4999,7 +5227,7 @@
         "Tags": null,
         "Amount": 59.58,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-06T00:00:00",
@@ -5009,7 +5237,7 @@
         "Tags": null,
         "Amount": 34.08,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-06T00:00:00",
@@ -5019,7 +5247,7 @@
         "Tags": null,
         "Amount": 9.99,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-05T00:00:00",
@@ -5029,7 +5257,7 @@
         "Tags": null,
         "Amount": 58.96,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-05T00:00:00",
@@ -5039,7 +5267,7 @@
         "Tags": null,
         "Amount": 15.97,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-05T00:00:00",
@@ -5049,7 +5277,7 @@
         "Tags": null,
         "Amount": -152.07,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-05T00:00:00",
@@ -5059,7 +5287,7 @@
         "Tags": null,
         "Amount": -261.27,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-05T00:00:00",
@@ -5069,7 +5297,7 @@
         "Tags": null,
         "Amount": 10.76,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-04T00:00:00",
@@ -5079,7 +5307,7 @@
         "Tags": null,
         "Amount": 49.23,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-04T00:00:00",
@@ -5089,7 +5317,7 @@
         "Tags": null,
         "Amount": -537.69,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-04T00:00:00",
@@ -5099,7 +5327,7 @@
         "Tags": null,
         "Amount": 84.51,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-03T00:00:00",
@@ -5109,7 +5337,7 @@
         "Tags": null,
         "Amount": 27.81,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-03T00:00:00",
@@ -5119,7 +5347,7 @@
         "Tags": null,
         "Amount": 200,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-03T00:00:00",
@@ -5129,7 +5357,7 @@
         "Tags": null,
         "Amount": 4.67,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-03T00:00:00",
@@ -5139,7 +5367,7 @@
         "Tags": null,
         "Amount": 300.6,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-03T00:00:00",
@@ -5149,7 +5377,7 @@
         "Tags": null,
         "Amount": 19.99,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-03T00:00:00",
@@ -5159,7 +5387,7 @@
         "Tags": null,
         "Amount": 397.8,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-03T00:00:00",
@@ -5169,7 +5397,7 @@
         "Tags": null,
         "Amount": 111.01,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-03T00:00:00",
@@ -5179,7 +5407,7 @@
         "Tags": null,
         "Amount": 19.99,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-02T00:00:00",
@@ -5189,7 +5417,7 @@
         "Tags": null,
         "Amount": 32.3,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-02T00:00:00",
@@ -5199,7 +5427,7 @@
         "Tags": null,
         "Amount": 11.49,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-02T00:00:00",
@@ -5209,7 +5437,7 @@
         "Tags": null,
         "Amount": 27.2,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-02T00:00:00",
@@ -5219,7 +5447,7 @@
         "Tags": null,
         "Amount": 72.24,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-02T00:00:00",
@@ -5229,7 +5457,7 @@
         "Tags": null,
         "Amount": 18.47,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-02T00:00:00",
@@ -5239,7 +5467,7 @@
         "Tags": null,
         "Amount": 573.54,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-01T00:00:00",
@@ -5249,7 +5477,7 @@
         "Tags": null,
         "Amount": 54.13,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-01T00:00:00",
@@ -5259,7 +5487,7 @@
         "Tags": null,
         "Amount": 190.09,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-01T00:00:00",
@@ -5269,7 +5497,7 @@
         "Tags": null,
         "Amount": 0.75,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-01T00:00:00",
@@ -5279,7 +5507,7 @@
         "Tags": null,
         "Amount": 35.3,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-01T00:00:00",
@@ -5289,7 +5517,7 @@
         "Tags": null,
         "Amount": -406.88,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-01T00:00:00",
@@ -5299,7 +5527,7 @@
         "Tags": null,
         "Amount": -44.29,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-01T00:00:00",
@@ -5309,7 +5537,7 @@
         "Tags": null,
         "Amount": 9,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-01T00:00:00",
@@ -5319,7 +5547,7 @@
         "Tags": null,
         "Amount": 44.62,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-01T00:00:00",
@@ -5329,7 +5557,7 @@
         "Tags": null,
         "Amount": 651.8,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-01T00:00:00",
@@ -5339,7 +5567,7 @@
         "Tags": null,
         "Amount": 264.47,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-01T00:00:00",
@@ -5349,7 +5577,7 @@
         "Tags": null,
         "Amount": 528.12,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-01T00:00:00",
@@ -5359,7 +5587,7 @@
         "Tags": null,
         "Amount": 407.34,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-04-01T00:00:00",
@@ -5369,7 +5597,7 @@
         "Tags": null,
         "Amount": 5.99,
         "Year": 2023,
-        "Month": 4
+        "Month": "April"
       },
       {
         "Date": "2023-03-31T00:00:00",
@@ -5379,7 +5607,7 @@
         "Tags": null,
         "Amount": 41.2,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-31T00:00:00",
@@ -5389,7 +5617,7 @@
         "Tags": null,
         "Amount": 71.69,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-31T00:00:00",
@@ -5399,7 +5627,7 @@
         "Tags": null,
         "Amount": 14.95,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-31T00:00:00",
@@ -5409,7 +5637,7 @@
         "Tags": null,
         "Amount": 671.88,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-31T00:00:00",
@@ -5419,7 +5647,7 @@
         "Tags": null,
         "Amount": 161.16,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-31T00:00:00",
@@ -5429,7 +5657,7 @@
         "Tags": null,
         "Amount": 16,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-31T00:00:00",
@@ -5439,7 +5667,7 @@
         "Tags": null,
         "Amount": 46.64,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-31T00:00:00",
@@ -5449,7 +5677,7 @@
         "Tags": null,
         "Amount": 20.9,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-30T00:00:00",
@@ -5459,7 +5687,7 @@
         "Tags": null,
         "Amount": 15.91,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-30T00:00:00",
@@ -5469,7 +5697,7 @@
         "Tags": null,
         "Amount": 48.73,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-30T00:00:00",
@@ -5479,7 +5707,7 @@
         "Tags": null,
         "Amount": 28.16,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-30T00:00:00",
@@ -5489,7 +5717,7 @@
         "Tags": null,
         "Amount": 51.98,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-29T00:00:00",
@@ -5499,7 +5727,7 @@
         "Tags": null,
         "Amount": 14.95,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-29T00:00:00",
@@ -5509,7 +5737,7 @@
         "Tags": null,
         "Amount": 88,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-29T00:00:00",
@@ -5519,7 +5747,7 @@
         "Tags": null,
         "Amount": 8.99,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-29T00:00:00",
@@ -5529,7 +5757,7 @@
         "Tags": null,
         "Amount": 59.58,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-29T00:00:00",
@@ -5539,7 +5767,7 @@
         "Tags": null,
         "Amount": 59.99,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-29T00:00:00",
@@ -5549,7 +5777,7 @@
         "Tags": null,
         "Amount": 19.96,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-28T00:00:00",
@@ -5559,7 +5787,7 @@
         "Tags": null,
         "Amount": 34.24,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-28T00:00:00",
@@ -5569,7 +5797,7 @@
         "Tags": null,
         "Amount": 6.43,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-28T00:00:00",
@@ -5579,7 +5807,7 @@
         "Tags": null,
         "Amount": 316.5,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-28T00:00:00",
@@ -5589,7 +5817,7 @@
         "Tags": null,
         "Amount": 14.99,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-28T00:00:00",
@@ -5599,7 +5827,7 @@
         "Tags": null,
         "Amount": 139.51,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-28T00:00:00",
@@ -5609,7 +5837,7 @@
         "Tags": null,
         "Amount": 115.87,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-27T00:00:00",
@@ -5619,7 +5847,7 @@
         "Tags": null,
         "Amount": 28.84,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-27T00:00:00",
@@ -5629,7 +5857,7 @@
         "Tags": null,
         "Amount": 34.93,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-27T00:00:00",
@@ -5639,7 +5867,7 @@
         "Tags": null,
         "Amount": 9.99,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-27T00:00:00",
@@ -5649,7 +5877,7 @@
         "Tags": null,
         "Amount": 99.92,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-27T00:00:00",
@@ -5659,7 +5887,7 @@
         "Tags": null,
         "Amount": 142.4,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-27T00:00:00",
@@ -5669,7 +5897,7 @@
         "Tags": null,
         "Amount": 8,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-27T00:00:00",
@@ -5679,7 +5907,7 @@
         "Tags": null,
         "Amount": 250,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-26T00:00:00",
@@ -5689,7 +5917,7 @@
         "Tags": null,
         "Amount": 11.95,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-26T00:00:00",
@@ -5699,7 +5927,7 @@
         "Tags": null,
         "Amount": 40,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-26T00:00:00",
@@ -5709,7 +5937,7 @@
         "Tags": null,
         "Amount": 138.57,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-26T00:00:00",
@@ -5719,7 +5947,7 @@
         "Tags": null,
         "Amount": 172.37,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-26T00:00:00",
@@ -5729,7 +5957,7 @@
         "Tags": null,
         "Amount": 60.13,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-25T00:00:00",
@@ -5739,7 +5967,7 @@
         "Tags": null,
         "Amount": 5,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-25T00:00:00",
@@ -5749,7 +5977,7 @@
         "Tags": null,
         "Amount": 0.75,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-25T00:00:00",
@@ -5759,7 +5987,7 @@
         "Tags": null,
         "Amount": 20.81,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-25T00:00:00",
@@ -5769,7 +5997,7 @@
         "Tags": null,
         "Amount": 45.97,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-25T00:00:00",
@@ -5779,7 +6007,7 @@
         "Tags": null,
         "Amount": 20.36,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-24T00:00:00",
@@ -5789,7 +6017,7 @@
         "Tags": null,
         "Amount": 200,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-24T00:00:00",
@@ -5799,7 +6027,7 @@
         "Tags": null,
         "Amount": 388,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-24T00:00:00",
@@ -5809,7 +6037,7 @@
         "Tags": null,
         "Amount": 49.97,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-24T00:00:00",
@@ -5819,7 +6047,7 @@
         "Tags": null,
         "Amount": 68.11,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-23T00:00:00",
@@ -5829,7 +6057,7 @@
         "Tags": null,
         "Amount": 17.93,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-23T00:00:00",
@@ -5839,7 +6067,7 @@
         "Tags": null,
         "Amount": 22,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-23T00:00:00",
@@ -5849,7 +6077,7 @@
         "Tags": null,
         "Amount": 49.23,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-23T00:00:00",
@@ -5859,7 +6087,7 @@
         "Tags": null,
         "Amount": 73.09,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-23T00:00:00",
@@ -5869,7 +6097,7 @@
         "Tags": null,
         "Amount": -243.89,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-23T00:00:00",
@@ -5879,7 +6107,7 @@
         "Tags": null,
         "Amount": 75.46,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-23T00:00:00",
@@ -5889,7 +6117,7 @@
         "Tags": null,
         "Amount": 91.25,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-23T00:00:00",
@@ -5899,7 +6127,7 @@
         "Tags": null,
         "Amount": 200,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-22T00:00:00",
@@ -5909,7 +6137,7 @@
         "Tags": null,
         "Amount": 9.99,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-22T00:00:00",
@@ -5919,7 +6147,7 @@
         "Tags": null,
         "Amount": 20.45,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-22T00:00:00",
@@ -5929,7 +6157,7 @@
         "Tags": null,
         "Amount": 4.99,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-21T00:00:00",
@@ -5939,7 +6167,7 @@
         "Tags": null,
         "Amount": 10.99,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-21T00:00:00",
@@ -5949,7 +6177,7 @@
         "Tags": null,
         "Amount": 35.3,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-21T00:00:00",
@@ -5959,7 +6187,7 @@
         "Tags": null,
         "Amount": 388,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-20T00:00:00",
@@ -5969,7 +6197,7 @@
         "Tags": null,
         "Amount": 9.77,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-20T00:00:00",
@@ -5979,7 +6207,7 @@
         "Tags": null,
         "Amount": 84.99,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-20T00:00:00",
@@ -5989,7 +6217,7 @@
         "Tags": null,
         "Amount": 75,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-20T00:00:00",
@@ -5999,7 +6227,7 @@
         "Tags": null,
         "Amount": 280,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-20T00:00:00",
@@ -6009,7 +6237,7 @@
         "Tags": null,
         "Amount": 24,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-20T00:00:00",
@@ -6019,7 +6247,7 @@
         "Tags": null,
         "Amount": 228.11,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-20T00:00:00",
@@ -6029,7 +6257,7 @@
         "Tags": null,
         "Amount": 104.74,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-20T00:00:00",
@@ -6039,7 +6267,7 @@
         "Tags": null,
         "Amount": 98,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-19T00:00:00",
@@ -6049,7 +6277,7 @@
         "Tags": null,
         "Amount": 132.27,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-19T00:00:00",
@@ -6059,7 +6287,7 @@
         "Tags": null,
         "Amount": 86.92,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-19T00:00:00",
@@ -6069,7 +6297,7 @@
         "Tags": null,
         "Amount": 10.95,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-19T00:00:00",
@@ -6079,7 +6307,7 @@
         "Tags": null,
         "Amount": 9.93,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-19T00:00:00",
@@ -6089,7 +6317,7 @@
         "Tags": null,
         "Amount": 68.18,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-18T00:00:00",
@@ -6099,7 +6327,7 @@
         "Tags": null,
         "Amount": 6.55,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-18T00:00:00",
@@ -6109,7 +6337,7 @@
         "Tags": null,
         "Amount": 67.14,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-18T00:00:00",
@@ -6119,7 +6347,7 @@
         "Tags": null,
         "Amount": 75.45,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-18T00:00:00",
@@ -6129,7 +6357,7 @@
         "Tags": null,
         "Amount": 12.93,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-18T00:00:00",
@@ -6139,7 +6367,7 @@
         "Tags": null,
         "Amount": 32.16,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-18T00:00:00",
@@ -6149,7 +6377,7 @@
         "Tags": null,
         "Amount": 11.78,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-18T00:00:00",
@@ -6159,7 +6387,7 @@
         "Tags": null,
         "Amount": 29,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-18T00:00:00",
@@ -6169,7 +6397,7 @@
         "Tags": null,
         "Amount": 31,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-17T00:00:00",
@@ -6179,7 +6407,7 @@
         "Tags": null,
         "Amount": 57.76,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-17T00:00:00",
@@ -6189,7 +6417,7 @@
         "Tags": null,
         "Amount": 70.94,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-17T00:00:00",
@@ -6199,7 +6427,7 @@
         "Tags": null,
         "Amount": 72.86,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-17T00:00:00",
@@ -6209,7 +6437,7 @@
         "Tags": null,
         "Amount": 456.23,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-16T00:00:00",
@@ -6219,7 +6447,7 @@
         "Tags": null,
         "Amount": 758.2,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-16T00:00:00",
@@ -6229,7 +6457,7 @@
         "Tags": null,
         "Amount": 5,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-16T00:00:00",
@@ -6239,7 +6467,7 @@
         "Tags": null,
         "Amount": 41.28,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-16T00:00:00",
@@ -6249,7 +6477,7 @@
         "Tags": null,
         "Amount": 101.55,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-15T00:00:00",
@@ -6259,7 +6487,7 @@
         "Tags": null,
         "Amount": 224.75,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-15T00:00:00",
@@ -6269,7 +6497,7 @@
         "Tags": null,
         "Amount": 13.99,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-15T00:00:00",
@@ -6279,7 +6507,7 @@
         "Tags": null,
         "Amount": 29.77,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-15T00:00:00",
@@ -6289,7 +6517,7 @@
         "Tags": null,
         "Amount": 15.97,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-15T00:00:00",
@@ -6299,7 +6527,7 @@
         "Tags": null,
         "Amount": 758.21,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-15T00:00:00",
@@ -6309,7 +6537,7 @@
         "Tags": null,
         "Amount": 5.82,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-15T00:00:00",
@@ -6319,7 +6547,7 @@
         "Tags": null,
         "Amount": 120,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-15T00:00:00",
@@ -6329,7 +6557,7 @@
         "Tags": null,
         "Amount": 146.28,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-14T00:00:00",
@@ -6339,7 +6567,7 @@
         "Tags": null,
         "Amount": 34.24,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-14T00:00:00",
@@ -6349,7 +6577,7 @@
         "Tags": null,
         "Amount": -42.86,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-14T00:00:00",
@@ -6359,7 +6587,7 @@
         "Tags": null,
         "Amount": 34.02,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-14T00:00:00",
@@ -6369,7 +6597,7 @@
         "Tags": null,
         "Amount": 220,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-14T00:00:00",
@@ -6379,7 +6607,7 @@
         "Tags": null,
         "Amount": 90.29,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-13T00:00:00",
@@ -6389,7 +6617,7 @@
         "Tags": null,
         "Amount": 13.02,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-13T00:00:00",
@@ -6399,7 +6627,7 @@
         "Tags": null,
         "Amount": 33.77,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-13T00:00:00",
@@ -6409,7 +6637,7 @@
         "Tags": null,
         "Amount": 191.14,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-13T00:00:00",
@@ -6419,7 +6647,7 @@
         "Tags": null,
         "Amount": 1.35,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-13T00:00:00",
@@ -6429,7 +6657,7 @@
         "Tags": null,
         "Amount": 453.14,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-13T00:00:00",
@@ -6439,7 +6667,7 @@
         "Tags": null,
         "Amount": 9.99,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-13T00:00:00",
@@ -6449,7 +6677,7 @@
         "Tags": null,
         "Amount": 3.99,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-13T00:00:00",
@@ -6459,7 +6687,7 @@
         "Tags": null,
         "Amount": 2.99,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-13T00:00:00",
@@ -6469,7 +6697,7 @@
         "Tags": null,
         "Amount": 270,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-12T00:00:00",
@@ -6479,7 +6707,7 @@
         "Tags": null,
         "Amount": 45,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-12T00:00:00",
@@ -6489,7 +6717,7 @@
         "Tags": null,
         "Amount": 61.96,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-12T00:00:00",
@@ -6499,7 +6727,7 @@
         "Tags": null,
         "Amount": 42.92,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-12T00:00:00",
@@ -6509,7 +6737,7 @@
         "Tags": null,
         "Amount": 21.71,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-12T00:00:00",
@@ -6519,7 +6747,7 @@
         "Tags": null,
         "Amount": 40.54,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-12T00:00:00",
@@ -6529,7 +6757,7 @@
         "Tags": null,
         "Amount": 6.99,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-12T00:00:00",
@@ -6539,17 +6767,17 @@
         "Tags": null,
         "Amount": 48.73,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-11T00:00:00",
         "Account": "Joint Chase Mariott - 3526",
         "Description": "La Nee Thai",
-        "Category": "Restaurants",
+        "Category": "Personal Care",
         "Tags": null,
         "Amount": 324,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-11T00:00:00",
@@ -6559,7 +6787,7 @@
         "Tags": null,
         "Amount": 65.01,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-11T00:00:00",
@@ -6569,7 +6797,7 @@
         "Tags": null,
         "Amount": 273.9,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-11T00:00:00",
@@ -6579,7 +6807,7 @@
         "Tags": null,
         "Amount": -131.97,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-11T00:00:00",
@@ -6589,7 +6817,7 @@
         "Tags": null,
         "Amount": 105.33,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-11T00:00:00",
@@ -6599,7 +6827,7 @@
         "Tags": null,
         "Amount": 288.95,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-11T00:00:00",
@@ -6609,7 +6837,7 @@
         "Tags": null,
         "Amount": 700.65,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-11T00:00:00",
@@ -6619,7 +6847,7 @@
         "Tags": null,
         "Amount": 13.02,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-10T00:00:00",
@@ -6629,7 +6857,7 @@
         "Tags": null,
         "Amount": 9,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-10T00:00:00",
@@ -6639,7 +6867,7 @@
         "Tags": null,
         "Amount": 450,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-09T00:00:00",
@@ -6649,7 +6877,7 @@
         "Tags": null,
         "Amount": 1020,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-09T00:00:00",
@@ -6659,7 +6887,7 @@
         "Tags": null,
         "Amount": 580.32,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-09T00:00:00",
@@ -6669,7 +6897,7 @@
         "Tags": null,
         "Amount": 11.89,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-09T00:00:00",
@@ -6679,7 +6907,7 @@
         "Tags": null,
         "Amount": 10.84,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-09T00:00:00",
@@ -6689,7 +6917,7 @@
         "Tags": null,
         "Amount": 88.11,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-09T00:00:00",
@@ -6699,7 +6927,7 @@
         "Tags": null,
         "Amount": 21.71,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-09T00:00:00",
@@ -6709,7 +6937,7 @@
         "Tags": null,
         "Amount": 161.58,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-09T00:00:00",
@@ -6719,7 +6947,7 @@
         "Tags": null,
         "Amount": 12.98,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-09T00:00:00",
@@ -6729,7 +6957,7 @@
         "Tags": null,
         "Amount": 15.2,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-09T00:00:00",
@@ -6739,7 +6967,7 @@
         "Tags": null,
         "Amount": 169.99,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-08T00:00:00",
@@ -6749,7 +6977,7 @@
         "Tags": null,
         "Amount": 15.49,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-08T00:00:00",
@@ -6759,7 +6987,7 @@
         "Tags": null,
         "Amount": 51.19,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-08T00:00:00",
@@ -6769,7 +6997,7 @@
         "Tags": null,
         "Amount": 38.77,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-08T00:00:00",
@@ -6779,7 +7007,7 @@
         "Tags": null,
         "Amount": 53.35,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-07T00:00:00",
@@ -6789,7 +7017,7 @@
         "Tags": null,
         "Amount": 2.14,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-07T00:00:00",
@@ -6799,7 +7027,7 @@
         "Tags": null,
         "Amount": 107.7,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-07T00:00:00",
@@ -6809,7 +7037,7 @@
         "Tags": null,
         "Amount": 18.04,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-07T00:00:00",
@@ -6819,7 +7047,7 @@
         "Tags": null,
         "Amount": 17.91,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-06T00:00:00",
@@ -6829,7 +7057,7 @@
         "Tags": null,
         "Amount": 350.29,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-06T00:00:00",
@@ -6839,7 +7067,7 @@
         "Tags": null,
         "Amount": 199.17,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-06T00:00:00",
@@ -6849,7 +7077,7 @@
         "Tags": null,
         "Amount": 8,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-06T00:00:00",
@@ -6859,7 +7087,7 @@
         "Tags": null,
         "Amount": 35.3,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-06T00:00:00",
@@ -6869,7 +7097,7 @@
         "Tags": null,
         "Amount": 14.95,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-06T00:00:00",
@@ -6879,7 +7107,7 @@
         "Tags": null,
         "Amount": 9.99,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-06T00:00:00",
@@ -6889,7 +7117,7 @@
         "Tags": null,
         "Amount": 12.99,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-06T00:00:00",
@@ -6899,7 +7127,7 @@
         "Tags": null,
         "Amount": 34.52,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-05T00:00:00",
@@ -6909,7 +7137,7 @@
         "Tags": null,
         "Amount": 249.84,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-05T00:00:00",
@@ -6919,7 +7147,7 @@
         "Tags": null,
         "Amount": 112.15,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-04T00:00:00",
@@ -6929,7 +7157,7 @@
         "Tags": null,
         "Amount": 195.69,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-03T00:00:00",
@@ -6939,7 +7167,7 @@
         "Tags": null,
         "Amount": -174.32,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-03T00:00:00",
@@ -6949,7 +7177,7 @@
         "Tags": null,
         "Amount": 11.49,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-03T00:00:00",
@@ -6959,7 +7187,7 @@
         "Tags": null,
         "Amount": 86.88,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-03T00:00:00",
@@ -6969,7 +7197,7 @@
         "Tags": null,
         "Amount": 111.19,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-03T00:00:00",
@@ -6979,7 +7207,7 @@
         "Tags": null,
         "Amount": 109.89,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-02T00:00:00",
@@ -6989,7 +7217,7 @@
         "Tags": null,
         "Amount": 74.42,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-02T00:00:00",
@@ -6999,7 +7227,7 @@
         "Tags": null,
         "Amount": 160.77,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-02T00:00:00",
@@ -7009,7 +7237,7 @@
         "Tags": null,
         "Amount": 3.99,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-01T00:00:00",
@@ -7019,7 +7247,7 @@
         "Tags": null,
         "Amount": 156.42,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-01T00:00:00",
@@ -7029,7 +7257,7 @@
         "Tags": null,
         "Amount": 163.27,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-01T00:00:00",
@@ -7039,7 +7267,7 @@
         "Tags": null,
         "Amount": 59.99,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-01T00:00:00",
@@ -7049,7 +7277,7 @@
         "Tags": null,
         "Amount": 19.96,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-03-01T00:00:00",
@@ -7059,7 +7287,7 @@
         "Tags": null,
         "Amount": 5.99,
         "Year": 2023,
-        "Month": 3
+        "Month": "March"
       },
       {
         "Date": "2023-02-28T00:00:00",
@@ -7069,7 +7297,7 @@
         "Tags": null,
         "Amount": 34.24,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-28T00:00:00",
@@ -7079,7 +7307,7 @@
         "Tags": null,
         "Amount": 671.88,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-28T00:00:00",
@@ -7089,7 +7317,7 @@
         "Tags": null,
         "Amount": 88,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-28T00:00:00",
@@ -7099,7 +7327,7 @@
         "Tags": null,
         "Amount": 8.99,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-28T00:00:00",
@@ -7109,7 +7337,7 @@
         "Tags": null,
         "Amount": 68.73,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-28T00:00:00",
@@ -7119,7 +7347,7 @@
         "Tags": null,
         "Amount": 91.04,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-28T00:00:00",
@@ -7129,7 +7357,7 @@
         "Tags": null,
         "Amount": 22.95,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-28T00:00:00",
@@ -7139,7 +7367,7 @@
         "Tags": null,
         "Amount": 15.99,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-27T00:00:00",
@@ -7149,7 +7377,7 @@
         "Tags": null,
         "Amount": 9.99,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-27T00:00:00",
@@ -7159,7 +7387,7 @@
         "Tags": null,
         "Amount": 24.98,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-27T00:00:00",
@@ -7169,7 +7397,7 @@
         "Tags": null,
         "Amount": 131.97,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-26T00:00:00",
@@ -7179,7 +7407,7 @@
         "Tags": null,
         "Amount": 7,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-26T00:00:00",
@@ -7189,7 +7417,7 @@
         "Tags": null,
         "Amount": 85.32,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-25T00:00:00",
@@ -7199,7 +7427,7 @@
         "Tags": null,
         "Amount": 18.47,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-25T00:00:00",
@@ -7209,7 +7437,7 @@
         "Tags": null,
         "Amount": 209.56,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-25T00:00:00",
@@ -7219,7 +7447,7 @@
         "Tags": null,
         "Amount": 19.55,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-24T00:00:00",
@@ -7229,7 +7457,7 @@
         "Tags": null,
         "Amount": 14.95,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-24T00:00:00",
@@ -7239,7 +7467,7 @@
         "Tags": null,
         "Amount": 42.86,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-24T00:00:00",
@@ -7249,7 +7477,7 @@
         "Tags": null,
         "Amount": 49.96,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-24T00:00:00",
@@ -7259,7 +7487,7 @@
         "Tags": null,
         "Amount": 13.02,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-24T00:00:00",
@@ -7269,7 +7497,7 @@
         "Tags": null,
         "Amount": 37.62,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-24T00:00:00",
@@ -7279,7 +7507,7 @@
         "Tags": null,
         "Amount": 141.67,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-23T00:00:00",
@@ -7289,7 +7517,7 @@
         "Tags": null,
         "Amount": 6.09,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-23T00:00:00",
@@ -7299,7 +7527,7 @@
         "Tags": null,
         "Amount": 3.52,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-23T00:00:00",
@@ -7309,7 +7537,7 @@
         "Tags": null,
         "Amount": 31.79,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-23T00:00:00",
@@ -7319,7 +7547,7 @@
         "Tags": null,
         "Amount": 10.28,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-23T00:00:00",
@@ -7329,7 +7557,7 @@
         "Tags": null,
         "Amount": 13.5,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-23T00:00:00",
@@ -7339,7 +7567,7 @@
         "Tags": null,
         "Amount": 9.6,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-23T00:00:00",
@@ -7349,7 +7577,7 @@
         "Tags": null,
         "Amount": 7.8,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-23T00:00:00",
@@ -7359,7 +7587,7 @@
         "Tags": null,
         "Amount": 3.25,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-23T00:00:00",
@@ -7369,7 +7597,7 @@
         "Tags": null,
         "Amount": 59.82,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-23T00:00:00",
@@ -7379,7 +7607,7 @@
         "Tags": null,
         "Amount": 8,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-22T00:00:00",
@@ -7389,7 +7617,7 @@
         "Tags": null,
         "Amount": 21.95,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-22T00:00:00",
@@ -7399,7 +7627,7 @@
         "Tags": null,
         "Amount": 38.9,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-22T00:00:00",
@@ -7409,7 +7637,7 @@
         "Tags": null,
         "Amount": 18.74,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-22T00:00:00",
@@ -7419,7 +7647,7 @@
         "Tags": null,
         "Amount": 12.05,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-22T00:00:00",
@@ -7429,7 +7657,7 @@
         "Tags": null,
         "Amount": 30.96,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-22T00:00:00",
@@ -7439,7 +7667,7 @@
         "Tags": null,
         "Amount": 9.99,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-22T00:00:00",
@@ -7449,7 +7677,7 @@
         "Tags": null,
         "Amount": 88.7,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-22T00:00:00",
@@ -7459,7 +7687,7 @@
         "Tags": null,
         "Amount": 16.3,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-22T00:00:00",
@@ -7469,7 +7697,7 @@
         "Tags": null,
         "Amount": 3.25,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-21T00:00:00",
@@ -7479,7 +7707,7 @@
         "Tags": null,
         "Amount": 6.04,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-21T00:00:00",
@@ -7489,7 +7717,7 @@
         "Tags": null,
         "Amount": 20,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-21T00:00:00",
@@ -7499,7 +7727,7 @@
         "Tags": null,
         "Amount": 20,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-20T00:00:00",
@@ -7509,7 +7737,7 @@
         "Tags": null,
         "Amount": 106.45,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-20T00:00:00",
@@ -7519,7 +7747,7 @@
         "Tags": null,
         "Amount": 334.56,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-20T00:00:00",
@@ -7529,7 +7757,7 @@
         "Tags": null,
         "Amount": 84.73,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-19T00:00:00",
@@ -7539,7 +7767,7 @@
         "Tags": null,
         "Amount": 87.05,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-19T00:00:00",
@@ -7549,7 +7777,7 @@
         "Tags": null,
         "Amount": 132.27,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-18T00:00:00",
@@ -7559,7 +7787,7 @@
         "Tags": null,
         "Amount": 0.5,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-17T00:00:00",
@@ -7569,7 +7797,7 @@
         "Tags": null,
         "Amount": 200,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-17T00:00:00",
@@ -7579,7 +7807,7 @@
         "Tags": null,
         "Amount": 22,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-17T00:00:00",
@@ -7589,7 +7817,7 @@
         "Tags": null,
         "Amount": 239.96,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-16T00:00:00",
@@ -7599,7 +7827,7 @@
         "Tags": null,
         "Amount": 27,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-16T00:00:00",
@@ -7609,7 +7837,7 @@
         "Tags": null,
         "Amount": 22,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-14T00:00:00",
@@ -7619,7 +7847,7 @@
         "Tags": null,
         "Amount": 22,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-14T00:00:00",
@@ -7629,7 +7857,7 @@
         "Tags": null,
         "Amount": 34.24,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-14T00:00:00",
@@ -7639,7 +7867,7 @@
         "Tags": null,
         "Amount": 150,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-13T00:00:00",
@@ -7649,7 +7877,7 @@
         "Tags": null,
         "Amount": 40.95,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-13T00:00:00",
@@ -7659,7 +7887,7 @@
         "Tags": null,
         "Amount": 32,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-13T00:00:00",
@@ -7669,7 +7897,7 @@
         "Tags": null,
         "Amount": 537.69,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-13T00:00:00",
@@ -7679,7 +7907,7 @@
         "Tags": null,
         "Amount": 166,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-13T00:00:00",
@@ -7689,7 +7917,7 @@
         "Tags": null,
         "Amount": 107.36,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-12T00:00:00",
@@ -7699,7 +7927,7 @@
         "Tags": null,
         "Amount": 40,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-11T00:00:00",
@@ -7709,7 +7937,7 @@
         "Tags": null,
         "Amount": 125,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-10T00:00:00",
@@ -7719,7 +7947,7 @@
         "Tags": null,
         "Amount": 454.04,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-10T00:00:00",
@@ -7729,7 +7957,7 @@
         "Tags": null,
         "Amount": 400,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-10T00:00:00",
@@ -7739,7 +7967,7 @@
         "Tags": null,
         "Amount": 15.29,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-10T00:00:00",
@@ -7749,7 +7977,7 @@
         "Tags": null,
         "Amount": 137.51,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-09T00:00:00",
@@ -7759,7 +7987,7 @@
         "Tags": null,
         "Amount": 59.67,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-09T00:00:00",
@@ -7769,7 +7997,7 @@
         "Tags": null,
         "Amount": 45.5,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-07T00:00:00",
@@ -7779,7 +8007,7 @@
         "Tags": null,
         "Amount": 20.26,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-07T00:00:00",
@@ -7789,7 +8017,7 @@
         "Tags": null,
         "Amount": 2.14,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-07T00:00:00",
@@ -7799,7 +8027,7 @@
         "Tags": null,
         "Amount": 6.33,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-06T00:00:00",
@@ -7809,7 +8037,7 @@
         "Tags": null,
         "Amount": 5.91,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-06T00:00:00",
@@ -7819,7 +8047,7 @@
         "Tags": null,
         "Amount": 294,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-05T00:00:00",
@@ -7829,7 +8057,7 @@
         "Tags": null,
         "Amount": 19.42,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-05T00:00:00",
@@ -7839,7 +8067,7 @@
         "Tags": null,
         "Amount": 51.59,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-04T00:00:00",
@@ -7849,7 +8077,7 @@
         "Tags": null,
         "Amount": 43.45,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-04T00:00:00",
@@ -7859,7 +8087,7 @@
         "Tags": null,
         "Amount": 209.59,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-04T00:00:00",
@@ -7869,7 +8097,7 @@
         "Tags": null,
         "Amount": 32.59,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-04T00:00:00",
@@ -7879,7 +8107,7 @@
         "Tags": null,
         "Amount": 0.5,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-03T00:00:00",
@@ -7889,7 +8117,7 @@
         "Tags": null,
         "Amount": 3.5,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-03T00:00:00",
@@ -7899,7 +8127,7 @@
         "Tags": null,
         "Amount": 50.28,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-03T00:00:00",
@@ -7909,7 +8137,7 @@
         "Tags": null,
         "Amount": 171.63,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-03T00:00:00",
@@ -7919,7 +8147,7 @@
         "Tags": null,
         "Amount": 6379.07,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-03T00:00:00",
@@ -7929,7 +8157,7 @@
         "Tags": null,
         "Amount": 50,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-02T00:00:00",
@@ -7939,7 +8167,7 @@
         "Tags": null,
         "Amount": 197.7,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-02T00:00:00",
@@ -7949,7 +8177,7 @@
         "Tags": null,
         "Amount": 11.49,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-01T00:00:00",
@@ -7959,7 +8187,7 @@
         "Tags": null,
         "Amount": 181.41,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-01T00:00:00",
@@ -7969,7 +8197,7 @@
         "Tags": null,
         "Amount": 14.96,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-01T00:00:00",
@@ -7979,7 +8207,7 @@
         "Tags": null,
         "Amount": 35.56,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-01T00:00:00",
@@ -7989,7 +8217,7 @@
         "Tags": null,
         "Amount": 156.42,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-01T00:00:00",
@@ -7999,7 +8227,7 @@
         "Tags": null,
         "Amount": 0.35,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-01T00:00:00",
@@ -8009,7 +8237,7 @@
         "Tags": null,
         "Amount": 0.19,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-01T00:00:00",
@@ -8019,7 +8247,7 @@
         "Tags": null,
         "Amount": -0.35,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-02-01T00:00:00",
@@ -8029,7 +8257,7 @@
         "Tags": null,
         "Amount": -0.19,
         "Year": 2023,
-        "Month": 2
+        "Month": "February"
       },
       {
         "Date": "2023-01-31T00:00:00",
@@ -8039,7 +8267,7 @@
         "Tags": null,
         "Amount": 4,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-31T00:00:00",
@@ -8049,7 +8277,7 @@
         "Tags": null,
         "Amount": 79.3,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-31T00:00:00",
@@ -8059,7 +8287,7 @@
         "Tags": null,
         "Amount": 149.91,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-31T00:00:00",
@@ -8069,7 +8297,7 @@
         "Tags": null,
         "Amount": 22.59,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-31T00:00:00",
@@ -8079,7 +8307,7 @@
         "Tags": null,
         "Amount": 671.88,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-31T00:00:00",
@@ -8089,7 +8317,7 @@
         "Tags": null,
         "Amount": 34.24,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-31T00:00:00",
@@ -8099,7 +8327,7 @@
         "Tags": null,
         "Amount": 50,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-31T00:00:00",
@@ -8109,7 +8337,7 @@
         "Tags": null,
         "Amount": 79.98,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-30T00:00:00",
@@ -8119,7 +8347,7 @@
         "Tags": null,
         "Amount": 174.32,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-30T00:00:00",
@@ -8129,7 +8357,7 @@
         "Tags": null,
         "Amount": 32.3,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-30T00:00:00",
@@ -8139,7 +8367,7 @@
         "Tags": null,
         "Amount": 40.36,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-30T00:00:00",
@@ -8149,7 +8377,7 @@
         "Tags": null,
         "Amount": 2.5,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-30T00:00:00",
@@ -8159,7 +8387,7 @@
         "Tags": null,
         "Amount": 530,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-30T00:00:00",
@@ -8169,7 +8397,7 @@
         "Tags": null,
         "Amount": 52,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-29T00:00:00",
@@ -8179,7 +8407,7 @@
         "Tags": null,
         "Amount": 58.3,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-29T00:00:00",
@@ -8189,7 +8417,7 @@
         "Tags": null,
         "Amount": 9.7,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-29T00:00:00",
@@ -8199,7 +8427,7 @@
         "Tags": null,
         "Amount": 88,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-29T00:00:00",
@@ -8209,7 +8437,7 @@
         "Tags": null,
         "Amount": 4,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-29T00:00:00",
@@ -8219,7 +8447,7 @@
         "Tags": null,
         "Amount": 70.86,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-28T00:00:00",
@@ -8229,7 +8457,7 @@
         "Tags": null,
         "Amount": 50,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-28T00:00:00",
@@ -8239,7 +8467,7 @@
         "Tags": null,
         "Amount": 63,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-27T00:00:00",
@@ -8249,7 +8477,7 @@
         "Tags": null,
         "Amount": 14.95,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-27T00:00:00",
@@ -8259,7 +8487,7 @@
         "Tags": null,
         "Amount": 220,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-26T00:00:00",
@@ -8269,7 +8497,7 @@
         "Tags": null,
         "Amount": 32,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-25T00:00:00",
@@ -8279,7 +8507,7 @@
         "Tags": null,
         "Amount": 32,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-24T00:00:00",
@@ -8289,7 +8517,7 @@
         "Tags": null,
         "Amount": 80,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-24T00:00:00",
@@ -8299,7 +8527,7 @@
         "Tags": null,
         "Amount": 35,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-23T00:00:00",
@@ -8309,7 +8537,7 @@
         "Tags": null,
         "Amount": 74.95,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-22T00:00:00",
@@ -8319,7 +8547,7 @@
         "Tags": null,
         "Amount": 10,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-22T00:00:00",
@@ -8329,7 +8557,7 @@
         "Tags": null,
         "Amount": 212.92,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-22T00:00:00",
@@ -8339,7 +8567,7 @@
         "Tags": null,
         "Amount": 19.89,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-22T00:00:00",
@@ -8349,7 +8577,7 @@
         "Tags": null,
         "Amount": 9.99,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-22T00:00:00",
@@ -8359,7 +8587,7 @@
         "Tags": null,
         "Amount": 58.96,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-21T00:00:00",
@@ -8369,7 +8597,7 @@
         "Tags": null,
         "Amount": 18.9,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-20T00:00:00",
@@ -8379,7 +8607,7 @@
         "Tags": null,
         "Amount": 14.99,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-19T00:00:00",
@@ -8389,7 +8617,7 @@
         "Tags": null,
         "Amount": 13.99,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-19T00:00:00",
@@ -8399,7 +8627,7 @@
         "Tags": null,
         "Amount": 87.04,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-19T00:00:00",
@@ -8409,7 +8637,7 @@
         "Tags": null,
         "Amount": 132.27,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-18T00:00:00",
@@ -8419,7 +8647,7 @@
         "Tags": null,
         "Amount": 15.99,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-18T00:00:00",
@@ -8429,7 +8657,7 @@
         "Tags": null,
         "Amount": 1300,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-17T00:00:00",
@@ -8439,7 +8667,7 @@
         "Tags": null,
         "Amount": 242.5,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-17T00:00:00",
@@ -8449,7 +8677,7 @@
         "Tags": null,
         "Amount": 34.24,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-16T00:00:00",
@@ -8459,7 +8687,7 @@
         "Tags": null,
         "Amount": 2529.76,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-16T00:00:00",
@@ -8469,7 +8697,7 @@
         "Tags": null,
         "Amount": 157.13,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-15T00:00:00",
@@ -8479,7 +8707,7 @@
         "Tags": null,
         "Amount": 50.52,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-14T00:00:00",
@@ -8489,7 +8717,7 @@
         "Tags": null,
         "Amount": 118.2,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-14T00:00:00",
@@ -8499,7 +8727,7 @@
         "Tags": null,
         "Amount": 127.82,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-14T00:00:00",
@@ -8509,7 +8737,7 @@
         "Tags": null,
         "Amount": 3.08,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-13T00:00:00",
@@ -8519,7 +8747,7 @@
         "Tags": null,
         "Amount": 12.93,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-13T00:00:00",
@@ -8529,7 +8757,7 @@
         "Tags": null,
         "Amount": 286.23,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-13T00:00:00",
@@ -8539,7 +8767,7 @@
         "Tags": null,
         "Amount": 111.75,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-12T00:00:00",
@@ -8549,7 +8777,7 @@
         "Tags": null,
         "Amount": 40,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-11T00:00:00",
@@ -8559,7 +8787,7 @@
         "Tags": null,
         "Amount": 22,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-11T00:00:00",
@@ -8569,7 +8797,7 @@
         "Tags": null,
         "Amount": 35.92,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-09T00:00:00",
@@ -8579,7 +8807,7 @@
         "Tags": null,
         "Amount": 3.84,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-09T00:00:00",
@@ -8589,7 +8817,7 @@
         "Tags": null,
         "Amount": 10,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-09T00:00:00",
@@ -8599,7 +8827,7 @@
         "Tags": null,
         "Amount": 32,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-08T00:00:00",
@@ -8609,7 +8837,7 @@
         "Tags": null,
         "Amount": 36,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-08T00:00:00",
@@ -8619,7 +8847,7 @@
         "Tags": null,
         "Amount": 46.94,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-08T00:00:00",
@@ -8629,7 +8857,7 @@
         "Tags": null,
         "Amount": 37.24,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-08T00:00:00",
@@ -8639,7 +8867,7 @@
         "Tags": null,
         "Amount": 3,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-08T00:00:00",
@@ -8649,7 +8877,7 @@
         "Tags": null,
         "Amount": 54.96,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-08T00:00:00",
@@ -8659,7 +8887,7 @@
         "Tags": null,
         "Amount": 24.93,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-06T00:00:00",
@@ -8669,7 +8897,7 @@
         "Tags": null,
         "Amount": 15.91,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-04T00:00:00",
@@ -8679,7 +8907,7 @@
         "Tags": null,
         "Amount": 80.6,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-04T00:00:00",
@@ -8689,7 +8917,7 @@
         "Tags": null,
         "Amount": 16.97,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-03T00:00:00",
@@ -8699,7 +8927,7 @@
         "Tags": null,
         "Amount": 4.05,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-02T00:00:00",
@@ -8709,7 +8937,7 @@
         "Tags": null,
         "Amount": 11.49,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-02T00:00:00",
@@ -8719,7 +8947,7 @@
         "Tags": null,
         "Amount": 8,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-02T00:00:00",
@@ -8729,7 +8957,7 @@
         "Tags": null,
         "Amount": 170.37,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-01T00:00:00",
@@ -8739,7 +8967,7 @@
         "Tags": null,
         "Amount": 156.42,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       },
       {
         "Date": "2023-01-01T00:00:00",
@@ -8749,7 +8977,7 @@
         "Tags": null,
         "Amount": 19.99,
         "Year": 2023,
-        "Month": 1
+        "Month": "January"
       }
     ]
   }
