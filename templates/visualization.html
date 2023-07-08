@@ -14,7 +14,7 @@
     {
       "layer": [
         {
-          "data": {"name": "data-fa09f5a410cc6bed1c43674d6e939ef3"},
+          "data": {"name": "data-2c7f6ab88648cf3de68468f6dfaecb18"},
           "mark": {"type": "bar", "width": 50},
           "encoding": {
             "color": {"field": "Category", "type": "nominal"},
@@ -22,8 +22,7 @@
               {"field": "Year", "type": "quantitative"},
               {"field": "Month", "type": "nominal"},
               {"field": "Category", "type": "nominal"},
-              {"aggregate": "sum", "field": "Amount", "type": "quantitative"},
-              {"aggregate": "count", "type": "quantitative"}
+              {"aggregate": "sum", "field": "Amount", "type": "quantitative"}
             ],
             "x": {
               "field": "Month",
@@ -48,7 +47,7 @@
           "selection": {
             "selector001": {"type": "single", "fields": ["Category"]}
           },
-          "title": "Spending by Month (Avg $13070)",
+          "title": "Spending by Month (Avg $13074)",
           "transform": [{"filter": {"selection": "selector001"}}],
           "width": 650
         },
@@ -58,7 +57,7 @@
           "encoding": {"y": {"field": "y", "type": "quantitative"}}
         },
         {
-          "data": {"name": "data-2c22a2f8101a939c174437552cb984bf"},
+          "data": {"name": "data-484ba6c18950b72a7d6b329d29a1f7b5"},
           "mark": {"type": "rule", "size": 2},
           "encoding": {
             "tooltip": [
@@ -76,7 +75,7 @@
       ]
     },
     {
-      "data": {"name": "data-fa09f5a410cc6bed1c43674d6e939ef3"},
+      "data": {"name": "data-2c7f6ab88648cf3de68468f6dfaecb18"},
       "mark": "bar",
       "encoding": {
         "color": {"field": "Category", "type": "nominal"},
@@ -86,8 +85,7 @@
         },
         "tooltip": [
           {"field": "Category", "type": "nominal"},
-          {"aggregate": "mean", "field": "Amount", "type": "quantitative"},
-          {"aggregate": "count", "type": "quantitative"}
+          {"aggregate": "mean", "field": "Amount", "type": "quantitative"}
         ],
         "x": {"aggregate": "mean", "field": "Amount", "type": "quantitative"},
         "y": {"field": "Category", "sort": "-x", "type": "nominal"}
@@ -123,7 +121,7 @@
   ],
   "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json",
   "datasets": {
-    "data-fa09f5a410cc6bed1c43674d6e939ef3": [
+    "data-2c7f6ab88648cf3de68468f6dfaecb18": [
       {
         "Year": 2023,
         "Month": "April",
@@ -722,8 +720,8 @@
       {
         "Year": 2023,
         "Month": "May",
-        "Category": "Office Supplies",
-        "Amount": 0
+        "Category": "Other Expenses",
+        "Amount": 25
       },
       {
         "Year": 2023,
@@ -767,16 +765,195 @@
         "Month": "May",
         "Category": "Utilities",
         "Amount": 442.40999999999997
-      }
+      },
+      {"Year": 2023, "Month": "April", "Category": "Automotive", "Amount": 0},
+      {"Year": 2023, "Month": "April", "Category": "Checks", "Amount": 0},
+      {"Year": 2023, "Month": "April", "Category": "Hobbies", "Amount": 0},
+      {
+        "Year": 2023,
+        "Month": "April",
+        "Category": "Home Improvement",
+        "Amount": 0
+      },
+      {"Year": 2023, "Month": "April", "Category": "Gifts", "Amount": 0},
+      {
+        "Year": 2023,
+        "Month": "April",
+        "Category": "Postage & Shipping",
+        "Amount": 0
+      },
+      {
+        "Year": 2023,
+        "Month": "April",
+        "Category": "Office Supplies",
+        "Amount": 0
+      },
+      {
+        "Year": 2023,
+        "Month": "April",
+        "Category": "Pets/Pet Care",
+        "Amount": 0
+      },
+      {
+        "Year": 2023,
+        "Month": "February",
+        "Category": "Charitable Giving",
+        "Amount": 0
+      },
+      {"Year": 2023, "Month": "February", "Category": "Education", "Amount": 0},
+      {"Year": 2023, "Month": "February", "Category": "Insurance", "Amount": 0},
+      {
+        "Year": 2023,
+        "Month": "February",
+        "Category": "Service Charges/Fees",
+        "Amount": 0
+      },
+      {"Year": 2023, "Month": "February", "Category": "Gifts", "Amount": 0},
+      {
+        "Year": 2023,
+        "Month": "February",
+        "Category": "Postage & Shipping",
+        "Amount": 0
+      },
+      {
+        "Year": 2023,
+        "Month": "February",
+        "Category": "Office Supplies",
+        "Amount": 0
+      },
+      {
+        "Year": 2023,
+        "Month": "February",
+        "Category": "Pets/Pet Care",
+        "Amount": 0
+      },
+      {
+        "Year": 2023,
+        "Month": "January",
+        "Category": "Dues & Subscriptions",
+        "Amount": 0
+      },
+      {"Year": 2023, "Month": "January", "Category": "Education", "Amount": 0},
+      {
+        "Year": 2023,
+        "Month": "January",
+        "Category": "Gasoline/Fuel",
+        "Amount": 0
+      },
+      {"Year": 2023, "Month": "January", "Category": "Insurance", "Amount": 0},
+      {
+        "Year": 2023,
+        "Month": "January",
+        "Category": "Online Services",
+        "Amount": 0
+      },
+      {
+        "Year": 2023,
+        "Month": "January",
+        "Category": "Other Expenses",
+        "Amount": 0
+      },
+      {
+        "Year": 2023,
+        "Month": "January",
+        "Category": "Service Charges/Fees",
+        "Amount": 0
+      },
+      {"Year": 2023, "Month": "January", "Category": "Automotive", "Amount": 0},
+      {"Year": 2023, "Month": "January", "Category": "Checks", "Amount": 0},
+      {"Year": 2023, "Month": "January", "Category": "Hobbies", "Amount": 0},
+      {
+        "Year": 2023,
+        "Month": "January",
+        "Category": "Office Supplies",
+        "Amount": 0
+      },
+      {
+        "Year": 2023,
+        "Month": "January",
+        "Category": "Pets/Pet Care",
+        "Amount": 0
+      },
+      {
+        "Year": 2023,
+        "Month": "June",
+        "Category": "Charitable Giving",
+        "Amount": 0
+      },
+      {
+        "Year": 2023,
+        "Month": "June",
+        "Category": "Dues & Subscriptions",
+        "Amount": 0
+      },
+      {"Year": 2023, "Month": "June", "Category": "Education", "Amount": 0},
+      {
+        "Year": 2023,
+        "Month": "June",
+        "Category": "Other Expenses",
+        "Amount": 0
+      },
+      {"Year": 2023, "Month": "June", "Category": "Automotive", "Amount": 0},
+      {"Year": 2023, "Month": "June", "Category": "Checks", "Amount": 0},
+      {"Year": 2023, "Month": "June", "Category": "Hobbies", "Amount": 0},
+      {
+        "Year": 2023,
+        "Month": "June",
+        "Category": "Home Improvement",
+        "Amount": 0
+      },
+      {"Year": 2023, "Month": "March", "Category": "Education", "Amount": 0},
+      {"Year": 2023, "Month": "March", "Category": "Automotive", "Amount": 0},
+      {"Year": 2023, "Month": "March", "Category": "Checks", "Amount": 0},
+      {
+        "Year": 2023,
+        "Month": "March",
+        "Category": "Home Improvement",
+        "Amount": 0
+      },
+      {"Year": 2023, "Month": "March", "Category": "Gifts", "Amount": 0},
+      {
+        "Year": 2023,
+        "Month": "March",
+        "Category": "Postage & Shipping",
+        "Amount": 0
+      },
+      {
+        "Year": 2023,
+        "Month": "March",
+        "Category": "Office Supplies",
+        "Amount": 0
+      },
+      {
+        "Year": 2023,
+        "Month": "March",
+        "Category": "Pets/Pet Care",
+        "Amount": 0
+      },
+      {
+        "Year": 2023,
+        "Month": "May",
+        "Category": "Charitable Giving",
+        "Amount": 0
+      },
+      {"Year": 2023, "Month": "May", "Category": "Education", "Amount": 0},
+      {"Year": 2023, "Month": "May", "Category": "Hobbies", "Amount": 0},
+      {
+        "Year": 2023,
+        "Month": "May",
+        "Category": "Home Improvement",
+        "Amount": 0
+      },
+      {"Year": 2023, "Month": "May", "Category": "Office Supplies", "Amount": 0}
     ],
     "data-06fd9f850666401b4599de5588b60692": [{"y": 0}],
-    "data-2c22a2f8101a939c174437552cb984bf": [
+    "data-484ba6c18950b72a7d6b329d29a1f7b5": [
       {"Month": "April", "Amount": 10534.05},
       {"Month": "February", "Amount": 13810.84},
       {"Month": "January", "Amount": 9155.87},
       {"Month": "June", "Amount": 6560.490000000001},
       {"Month": "March", "Amount": 17067.41},
-      {"Month": "May", "Amount": 21289.08}
+      {"Month": "May", "Amount": 21314.08}
     ],
     "data-13f37ab9bf00f16f643573668578073f": [
       {
